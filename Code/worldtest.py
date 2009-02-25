@@ -20,7 +20,8 @@ import vizinfo
 vizinfo.add('This script demonstrates how to perform manual head tracking.\nIt will retrieve data from the tracker and only rotate the yaw.\nBy default this script will connect to an intersense.\nPress the \'r\' key to reset the tracker')
 
 #Add environment
-viz.add('gallery.ive')
+#viz.add('gallery.ive')
+viz.add('../models/crappy_smallroom1.wrl')
 
 #Add the intersense plugin
 PORT_INTERSENSE = 0
