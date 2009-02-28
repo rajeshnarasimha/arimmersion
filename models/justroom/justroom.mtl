@@ -1,0 +1,135 @@
+#
+## Alias OBJ Material File
+# Exported from SketchUp, (c) 2000-2006 Google, Inc.
+
+newmtl Oak2
+Ka 0.000000 0.000000 0.000000
+Kd 0.635294 0.466667 0.298039
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Oak2.jpg
+
+newmtl _Metal_Corrogated_Shiny_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.756863 0.756863 0.756863
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/_Metal_Corrogated_Shiny_1.jpg
+
+newmtl Material11
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 0.498039 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Wood_Cherry
+Ka 0.000000 0.000000 0.000000
+Kd 0.360784 0.113725 0.043137
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Wood_Cherry.jpg
+
+newmtl Wood_Floor_Dark
+Ka 0.000000 0.000000 0.000000
+Kd 0.600000 0.368627 0.164706
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Wood_Floor_Dark.jpg
+
+newmtl Color_E05
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 0.800000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Carpet_Frieze_Aqua
+Ka 0.000000 0.000000 0.000000
+Kd 0.537255 0.678431 0.525490
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Frieze_Aqua.jpg
+
+newmtl _Brown_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.466667 0.345098 0.211765
+Ks 0.330000 0.330000 0.330000
+
+newmtl Carpet_Plush_Tan
+Ka 0.000000 0.000000 0.000000
+Kd 0.803922 0.709804 0.576471
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Plush_Tan.jpg
+
+newmtl Carpet_Ltorange
+Ka 0.000000 0.000000 0.000000
+Kd 0.666667 0.541176 0.380392
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Ltorange.jpg
+
+newmtl Carpet_Berber_Tight
+Ka 0.000000 0.000000 0.000000
+Kd 0.623529 0.486275 0.298039
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Berber_Tight.jpg
+
+newmtl Cladding_Stucco_White
+Ka 0.000000 0.000000 0.000000
+Kd 0.784314 0.784314 0.784314
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Cladding_Stucco_White.jpg
+
+newmtl Carpet_Plush_Forest
+Ka 0.000000 0.000000 0.000000
+Kd 0.345098 0.392157 0.337255
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Plush_Forest.jpg
+
+newmtl Sketchy_Shingles_Shakes
+Ka 0.000000 0.000000 0.000000
+Kd 0.788235 0.768627 0.772549
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Sketchy_Shingles_Shakes.jpg
+
+newmtl Carpet_Plush_Charcoal
+Ka 0.000000 0.000000 0.000000
+Kd 0.407843 0.407843 0.407843
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Carpet_Plush_Charcoal.jpg
+
+newmtl _DarkGreen_
+Ka 0.000000 0.000000 0.000000
+Kd 0.000000 0.200000 0.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl _SaddleBrown_1
+Ka 0.000000 0.000000 0.000000
+Kd 0.447059 0.219608 0.058824
+Ks 0.330000 0.330000 0.330000
+
+newmtl M_0042_Sienna
+Ka 0.000000 0.000000 0.000000
+Kd 0.627451 0.321569 0.176471
+Ks 0.330000 0.330000 0.330000
+
+newmtl Vegetation_Grass_Dry
+Ka 0.000000 0.000000 0.000000
+Kd 0.388235 0.294118 0.207843
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Vegetation_Grass_Dry.jpg
+
+newmtl Material12
+Ka 0.000000 0.000000 0.000000
+Kd 0.682353 0.568627 0.427451
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Material12.jpg
+
+newmtl Material15
+Ka 0.000000 0.000000 0.000000
+Kd 0.427451 0.317647 0.203922
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Material15.jpg
+
+newmtl FrontColor
+Ka 0.000000 0.000000 0.000000
+Kd 1.000000 1.000000 1.000000
+Ks 0.330000 0.330000 0.330000
+
+newmtl Material14
+Ka 0.000000 0.000000 0.000000
+Kd 0.650980 0.494118 0.215686
+Ks 0.330000 0.330000 0.330000
+map_Kd justroom/Material14.jpg
+
