@@ -6,8 +6,8 @@ SCALE = [0.03, 0.03, 0.03]
 
 
 viz.go()
-room = viz.add("justroom.obj")
-room.ambient([.7,.7,.7])
+room = viz.add("room2.obj")
+#room.ambient([.5,.5,.5])
 room.setScale(SCALE)
 viz.MainView.setPosition(0,1.7,0)
 viz.clearcolor(viz.SKYBLUE)
