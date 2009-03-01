@@ -7,6 +7,9 @@ HMDheight = 480.
 HMDaspect = HMDwidth/HMDheight
 
 viz.go()
+
+#viz.add('new_lab.ive')
+
 #print dir(viz.setFov)
 viz.fov( HMDfov_vert, HMDaspect )
 viz.window.setSize( HMDwidth, HMDheight )
@@ -55,7 +58,7 @@ def setARfov( val ):
 	node.setFov( ARfov_vert, HMDaspect, 0.1, 10 )
 	node.setSize( ARwidth,ARheight,ARx,ARy )
 
-setARfov( 20 )
+setARfov( 30 )
 
 
 
