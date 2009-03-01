@@ -9,7 +9,7 @@ viz.phys.enable()
 TRANSLATE_INC = .2
 ROTATION_INC = 4
 SCALE = [0.03, 0.03, 0.03]
-room = viz.add("../models/justroom/justroom.obj")
+room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
 
 vizact.whilekeydown(viz.KEY_UP,viz.move,0,0,TRANSLATE_INC) #Move forward while up key is pressed
