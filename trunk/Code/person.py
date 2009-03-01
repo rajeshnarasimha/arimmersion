@@ -22,6 +22,9 @@ HMDwidth = 640.
 HMDheight = 480.
 HMDaspect = HMDwidth/HMDheight
 
+viz.fov( HMDfov_vert, HMDaspect )
+viz.window.setSize( HMDwidth, HMDheight )
+
 ground = viz.add('tut_ground.wrl')
 
 #viz.translate(viz.HEAD_POS,0,20,-20)
@@ -31,13 +34,13 @@ viz.clearcolor(viz.SKYBLUE)
 #window = viz.add(viz.WINDOW)
 #window.setPosition(.5,.5)
 
-
 node = viz.addRenderNode()
-node.setScene( viz.Scene1 )
+node.setScene( viz.Scene2 )
 node.setBuffer( viz.RENDER_FRAME_BUFFER )
 node.setOrder( viz.POST_RENDER )
 node.setInheritView( 0 )
 node.setClearMask( 0 )
+node.disable( viz.DEPTH_TEST );
 
 def setARfov( val ):
 	global node, ARfov_vert
@@ -56,10 +59,11 @@ setARfov( 20 )
 
 def UpdateMovement():
 	global node
-	y,p,r = viz.MainView.getEuler()
-	node.setEuler([y,p,r])
-	x,y,z = viz.MainView.getPosition()
-	node.setPosition([x,y,z])
+	node.setMatrix( viz.MainView.getMatrix() )
+#	y,p,r = viz.MainView.getEuler()
+#	node.setEuler([y,p,r])
+#	x,y,z = viz.MainView.getPosition()
+#	node.setPosition([x,y,z])
 vizact.ontimer(0,UpdateMovement)
 
 fovslider = viz.addSlider()
@@ -207,15 +211,22 @@ class a_person:
 		self.avatar.enable(viz.COLLIDE_NOTIFY)
 		
 		#setup the AR
-		viz.startlayer(viz.LINES)
+		viz.startlayer(viz.LINE_STRIP)
 		viz.vertexcolor(1,0,0)
-		viz.pointsize(20)
+		#viz.pointsize(20)
+		viz.linewidth(20)
 		pos = self.avatar.getPosition()
 		#viz.vertex(pos[0], -20, pos[2])
 		#viz.vertex(pos[0], 20, pos[2])
-		viz.vertex(0, -20, 0)
-		viz.vertex(0, 20, 0)
-		self.pointAR = viz.endlayer(viz.WORLD, viz.Scene1)
+		#rx = 0.5
+		#ry = 1
+		#viz.vertex(-rx, 0, 0)
+		#viz.vertex(-rx, r, 0)
+		#viz.vertex(r, r, 0)
+		#viz.vertex(r, -r, 0)
+		viz.vertex(0,1,0)
+		viz.vertex(0,1.5,0)
+		self.pointAR = viz.endlayer(viz.WORLD, viz.Scene2)
 		
 		vizact.ontimer(.01,self.move_AR)
 			
