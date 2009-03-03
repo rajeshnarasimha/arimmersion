@@ -25,8 +25,27 @@ vizact.whilekeydown(viz.KEY_DOWN,viz.move,0,0,-TRANSLATE_INC) #Move backward whi
 vizact.whilekeydown(viz.KEY_LEFT,viz.rotate,viz.BODY_ORI,-ROTATION_INC,0,0) #Turn left while left arrow pressed
 vizact.whilekeydown(viz.KEY_RIGHT,viz.rotate,viz.BODY_ORI,ROTATION_INC,0,0) #Turn right while right arrow pressed
 
+nfalsepos = 0
+nfalseneg = 0
+ncorrect = 0
+tophatwindow = -1
+tophatclicked = 0
 def onclick():
-	a=0
+	global tophatwindow,tophatclicked,nfalsepos,ncorrect
+	if ( tophatwindow == -1 ):
+		nfalsepos += 1
+	elif ( tophatclicked == 0 ):
+		ncorrect += 1
+		tophatclicked = 1
+
+#results_tbox = viz.addTextbox()
+#results_tbox.setPosition(0.5,0.15)
+#
+#def updateResults():
+#	global results_tbox,nfalsepos,nfalseneg,ncorrect
+#	updateResults.message( str(ncorrect)+" "+str(nfalsepos)+" "+str(ncorrect))
+#
+#vizact.ontimer(0,updateResults)
 
 vizact.onmousedown(viz.MOUSEBUTTON_LEFT,onclick)
 
@@ -362,7 +381,8 @@ def getWindow(angle):
 
 
 def reportTargetAngle():
-	global tophat,tophatwindow,node,tbox,tbox2,windows
+	global tophat,tophatwindow,node,tbox,tbox2,windows,tophatclicked
+	global results_tbox,nfalsepos,nfalseneg,ncorrect
 	[x,y,z] = tophat.avatar.getPosition()
 	#print z/x
 	angle = math.atan(z/x)
@@ -375,13 +395,22 @@ def reportTargetAngle():
 	angle = 360-angle
 	
 	msg = getWindow(angle)
+	
+	if ( tophatwindow == -1 and msg != -1 ):
+		tophatclicked = 0
+	elif ( tophatwindow != -1 and msg == -1 and tophatclicked == 0 ):
+		nfalseneg += 1
+	
+	tophatwindow=msg
 	if(msg != -1):
 		tbox.message("tophat window"+str(msg))
 	else:
 		tbox.message("tophat not in a window! :(")
-	tbox2.message("tophat angle: "+str(angle))
+	#tbox2.message("tophat angle: "+str(angle))
 	#print "viewing angle: ",y
 	
+	tbox2.message( str(ncorrect)+" "+str(nfalsepos)+" "+str(nfalseneg))
+
 	
 tbox = viz.addTextbox()	
 tbox.setPosition(0.5,0.35)
