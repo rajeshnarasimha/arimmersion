@@ -415,6 +415,6 @@ def reportTargetAngle():
 tbox = viz.addTextbox()	
 tbox.setPosition(0.5,0.35)
 tbox2 = viz.addTextbox()
-tbox2.setPosition(0.5,0.25)
+tbox2.setPosition(0.5,0.65)
 vizact.ontimer(0,reportTargetAngle)
 
