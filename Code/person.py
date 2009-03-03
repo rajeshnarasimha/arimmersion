@@ -10,12 +10,13 @@ light1 = viz.addLight()
 light1.position(0,5,0)
 light1.color(viz.WHITE)
 
-env = viz.add(viz.ENVIRONMENT_MAP, 'eucalyptus\eucalyptus.jpg',scene=viz.MainScene)
+#env = viz.add(viz.ENVIRONMENT_MAP, 'eucalyptus\eucalyptus.jpg',scene=viz.MainScene)
+env = viz.add(viz.ENVIRONMENT_MAP, 'sky.jpg',scene=viz.MainScene)
 sky = viz.add('skydome.dlc')
 sky.texture(env)
 
 TRANSLATE_INC = .2
-ROTATION_INC = .1
+ROTATION_INC = .5
 SCALE = [0.03, 0.03, 0.03]
 room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
@@ -58,7 +59,7 @@ viz.fov( HMDfov_vert, HMDaspect )
 viz.window.setSize( HMDwidth, HMDheight )
 
 ground = viz.add('tut_ground.wrl')
-
+ground.setScale([5,1,5])
 #viz.translate(viz.HEAD_POS,0,20,-20)
 #viz.lookat(0,0,0)
 viz.clearcolor(viz.SKYBLUE)
@@ -123,7 +124,7 @@ node2D.disable(viz.DEPTH_TEST)
 
 
 
-ringbuffer_len = 40
+ringbuffer_len = 1
 yaw_ringbuffer = range(ringbuffer_len)
 pitch_ringbuffer = range(ringbuffer_len)
 roll_ringbuffer = range(ringbuffer_len)
@@ -305,7 +306,7 @@ class a_person:
 		self.avatar.enable(viz.COLLIDE_NOTIFY)
 		
 		#setup the AR
-		viz.startlayer(viz.LINE_STRIP)
+		viz.startlayer(viz.QUADS)
 		viz.vertexcolor(1,0,0)
 		#viz.pointsize(20)
 		viz.linewidth(20)
@@ -318,9 +319,16 @@ class a_person:
 		#viz.vertex(-rx, r, 0)
 		#viz.vertex(r, r, 0)
 		#viz.vertex(r, -r, 0)
-		viz.vertex(0,1,0)
-		viz.vertex(0,1.5,0)
+		
+		#viz.vertex(0,0,0)
+		#viz.vertex(0,2,0)
+		viz.vertex(-0.3,0,0)
+		viz.vertex(0.3,0,0)
+		viz.vertex(0.3,2,0)
+		viz.vertex(-0.3,2,0)
 		self.pointAR = viz.endlayer(viz.WORLD, viz.Scene2)
+		self.pointAR.alpha(0.3)
+		
 		
 		vizact.ontimer(.01,self.move_AR)
 			
@@ -331,6 +339,10 @@ class a_person:
 		#why is this in the wrong position?
 		apos = self.avatar.getPosition(viz.ABS_GLOBAL)
 		self.pointAR.setPosition(apos, viz.ABS_GLOBAL)
+		x,y,z = apos
+		angle = math.atan(z/x)
+		angle = angle * 180. / math.pi
+		self.pointAR.setAxisAngle([0,1,0,90-angle])
 		
 	def custom_walk(self, points):
 		self.points = points
