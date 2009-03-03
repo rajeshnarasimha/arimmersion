@@ -15,7 +15,7 @@ sky = viz.add('skydome.dlc')
 sky.texture(env)
 
 TRANSLATE_INC = .2
-ROTATION_INC = 1
+ROTATION_INC = .1
 SCALE = [0.03, 0.03, 0.03]
 room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
@@ -118,13 +118,42 @@ node2D.disable(viz.DEPTH_TEST)
 
 
 
+
+
+
+
+
+ringbuffer_len = 40
+yaw_ringbuffer = range(ringbuffer_len)
+pitch_ringbuffer = range(ringbuffer_len)
+roll_ringbuffer = range(ringbuffer_len)
+for i in range(ringbuffer_len):
+	yaw_ringbuffer[i] = 0
+	pitch_ringbuffer[i] = 0
+	roll_ringbuffer[i] = 0
+ringbuffer_idx = 0
+
 def UpdateMovement():
 	global node
-	node.setMatrix( viz.MainView.getMatrix() )
-#	y,p,r = viz.MainView.getEuler()
-#	node.setEuler([y,p,r])
-#	x,y,z = viz.MainView.getPosition()
-#	node.setPosition([x,y,z])
+	global yaw_ringbuffer, pitch_ringbuffer, roll_ringbuffer, ringbuffer_idx
+	
+	yaw = yaw_ringbuffer[ringbuffer_idx]
+	pitch = pitch_ringbuffer[ringbuffer_idx]
+	roll = roll_ringbuffer[ringbuffer_idx]
+
+	node.setPosition( viz.MainView.getPosition() )
+	node.setEuler( yaw,pitch,roll )
+	
+	#Get tracker euler rotation
+	#yaw,pitch,roll = tracker.getEuler()
+	yaw,pitch,roll = viz.MainView.getEuler()
+	
+	yaw_ringbuffer[ringbuffer_idx] = yaw
+	pitch_ringbuffer[ringbuffer_idx] = pitch
+	roll_ringbuffer[ringbuffer_idx] = roll
+	
+	ringbuffer_idx = (ringbuffer_idx + 1)%len(yaw_ringbuffer)
+	
 vizact.ontimer(0,UpdateMovement)
 
 fovslider = viz.addSlider()
@@ -323,10 +352,10 @@ class a_person:
 	def walk_around( self ):
 		global quadrants
 		
-		if random.random() > 0.3:
+		if random.random() > 1:#0.3:
 			walk = vizact.walkTo(self.next_point)
 		else:
-			walk = vizact.walkTo(self.next_point, random.uniform(1, 3), 90)
+			walk = vizact.walkTo(self.next_point, random.uniform(2, 4.5), 90)
 		
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
