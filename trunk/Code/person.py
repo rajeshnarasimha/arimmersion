@@ -5,6 +5,10 @@ import viztask
 
 viz.go()
 viz.phys.enable()
+#viz.disable( viz.LIGHTING )
+light1 = viz.addLight()
+light1.position(0,5,0)
+light1.color(viz.WHITE)
 
 TRANSLATE_INC = .2
 ROTATION_INC = 4
