@@ -1,17 +1,21 @@
 import viz
 import random
 import viztask
-
+import math
 
 viz.go()
 viz.phys.enable()
 #viz.disable( viz.LIGHTING )
-light1 = viz.addLight()
-light1.position(0,5,0)
-light1.color(viz.WHITE)
+#light1 = viz.addLight()
+#light1.position(0,5,0)
+#light1.color(viz.WHITE)
+
+env = viz.add(viz.ENVIRONMENT_MAP, 'eucalyptus\eucalyptus.jpg',scene=viz.MainScene)
+sky = viz.add('skydome.dlc')
+sky.texture(env)
 
 TRANSLATE_INC = .2
-ROTATION_INC = 4
+ROTATION_INC = .1
 SCALE = [0.03, 0.03, 0.03]
 room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
@@ -46,8 +50,9 @@ node.setInheritView( 0 )
 node.setClearMask( 0 )
 node.disable( viz.DEPTH_TEST );
 
+hmdview = 0
 def setARfov( val ):
-	global node, ARfov_vert
+	global node, ARfov_vert, hmdview	
 	ARfov_vert = val
 	ARheight = HMDheight / HMDfov_vert * ARfov_vert
 	ARwidth = ARheight * HMDaspect
@@ -56,8 +61,36 @@ def setARfov( val ):
 	print ARwidth,ARheight,ARx,ARy
 	node.setFov( ARfov_vert, HMDaspect, 0.1, 10 )
 	node.setSize( ARwidth,ARheight,ARx,ARy )
+	
+	if(hmdview != 0):
+		hmdview.remove()
+	viz.startlayer(viz.QUADS)
+	viz.vertex([ARx,ARy,0])
+	viz.vertex([ARx + ARwidth, ARy,0])
+	viz.vertex([ARx + ARwidth,ARy + ARheight,0])
+	viz.vertex([ARx,ARy + ARheight,0])
+	hmdview = viz.endlayer(viz.WORLD,viz.Scene3)
+	hmdview.alpha(0.15)
 
 setARfov( 20 )
+
+
+
+
+node2D = viz.addRenderNode()
+node2D.setScene(viz.Scene3)
+node2D.setBuffer( viz.RENDER_FRAME_BUFFER )
+node2D.setOrder( viz.POST_RENDER )
+node2D.setInheritView(0)
+node2D.setSize( HMDwidth,HMDheight )
+node2D.setProjectionMatrix(viz.Matrix.ortho2D(0,HMDwidth,0,HMDheight))
+node2D.setClearMask(0)
+node2D.disable(viz.DEPTH_TEST)
+#viz.startlayer(viz.LINES)
+#viz.vertex([HMDwidth/2,0,0])
+#viz.vertex([HMDwidth/2,HMDheight,0])
+#viz.endlayer(viz.WORLD,viz.Scene3)
+
 
 
 
@@ -146,7 +179,10 @@ class quadrant:
 		
 	def get_random_within(self):
 		return [random.uniform(self.x1, self.x2), 0, random.uniform(self.y1, self.y2)]
-	
+
+#define the window angles
+windows = [[170, 192.3], [246.4, 257.3], [281.9, 292.9],[342.2, 4.2], [76.6, 100.8]]
+
 #define the quadrants
 quadrants = [ quadrant(-max_x, -room_x, room_y, max_y), quadrant(-room_x, room_x, room_y, max_y), quadrant(room_x, max_x, room_y, max_y), quadrant(room_x, max_x, -room_y, room_y), quadrant(room_x, max_x, -max_y, -room_y), quadrant(-room_x, room_x, -max_y, -room_y), quadrant(-max_x, -room_x, -max_y, -room_y), quadrant(-max_x, -room_x, -room_y, room_y)]
 
@@ -180,6 +216,7 @@ def get_quadrant( current_point ):
 
 class a_person:
 	def __init__( self ,  av_type = 0):
+		self.in_quad = 0
 		if av_type == 0:
 			type = random.randrange(0,4)
 			if type == 0:
@@ -241,8 +278,26 @@ class a_person:
 		#why is this in the wrong position?
 		apos = self.avatar.getPosition(viz.ABS_GLOBAL)
 		self.pointAR.setPosition(apos, viz.ABS_GLOBAL)
+		
+	def custom_walk(self, points):
+		self.points = points
+		self.place_points = 0
+		self.avatar.setPosition(points[0])
+		self.next_point = points[0]
+		viztask.schedule(self.start_custom_walk())
+		
+	def start_custom_walk(self):
+		walk = vizact.walkTo(self.next_point)
+		yield viztask.addAction(self.avatar, walk)
+		if(self.place_points < len(self.points)):
+			self.place_points += 1
+			self.next_point = self.points[self.place_points]
+			if self.coll == 0:
+				print "no collision"
+				viztask.schedule(self.start_custom_walk())
 	
 	def walk_around( self ):
+		global quadrants
 		
 		if random.random() > 0.3:
 			walk = vizact.walkTo(self.next_point)
@@ -276,7 +331,7 @@ def onCollideBegin(e):
 			print "Collision detection"
 
 
-viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
+#viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
 
 people = []
 
@@ -284,8 +339,34 @@ for i in range(0, num_av):
 	people.append( a_person())
 	
 tophat = a_person(1)
-people.append(tophat)
-
+#people.append(tophat)
+tophat.custom_walk([[10, 0, 10], [-10, 0, 10], [-10, 0, -10], [10, 0, -10], [10, 0, 10]])
 for person in people:
 	viztask.schedule(person.walk_around())
 	
+	
+
+
+
+def reportTargetAngle():
+	global tophat, node,tbox,tbox2
+	[x,y,z] = tophat.avatar.getPosition()
+	#print z/x
+	angle = math.atan(z/x)
+	angle = angle * 180. / math.pi
+	if ( x < 0 ): angle += 180.
+	angle += 90
+	#print "angle:%f"%angle
+	[y,p,r] = node.getEuler()
+	y = y + 180
+	tbox.message("viewing angle: "+str(y))
+	tbox2.message("tophat angle: "+str(360-angle))
+	#print "viewing angle: ",y
+	
+	
+tbox = viz.addTextbox()	
+tbox.setPosition(0.5,0.35)
+tbox2 = viz.addTextbox()
+tbox2.setPosition(0.5,0.25)
+vizact.ontimer(0,reportTargetAngle)
+
