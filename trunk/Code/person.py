@@ -6,16 +6,16 @@ import math
 viz.go()
 viz.phys.enable()
 #viz.disable( viz.LIGHTING )
-#light1 = viz.addLight()
-#light1.position(0,5,0)
-#light1.color(viz.WHITE)
+light1 = viz.addLight()
+light1.position(0,5,0)
+light1.color(viz.WHITE)
 
 env = viz.add(viz.ENVIRONMENT_MAP, 'eucalyptus\eucalyptus.jpg',scene=viz.MainScene)
 sky = viz.add('skydome.dlc')
 sky.texture(env)
 
 TRANSLATE_INC = .2
-ROTATION_INC = .1
+ROTATION_INC = 1
 SCALE = [0.03, 0.03, 0.03]
 room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
@@ -24,6 +24,11 @@ vizact.whilekeydown(viz.KEY_UP,viz.move,0,0,TRANSLATE_INC) #Move forward while u
 vizact.whilekeydown(viz.KEY_DOWN,viz.move,0,0,-TRANSLATE_INC) #Move backward while down key is pressed
 vizact.whilekeydown(viz.KEY_LEFT,viz.rotate,viz.BODY_ORI,-ROTATION_INC,0,0) #Turn left while left arrow pressed
 vizact.whilekeydown(viz.KEY_RIGHT,viz.rotate,viz.BODY_ORI,ROTATION_INC,0,0) #Turn right while right arrow pressed
+
+def onclick():
+	a=0
+
+vizact.onmousedown(viz.MOUSEBUTTON_LEFT,onclick)
 
 HMDfov_vert = 36.
 HMDwidth = 640.
@@ -117,8 +122,8 @@ viz.callback(viz.BUTTON_EVENT,onButton)
 
 
 #Create custom camera handler
-#class MyCameraHandler( viz.CameraHandler ):
-#
+class MyCameraHandler( viz.CameraHandler ):
+	a=0
 #	def _camUpdate( self, e ):
 #		if viz.iskeydown( viz.KEY_RIGHT ):
 #			e.view.rotate(0,1,0,1,viz.BODY_ORI,viz.REL_PARENT)
@@ -127,8 +132,8 @@ viz.callback(viz.BUTTON_EVENT,onButton)
 #			#move view up
 #			e.view.rotate(0,1,0,-1,viz.BODY_ORI,viz.REL_PARENT)
 #			#e.view2.rotate(0,1,0,-1,viz.BODY_ORI,viz.REL_PARENT)
-#
-#viz.cam.setHandler( MyCameraHandler() )
+
+viz.cam.setHandler( MyCameraHandler() )
 
 
 num_av = 20
@@ -346,10 +351,18 @@ for person in people:
 	
 	
 
+def getWindow(angle):
+	i = 0
+	for window in windows:
+		if ( (window[0]<window[1] and angle >= window[0] and angle <= window[1]) or ( window[1]<window[0] and (angle <= window[1] or angle>=window[0]))):
+			return i
+		i += 1
+	else:
+		return -1
 
 
 def reportTargetAngle():
-	global tophat, node,tbox,tbox2
+	global tophat,tophatwindow,node,tbox,tbox2,windows
 	[x,y,z] = tophat.avatar.getPosition()
 	#print z/x
 	angle = math.atan(z/x)
@@ -359,8 +372,14 @@ def reportTargetAngle():
 	#print "angle:%f"%angle
 	[y,p,r] = node.getEuler()
 	y = y + 180
-	tbox.message("viewing angle: "+str(y))
-	tbox2.message("tophat angle: "+str(360-angle))
+	angle = 360-angle
+	
+	msg = getWindow(angle)
+	if(msg != -1):
+		tbox.message("tophat window"+str(msg))
+	else:
+		tbox.message("tophat not in a window! :(")
+	tbox2.message("tophat angle: "+str(angle))
 	#print "viewing angle: ",y
 	
 	
