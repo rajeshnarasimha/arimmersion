@@ -16,7 +16,7 @@ sky = viz.add('skydome.dlc')
 sky.texture(env)
 
 TRANSLATE_INC = .2
-ROTATION_INC = .5
+ROTATION_INC = 2
 SCALE = [0.03, 0.03, 0.03]
 room = viz.add("../models/room2/room2.wrl")
 room.setScale(SCALE)
@@ -186,13 +186,14 @@ viz.cam.setHandler( MyCameraHandler() )
 
 
 num_av = 20
-real_room_x = 5
+real_room_x = 8
 room_x = real_room_x + 2
-real_room_y = 5
+real_room_y = 6
 room_y = real_room_y + 2
-max_x = 20
-max_y = 20
+max_x = 25
+max_y = 25
 
+"""
 viz.startlayer(viz.LINES) 
 viz.vertex(-real_room_x,1,real_room_y) #Vertices are split into pairs.
 viz.vertex(real_room_x,1,real_room_y)
@@ -206,7 +207,7 @@ viz.vertex(-real_room_x,1,-real_room_y)
 viz.vertex(-real_room_x,1,-real_room_y)
 viz.vertex(-real_room_x,1,real_room_y)
 myLines = viz.endlayer()
-
+"""
 
 
 
@@ -220,9 +221,9 @@ class quadrant:
 		self.y2 = y2
 	
 	def contains(self, point):
-		print point
-		print [self.x1, self.x2]
-		print [self.y1, self.y2]
+		##print point
+		#print [self.x1, self.x2]
+		#print [self.y1, self.y2]
 		if self.x1 <= point[0] and self.x2 > point[0]:
 			if self.y1 <= point[2] and self.y2 > point[2]:
 				return True
@@ -260,7 +261,8 @@ def get_quadrant( current_point ):
 	for quad in quadrants:
 		if quad.contains(current_point):
 			return quad
-	print "Error not in a quadrant!"
+	print "Error not in a quadrant!!!!!!!!!!!!!!"
+	print current_point
 	return quadrants[0]
 	
 	
@@ -284,14 +286,14 @@ class a_person:
 		else:
 			self.avatar = viz.add('vcc_male.cfg',viz.WORLD,scene=viz.MainScene)
 			#Add the hat model
-			hat = viz.add('tophat.3ds')
-			hat.setScale([1,5,1])
+			self.hat = viz.add('tophat.3ds')
+			self.hat.setScale([1,5,1])
 
 			#Get the head bone of the avatar
 			head = self.avatar.getBone('Bip01 Head')
 
 			#Link the hat to the head
-			HatLink = viz.link(head,hat)
+			HatLink = viz.link(head,self.hat)
 
 			#Tweek the hat link so it fits snuggly on the head
 			
@@ -330,7 +332,7 @@ class a_person:
 		self.pointAR.alpha(0.3)
 		
 		
-		vizact.ontimer(.01,self.move_AR)
+		self.arev = vizact.ontimer(.01,self.move_AR)
 			
 			
 		
@@ -347,18 +349,20 @@ class a_person:
 	def custom_walk(self, points):
 		self.points = points
 		self.place_points = 0
-		self.avatar.setPosition(points[0])
-		self.next_point = points[0]
+		self.avatar.setPosition(points[0][0])
+		self.next_point = points[0][0]
+		self.next_speed = points[0][1]
 		viztask.schedule(self.start_custom_walk())
 		
 	def start_custom_walk(self):
-		walk = vizact.walkTo(self.next_point)
+		walk = vizact.walkTo(self.next_point, self.next_speed, 90)
 		yield viztask.addAction(self.avatar, walk)
-		if(self.place_points < len(self.points)):
+		if(self.place_points < len(self.points)):			
+			self.next_point = self.points[self.place_points][0]
+			self.next_speed = self.points[self.place_points][1]
 			self.place_points += 1
-			self.next_point = self.points[self.place_points]
 			if self.coll == 0:
-				print "no collision"
+				##print "no collision"
 				viztask.schedule(self.start_custom_walk())
 	
 	def walk_around( self ):
@@ -372,12 +376,12 @@ class a_person:
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
 		if self.coll == 0:
-			print "no collision"
+			##print "no collision"
 			viztask.schedule(self.walk_around())
 			
 	def collision( self ):
 		self.next_point = [self.next_point[0] - .1, 0, self.next_point[2] - .1] #get_quadrant(self.avatar.getPosition()).get_random_walk()#[self.avatar.getPosition()[0], 0, self.avatar.getPosition()[2] - 0.05]
-		yield viztask.addAction(self.avatar, vizact.waittime(1))
+		yield viztask.addAction(self.avatar, vizact.waittime(0.5))
 		#self.avatar.lookat(self.next_point)
 		#yield viztask.addAction(self.avatar, vizact.waittime(1))
 		self.coll = 0
@@ -393,21 +397,12 @@ def onCollideBegin(e):
 			person.coll = 1
 			person.avatar.clearActions()
 			viztask.schedule(person.collision())
-			print "Collision detection"
+			##print "Collision detection"
 
 
-#viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
+viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
 
-people = []
 
-for i in range(0, num_av):
-	people.append( a_person())
-	
-tophat = a_person(1)
-#people.append(tophat)
-tophat.custom_walk([[10, 0, 10], [-10, 0, 10], [-10, 0, -10], [10, 0, -10], [10, 0, 10]])
-for person in people:
-	viztask.schedule(person.walk_around())
 	
 	
 
@@ -443,10 +438,10 @@ def reportTargetAngle():
 		nfalseneg += 1
 	
 	tophatwindow=msg
-	if(msg != -1):
-		tbox.message("tophat window"+str(msg))
-	else:
-		tbox.message("tophat not in a window! :(")
+	#if(msg != -1):
+	#	tbox.message("tophat window"+str(msg))
+	#else:
+	#	tbox.message("tophat not in a window! :(")
 	#tbox2.message("tophat angle: "+str(angle))
 	#print "viewing angle: ",y
 	
@@ -457,5 +452,55 @@ tbox = viz.addTextbox()
 tbox.setPosition(0.5,0.35)
 tbox2 = viz.addTextbox()
 tbox2.setPosition(0.5,0.65)
-vizact.ontimer(0,reportTargetAngle)
+
+numtasks = 12
+
+def run_tasks():
+	global tbox, message, tophat, people, numtasks
+	tbox.message("Press space to start")
+	for i in range(0,numtasks):
+		
+		yield viztask.waitKeyDown(' ')
+		tbox.visible(viz.OFF)
+
+
+
+		for i in range(0, num_av):
+			people.append( a_person())
+			
+		tophat = a_person(1)
+		#people.append(tophat)
+		tophat.custom_walk([[[10, 0, 10], 2], [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		for person in people:
+			viztask.schedule(person.walk_around())
+			
+			
+		rpt = vizact.ontimer(0,reportTargetAngle)
+		
+		yield viztask.waitTime(10)
+		
+		
+		vizact.removeEvent(rpt)
+		vizact.removeEvent(tophat.arev)
+		tophat.pointAR.remove()
+		tophat.avatar.clearActions()
+		tophat.avatar.remove()
+		tophat.hat.remove()
+		for person in people:
+			person.pointAR.remove()
+			vizact.removeEvent(person.arev)
+			person.avatar.clearActions()
+			person.avatar.remove()
+			
+		people = []
+		tbox.visible(viz.ON)
+		tbox.message("Task Over, press space for next")
+
+	tbox.message("Done!")
+
+people = []
+
+
+viztask.schedule(run_tasks())
+
 
