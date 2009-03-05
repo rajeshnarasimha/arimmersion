@@ -38,6 +38,7 @@ def onclick():
 	elif ( tophatclicked == 0 ):
 		ncorrect += 1
 		tophatclicked = 1
+	print [ncorrect, nfalsepos, nfalseneg]
 
 #results_tbox = viz.addTextbox()
 #results_tbox.setPosition(0.5,0.15)
@@ -392,7 +393,7 @@ class a_person:
 			self.place_points += 1
 		else:
 			self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
-			self.next_speed = random.uniform(2, 4.5)
+			self.next_speed = random.uniform(3, 5)
 		if self.coll == 0:
 			##print "no collision"
 			viztask.schedule(self.start_custom_walk())
@@ -403,7 +404,7 @@ class a_person:
 		if random.random() > 1:#0.3:
 			walk = vizact.walkTo(self.next_point)
 		else:
-			walk = vizact.walkTo(self.next_point, random.uniform(2, 4.5), 90)
+			walk = vizact.walkTo(self.next_point, random.uniform(3, 5), 90)
 		#print self.next_point
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
@@ -504,8 +505,8 @@ for i in xrange(2):
 			
 random.shuffle(conditions)
 
-for i in range(0,numtasks):
-	random_seeds.append(i)
+for i in range(1,numtasks + 1):
+	random_seeds.append(i * 3)
 
 random.shuffle(random_seeds)
 
@@ -531,15 +532,16 @@ def run_tasks():
 			people.append( a_person())
 			
 		tophat = a_person(1)
-		#people.append(tophat)
-		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		people.append(tophat)
+		#tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		
 		for person in people:
 			viztask.schedule(person.walk_around())
 			
 			
 		rpt = vizact.ontimer(0,reportTargetAngle)
 		
-		yield viztask.waitTime(10)
+		yield viztask.waitTime(45)
 		results.append([ncorrect, nfalsepos, nfalseneg])
 		
 		vizact.removeEvent(rpt)
@@ -569,6 +571,28 @@ def run_tasks():
 	for r in results:
 		print conditions[i] + r
 		i += 1
+
+
+def onKeyDown(key):
+	global nfalsepos, nfalseneg, ncorrect
+	if key == '4':
+		ncorrect += 1
+	elif key == '1':
+		ncorrect -= 1
+		
+	elif key == '5':
+		nfalsepos += 1
+	elif key == '2':
+		nfalsepos -= 1
+		
+	elif key == '6':
+		nfalseneg += 1
+	elif key == '3':
+		nfalseneg -= 1
+	
+	print [ncorrect, nfalsepos, nfalseneg]
+
+viz.callback(viz.KEYDOWN_EVENT,onKeyDown) 
 
 people = []
 
