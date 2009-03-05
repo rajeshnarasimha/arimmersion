@@ -401,7 +401,7 @@ class a_person:
 			self.place_points += 1
 		else:
 			self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
-			self.next_speed = random.uniform(3, 5)
+			self.next_speed = random.uniform(4, 5)
 		if self.coll == 0:
 			##print "no collision"
 			viztask.schedule(self.start_custom_walk())
@@ -412,7 +412,7 @@ class a_person:
 		if random.random() > 1:#0.3:
 			walk = vizact.walkTo(self.next_point)
 		else:
-			walk = vizact.walkTo(self.next_point, random.uniform(3, 5), 90)
+			walk = vizact.walkTo(self.next_point, random.uniform(4, 5), 90)
 		#print self.next_point
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
@@ -532,8 +532,8 @@ def run_tasks():
 		nfalsepos = 0
 		nfalseneg = 0
 		ncorrect = 0
-		tophatwindow = -1
-		tophatclicked = 0
+		tophatwindow = 0
+		tophatclicked = 1
 		
 		setARfov( conditions[i][0] )
 		ringbuffer_len = conditions[i][1]
@@ -571,7 +571,7 @@ def run_tasks():
 			
 		people = []
 		tbox.visible(viz.ON)
-		tbox.message("Task Over, press space for next")
+		tbox.message("Task %d Over"%(i+1))
 		print "Result: fov, latency, ncorrect, nfalsepos, nfalseneg"
 		print conditions[i] +results[i]
 
