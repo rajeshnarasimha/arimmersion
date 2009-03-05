@@ -469,6 +469,7 @@ def reportTargetAngle():
 		tophatclicked = 0
 	elif ( tophatwindow != -1 and msg == -1 and tophatclicked == 0 ):
 		nfalseneg += 1
+		print [ncorrect, nfalsepos, nfalseneg]
 	
 	tophatwindow=msg
 	#if(msg != -1):
@@ -485,7 +486,7 @@ tbox = viz.addTextbox()
 tbox.setPosition(0.5,0.35)
 tbox2 = viz.addTextbox()
 tbox2.setPosition(0.5,0.65)
-
+tbox2.visible(viz.OFF)
 numtasks = 18
 random_seeds = []
 results = []
