@@ -3,6 +3,10 @@ import random
 import viztask
 import math
 
+tracker = viz.add('intersense.dls')
+viz.mouse.setVisible(viz.OFF)
+viz.window.setFullscreen(viz.ON)
+viz.window.setBorder( viz.BORDER_NONE )
 viz.go()
 viz.phys.enable()
 #viz.disable( viz.LIGHTING )
@@ -125,7 +129,7 @@ node2D.disable(viz.DEPTH_TEST)
 
 
 
-ringbuffer_len = 1
+ringbuffer_len = 20
 yaw_ringbuffer = range(ringbuffer_len)
 pitch_ringbuffer = range(ringbuffer_len)
 roll_ringbuffer = range(ringbuffer_len)
@@ -135,9 +139,12 @@ for i in range(ringbuffer_len):
 	roll_ringbuffer[i] = 0
 ringbuffer_idx = 0
 
+
 def UpdateMovement():
+	global tracker
 	global node
 	global yaw_ringbuffer, pitch_ringbuffer, roll_ringbuffer, ringbuffer_idx
+	global ringbuffer_len
 	
 	yaw = yaw_ringbuffer[ringbuffer_idx]
 	pitch = pitch_ringbuffer[ringbuffer_idx]
@@ -147,27 +154,28 @@ def UpdateMovement():
 	node.setEuler( yaw,pitch,roll )
 	
 	#Get tracker euler rotation
-	#yaw,pitch,roll = tracker.getEuler()
-	yaw,pitch,roll = viz.MainView.getEuler()
+	yaw,pitch,roll = tracker.getEuler()
+	viz.MainView.setEuler([yaw,pitch,roll])
+	#yaw,pitch,roll = viz.MainView.getEuler()
 	
 	yaw_ringbuffer[ringbuffer_idx] = yaw
 	pitch_ringbuffer[ringbuffer_idx] = pitch
 	roll_ringbuffer[ringbuffer_idx] = roll
 	
-	ringbuffer_idx = (ringbuffer_idx + 1)%len(yaw_ringbuffer)
+	ringbuffer_idx = (ringbuffer_idx + 1)%ringbuffer_len
 	
 vizact.ontimer(0,UpdateMovement)
 
-fovslider = viz.addSlider()
-fovslider.translate(0.2,0.1)
-fovslider.set(ARfov_vert/HMDfov_vert)
+#fovslider = viz.addSlider()
+#fovslider.translate(0.2,0.1)
+#fovslider.set(ARfov_vert/HMDfov_vert)
 
-def onButton(obj,state):
-	global fovslider, HMDfov_vert
-	if obj == fovslider:
-		setARfov( HMDfov_vert * fovslider.get() )
-
-viz.callback(viz.BUTTON_EVENT,onButton)
+#def onButton(obj,state):
+#	global fovslider, HMDfov_vert
+#	if obj == fovslider:
+#		setARfov( HMDfov_vert * fovslider.get() )
+#
+#viz.callback(viz.BUTTON_EVENT,onButton)
 
 
 
@@ -493,7 +501,7 @@ results = []
 
 
 fov_values = [10, 20, 34]
-latency_values = [1, 10, 20]
+latency_values = [1, 6, 12]
 
 
 
@@ -512,7 +520,8 @@ for i in range(1,numtasks + 1):
 random.shuffle(random_seeds)
 
 def run_tasks():
-	global tbox, message, tophat, people, numtasks, random_seeds, nfalsepos, nfalseneg, ncorrect, tophatwindow, tophatclicked, ringbuffer_len
+	global tbox, message, tophat, people, numtasks, random_seeds, nfalsepos, nfalseneg, ncorrect, tophatwindow, tophatclicked
+	global ringbuffer_idx, ringbuffer_len
 	tbox.message("Press space to start")
 	for i in range(0,numtasks):
 		
@@ -528,7 +537,8 @@ def run_tasks():
 		
 		setARfov( conditions[i][0] )
 		ringbuffer_len = conditions[i][1]
-
+		ringbuffer_idx = 0
+		
 		for j in range(0, num_av):
 			people.append( a_person())
 			
