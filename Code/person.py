@@ -192,6 +192,8 @@ real_room_y = 6
 room_y = real_room_y + 2
 max_x = 25
 max_y = 25
+max_walk_x = max_x + 2
+max_walk_y = max_y + 2
 
 """
 viz.startlayer(viz.LINES) 
@@ -216,9 +218,28 @@ class quadrant:
 	
 	def __init__(self, x1, x2, y1, y2):
 		self.x1 = x1
+		if x1 < 0:
+			self.x1_walk = x1 + 2
+		else:
+			self.x1_walk = x1 + 2
+			
 		self.x2 = x2
+		if x2 < 0:
+			self.x2_walk = x2 - 2
+		else:
+			self.x2_walk = x2 - 2
+			
 		self.y1 = y1
+		if y1 < 0:
+			self.y1_walk = y1 + 2
+		else:
+			self.y1_walk = y1 + 2
+			
 		self.y2 = y2
+		if y2 < 0:
+			self.y2_walk = y2 - 2
+		else:
+			self.y2_walk = y2 - 2
 	
 	def contains(self, point):
 		##print point
@@ -233,7 +254,7 @@ class quadrant:
 		return self.next_to[random.randrange(0, len(self.next_to))].get_random_within()
 		
 	def get_random_within(self):
-		return [random.uniform(self.x1, self.x2), 0, random.uniform(self.y1, self.y2)]
+		return [random.uniform(self.x1_walk, self.x2_walk), 0, random.uniform(self.y1_walk, self.y2_walk)]
 
 #define the window angles
 windows = [[170, 192.3], [246.4, 257.3], [281.9, 292.9],[342.2, 4.2], [76.6, 100.8]]
@@ -250,6 +271,11 @@ quadrants[5].next_to = [quadrants[5], quadrants[4], quadrants[6]]
 quadrants[6].next_to = [quadrants[6], quadrants[5], quadrants[4], quadrants[7], quadrants[0]]
 quadrants[7].next_to = [quadrants[7], quadrants[6], quadrants[0]]
 
+
+for q in quadrants:
+	print str(q.x1)+" "+str(q.x2)+" "+str(q.y1)+" "+str(q.y2)
+	print str(q.x1_walk)+" "+str(q.x2_walk)+" "+str(q.y1_walk)+" "+str(q.y2_walk)
+	print ""
 
 def get_random_point():
 	global quadrants
@@ -354,6 +380,9 @@ class a_person:
 		self.next_speed = points[0][1]
 		viztask.schedule(self.start_custom_walk())
 		
+	def stop(self):
+		self.coll = 1
+		
 	def start_custom_walk(self):
 		walk = vizact.walkTo(self.next_point, self.next_speed, 90)
 		yield viztask.addAction(self.avatar, walk)
@@ -361,9 +390,12 @@ class a_person:
 			self.next_point = self.points[self.place_points][0]
 			self.next_speed = self.points[self.place_points][1]
 			self.place_points += 1
-			if self.coll == 0:
-				##print "no collision"
-				viztask.schedule(self.start_custom_walk())
+		else:
+			self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
+			self.next_speed = random.uniform(2, 4.5)
+		if self.coll == 0:
+			##print "no collision"
+			viztask.schedule(self.start_custom_walk())
 	
 	def walk_around( self ):
 		global quadrants
@@ -372,7 +404,7 @@ class a_person:
 			walk = vizact.walkTo(self.next_point)
 		else:
 			walk = vizact.walkTo(self.next_point, random.uniform(2, 4.5), 90)
-		
+		#print self.next_point
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
 		if self.coll == 0:
@@ -453,24 +485,54 @@ tbox.setPosition(0.5,0.35)
 tbox2 = viz.addTextbox()
 tbox2.setPosition(0.5,0.65)
 
-numtasks = 12
+numtasks = 18
+random_seeds = []
+results = []
+
+
+fov_values = [10, 20, 34]
+latency_values = [1, 10, 20]
+
+
+
+conditions = []
+
+for i in xrange(2):
+	for j in xrange(3):
+		for k in xrange(3):
+			conditions.append([fov_values[j], latency_values[k]])
+			
+random.shuffle(conditions)
+
+for i in range(0,numtasks):
+	random_seeds.append(i)
+
+random.shuffle(random_seeds)
 
 def run_tasks():
-	global tbox, message, tophat, people, numtasks
+	global tbox, message, tophat, people, numtasks, random_seeds, nfalsepos, nfalseneg, ncorrect, tophatwindow, tophatclicked, ringbuffer_len
 	tbox.message("Press space to start")
 	for i in range(0,numtasks):
 		
 		yield viztask.waitKeyDown(' ')
 		tbox.visible(viz.OFF)
+		random.seed(random_seeds[i])
+		
+		nfalsepos = 0
+		nfalseneg = 0
+		ncorrect = 0
+		tophatwindow = 0
+		tophatclicked = 1
+		
+		setARfov( conditions[i][0] )
+		ringbuffer_len = conditions[i][1]
 
-
-
-		for i in range(0, num_av):
+		for j in range(0, num_av):
 			people.append( a_person())
 			
 		tophat = a_person(1)
 		#people.append(tophat)
-		tophat.custom_walk([[[10, 0, 10], 2], [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		for person in people:
 			viztask.schedule(person.walk_around())
 			
@@ -478,7 +540,7 @@ def run_tasks():
 		rpt = vizact.ontimer(0,reportTargetAngle)
 		
 		yield viztask.waitTime(10)
-		
+		results.append([ncorrect, nfalsepos, nfalseneg])
 		
 		vizact.removeEvent(rpt)
 		vizact.removeEvent(tophat.arev)
@@ -486,17 +548,27 @@ def run_tasks():
 		tophat.avatar.clearActions()
 		tophat.avatar.remove()
 		tophat.hat.remove()
+		tophat.stop()
 		for person in people:
 			person.pointAR.remove()
 			vizact.removeEvent(person.arev)
 			person.avatar.clearActions()
 			person.avatar.remove()
+			person.stop()
 			
 		people = []
 		tbox.visible(viz.ON)
 		tbox.message("Task Over, press space for next")
+		print "Result: fov, latency, ncorrect, nfalsepos, nfalseneg"
+		print conditions[i] +results[i]
 
 	tbox.message("Done!")
+	print "Results:"
+	print "fov, latency, ncorrect, nfalsepos, nfalseneg"
+	i = 0
+	for r in results:
+		print conditions[i] + r
+		i += 1
 
 people = []
 
