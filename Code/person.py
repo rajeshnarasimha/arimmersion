@@ -401,7 +401,7 @@ class a_person:
 			self.place_points += 1
 		else:
 			self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
-			self.next_speed = random.uniform(4, 5)
+			self.next_speed = random.uniform(4, 5) #change tophat speed here
 		if self.coll == 0:
 			##print "no collision"
 			viztask.schedule(self.start_custom_walk())
@@ -412,7 +412,7 @@ class a_person:
 		if random.random() > 1:#0.3:
 			walk = vizact.walkTo(self.next_point)
 		else:
-			walk = vizact.walkTo(self.next_point, random.uniform(4, 5), 90)
+			walk = vizact.walkTo(self.next_point, random.uniform(4, 5), 90) #change everyone else speed here
 		#print self.next_point
 		yield viztask.addAction(self.avatar, walk)
 		self.next_point = get_quadrant(self.avatar.getPosition()).get_random_walk()
@@ -544,7 +544,7 @@ def run_tasks():
 			
 		tophat = a_person(1)
 		people.append(tophat)
-		#tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
 		for person in people:
 			viztask.schedule(person.walk_around())
