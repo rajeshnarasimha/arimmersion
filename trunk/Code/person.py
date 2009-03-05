@@ -413,7 +413,7 @@ class a_person:
 			viztask.schedule(self.walk_around())
 			
 	def collision( self ):
-		self.next_point = [self.next_point[0] - .1, 0, self.next_point[2] - .1] #get_quadrant(self.avatar.getPosition()).get_random_walk()#[self.avatar.getPosition()[0], 0, self.avatar.getPosition()[2] - 0.05]
+		#self.next_point = [self.next_point[0] - .1, 0, self.next_point[2] - .1] #get_quadrant(self.avatar.getPosition()).get_random_walk()#[self.avatar.getPosition()[0], 0, self.avatar.getPosition()[2] - 0.05]
 		yield viztask.addAction(self.avatar, vizact.waittime(0.5))
 		#self.avatar.lookat(self.next_point)
 		#yield viztask.addAction(self.avatar, vizact.waittime(1))
@@ -522,8 +522,8 @@ def run_tasks():
 		nfalsepos = 0
 		nfalseneg = 0
 		ncorrect = 0
-		tophatwindow = 0
-		tophatclicked = 1
+		tophatwindow = -1
+		tophatclicked = 0
 		
 		setARfov( conditions[i][0] )
 		ringbuffer_len = conditions[i][1]
