@@ -19,3 +19,6 @@ boxplot(percent_correct~latency,data=data.all)
 aov.two = aov(percent_correct~fov*latency,data.all)
 print(summary(aov.two))
 boxplot(percent_correct~fov*latency,data=data.all)
+
+
+boxplot(percent_correct~fov/latency,data=data.all)
