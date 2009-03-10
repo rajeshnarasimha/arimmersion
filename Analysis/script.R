@@ -1,24 +1,54 @@
-datafilename="alldata.csv"
-data.all=read.csv(datafilename,header=T)	# read the data into a table
+datafilename="alldata.tab"
+data.all=read.table(datafilename,header=T)	# read the data into a table
 
-# one-way anova on fov
-aov.fov=aov(percent_correct~fov,data.all)
+# one-way repeated measures anova on fov
+aov.fov=aov(recall~fov+Error(id/fov),data.all)
 print(summary(aov.fov))
-#print(model.tables(aov.all,"means"),digits=3)
-boxplot(percent_correct~fov,data=data.all)
+boxplot(recall~fov,data=data.all)
 
 
-# one-way anova on latency
-aov.latency=aov(percent_correct~latency,data.all)
+# one-way repeated measures anova on latency
+aov.latency=aov(recall~latency+Error(id/latency),data.all)
 print(summary(aov.latency))
-boxplot(percent_correct~latency,data=data.all)
+boxplot(recall~latency,data=data.all)
 
 
 
-# two-way anova on both
-aov.two = aov(percent_correct~fov*latency,data.all)
+# two-way anova repeated measures on both
+aov.two = aov(recall~(fov*latency)+Error(id/(fov*latency)),data.all)
 print(summary(aov.two))
-boxplot(percent_correct~fov*latency,data=data.all)
+#boxplot(recall~fov*latency,data=data.all)
+attach(data.all)
+interaction.plot(fov,latency,recall)    #another way to graph the interaction
+detach(data.all)
 
 
-boxplot(percent_correct~fov/latency,data=data.all)
+
+
+
+
+
+
+
+
+# one-way repeated measures anova on precision~fov
+aov.fov=aov(precision~fov+Error(id/fov),data.all)
+print(summary(aov.fov))
+#boxplot(recall~fov,data=data.all)
+
+
+# one-way repeated measures anova on precision~latency
+aov.latency=aov(precision~latency+Error(id/latency),data.all)
+print(summary(aov.latency))
+#boxplot(recall~latency,data=data.all)
+
+
+
+# two-way anova repeated measures on precision~(fov*latency)
+aov.two = aov(precision~(fov*latency)+Error(id/(fov*latency)),data.all)
+print(summary(aov.two))
+#boxplot(recall~fov*latency,data=data.all)
+attach(data.all)
+interaction.plot(fov,latency,precision)    #another way to graph the interaction
+detach(data.all)
+
