@@ -22,6 +22,7 @@ data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id6'
 
 #data.agg[4] = log(data.agg[4])
 #data.agg[17,4] <- -2
+
 detach(data.all)
 
 # one-way repeated measures anova on fov
@@ -31,19 +32,19 @@ detach(data.all)
 
 
 # one-way repeated measures anova on latency
-aov.latency=aov(recall~latency+Error(id/latency),data.agg)
-print(summary(aov.latency))
-boxplot(recall~latency,data=data.agg)
+#aov.latency=aov(recall~latency+Error(id/latency),data.agg)
+#print(summary(aov.latency))
+#boxplot(recall~latency,data=data.agg)
 
 
 
 # two-way anova repeated measures on both
-#aov.two = aov(recall~(fov*latency)+Error(id/(fov*latency)),data.agg)
-#print(summary(aov.two))
+aov.two = aov(recall~(fov*latency)+Error(id/(fov*latency)),data.agg)
+print(summary(aov.two))
 #boxplot(recall~fov*latency,data=data.agg)
-#attach(data.agg)
-#interaction.plot(fov,latency,recall)    #another way to graph the interaction
-#detach(data.agg)
+attach(data.agg)
+interaction.plot(fov,latency,recall)    #another way to graph the interaction
+detach(data.agg)
 
 
 
