@@ -1,0 +1,36 @@
+How difficult?
+high				+
+moderate			++++
+varying				++
+
+Why?
+Lose track of person
+	because of occlusion	+++
+small FOV			+
+no peripheral vision		+
+markers off			+
+
+Enough time?
+Yes				+++++
+
+Differences?
+Crowding			++
+Moves faster			++++
+Walks through walls		++
+FOV				++++
+Jitter				+
+Markers behaving differently	+
+
+Strategy?
+Focus on him only		++++
+Follow boxes to other windows	++
+Look at nearby windows		+++
+Look at all windows		++
+Use marker latency		+
+Slow movement for latency	++
+
+Issues?
+heavy				++
+hard to adjust			+
+dizziness			++
+cords				+
