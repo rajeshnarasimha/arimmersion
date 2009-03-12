@@ -1,0 +1,16 @@
+Error: id:fov
+          Df   Sum Sq  Mean Sq F value Pr(>F)
+fov        2 0.054585 0.027293  0.8739 0.4469
+Residuals 10 0.312292 0.031229               
+
+Error: id:latency
+          Df   Sum Sq  Mean Sq F value  Pr(>F)  
+latency    2 0.121975 0.060987  5.5703 0.02368 *
+Residuals 10 0.109486 0.010949                  
+---
+Signif. codes:  0 Ô***Õ 0.001 Ô**Õ 0.01 Ô*Õ 0.05 Ô.Õ 0.1 Ô Õ 1 
+
+Error: id:fov:latency
+            Df  Sum Sq Mean Sq F value Pr(>F)
+fov:latency  4 0.14673 0.03668  0.6764 0.6162
+Residuals   20 1.08467 0.05423               
