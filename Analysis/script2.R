@@ -2,8 +2,8 @@ datafilename="alldata.tab"
 data.all=read.table(datafilename,header=T)	# read the data into a table
 
 attach(data.all)
-data.agg = aggregate(precision,list(fov,latency,id), mean)
-colnames(data.agg) <- c("fov","latency","id",'precision')
+data.agg = aggregate(recall,list(fov,latency,id,gender,game), mean)
+colnames(data.agg) <- c("fov","latency","id",'gender','game','recall')
 
 #data.agg = aggregate(recall,list(fov,latency,id), mean)
 #colnames(data.agg) <- c("fov","latency","id",'recall')
@@ -32,10 +32,22 @@ data.agg[sapply(data.agg['id'],function(x) x==4),'id'] = 'id4'
 data.agg[sapply(data.agg['id'],function(x) x==5),'id'] = 'id5'
 data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id6'
 
+data.agg[sapply(data.agg['game'],function(x) x==1),'game'] = '0-1'
+data.agg[sapply(data.agg['game'],function(x) x==3),'game'] = '2-5'
+data.agg[sapply(data.agg['game'],function(x) x==10),'game'] = '5-15'
+
 #data.agg[4] = log(data.agg[4])
 #data.agg[17,4] <- -2
 
 detach(data.all)
+
+aov.gender=aov(recall~gender,data.agg)
+print(summary(aov.gender))
+boxplot(recall~gender,data=data.agg)
+
+aov.game=aov(recall~game,data.agg)
+print(summary(aov.game))
+boxplot(recall~game,data=data.agg)
 
 # one-way repeated measures anova on fov
 #aov.fov=aov(recall~fov+Error(id/fov),data.agg)
