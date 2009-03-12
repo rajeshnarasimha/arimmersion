@@ -140,11 +140,25 @@ for i in range(ringbuffer_len):
 ringbuffer_idx = 0
 
 
+elapsed_sum = 0
+elapsed_N = 0
+
 def UpdateMovement():
 	global tracker
 	global node
 	global yaw_ringbuffer, pitch_ringbuffer, roll_ringbuffer, ringbuffer_idx
 	global ringbuffer_len
+	global elapsed_sum, elapsed_N
+	
+	elapsed_sum = elapsed_sum + viz.elapsed()
+	elapsed_N = elapsed_N + 1
+	
+	if ( elapsed_N == 50 ):
+		print 'upp latency:',(elapsed_sum/elapsed_N)*12*1000,' ms'
+		print 'med latency:',(elapsed_sum/elapsed_N)*6*1000,' ms'
+		print 'low latency:',(elapsed_sum/elapsed_N)*1*1000,' ms'
+		elapsed_sum = 0
+		elapsed_N = 0
 	
 	yaw = yaw_ringbuffer[ringbuffer_idx]
 	pitch = pitch_ringbuffer[ringbuffer_idx]
