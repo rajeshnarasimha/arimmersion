@@ -74,6 +74,7 @@ class PathGenerator:
 	def generateAndTestPathSet(self):
 		print "I am in here"
 		peopleset = []
+		ps = PathSet()
 		
 		for j in range(0, self.num_av):
 			peopleset.append( people.a_person())
@@ -88,7 +89,6 @@ class PathGenerator:
 		yield viztask.waitTime(self.task_time)
 		
 		#save the path
-		ps = PathSet()
 		for person in peppleset:
 			ps.peoplePaths.append(person.getPath())
 		ps.abePath = tophat.getPath()
