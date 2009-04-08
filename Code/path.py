@@ -2,6 +2,8 @@ import viz
 import quadrants
 import people
 import viztask
+import pickle
+import random
 
 quadSet = quadrants.QuadrantSet()
 
@@ -41,10 +43,20 @@ class PathGenerator:
 	num_av = 20
 	
 	
-	def __init__(self):
+	def __init__(self, filename = "pathGen" + str(random.randrange(1,100000))):
 		print "AA"
 		self.pathSets = []
 		self.nextPath = 0
+		self.filename = filename
+		#save the new path to a file
+		file = open(self.filename, 'w')
+		pickle.dump(self,file)
+		file.close()
+		#just to test working
+		##unpicklefile = open(self.filename, 'r')
+		##picklepg = pickle.load(unpicklefile)
+		##unpicklefile.close()
+		##print "The loaded values is: " + str(picklepg.taskTime)
 		
 	def generatePaths(self):
 		print "I am right here1"
@@ -53,6 +65,10 @@ class PathGenerator:
 			yield self.generateAndTestPathSet()
 			if self.checkPathSet(self.nextPath):
 				self.pathSets.append(self.nextPath)
+				#save the new path to a file
+				file = open(self.filename, 'w')
+				pickle.dump(self,file)
+				file.close()
 		#return self.pathSets
 			
 			
