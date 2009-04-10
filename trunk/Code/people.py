@@ -15,8 +15,9 @@ max_speed = 5
 
 class a_person:
 	
-	def __init__( self ,  av_type = 0):
+	def __init__( self , speedMultiplier = 1.0, av_type = 0):
 		print "Creating a person"
+		self.speedMultiplier = speedMultiplier
 		self.save_path = path.Path()
 		self.in_quad = 0
 		if av_type == 0:
@@ -94,7 +95,7 @@ class a_person:
 		
 	def start_custom_walk(self):
 		#self.avatar.lookat(self.next_point)
-		walk = vizact.walkTo(self.next_point, self.next_speed, 270)
+		walk = vizact.walkTo(self.next_point, self.next_speed*self.speedMultiplier, 270*self.speedMultiplier)
 		yield viztask.addAction(self.avatar, walk)
 		if(self.place_points < len(self.points)):			
 			self.next_point = self.points[self.place_points][0]
@@ -116,7 +117,7 @@ class a_person:
 		##if random.random() > 1:
 			##walk = vizact.walkTo(self.next_point)
 		##else:
-		walk = vizact.walkTo(self.next_point, self.next_speed, 270) #change everyone else speed here
+		walk = vizact.walkTo(self.next_point, self.next_speed*self.speedMultiplier, 270*self.speedMultiplier) #change everyone else speed here
 		yield viztask.addAction(self.avatar, walk)
 		theq = quadSet.get_quadrant(self.avatar.getPosition())
 		if theq != -1:
@@ -135,7 +136,7 @@ class a_person:
 		a = 0
 		
 	def get_path(self):
-		return self.self.save_path
+		return self.save_path
 		
 def get_next_speed():
 	global min_speed, max_speed
