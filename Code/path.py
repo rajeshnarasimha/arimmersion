@@ -4,8 +4,10 @@ import people
 import viztask
 import pickle
 import random
+import vizact
 
 quadSet = quadrants.QuadrantSet()
+speedMultiplier = 50.0
 
 class Path:
 	startPoint = []
@@ -31,6 +33,7 @@ class PathSet:
 	quadrantsReached = 0
 
 class PathGenerator:
+	global speedMultipler
 	speedRange = [2,5]
 	collisionRange = [10,15]
 	timeNotVisilbleRange = [20,30]
@@ -39,7 +42,7 @@ class PathGenerator:
 	quadrantsReachedRange = [1,8]
 	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
-	taskTime = 200
+	taskTime = 100/speedMultiplier
 	numPaths = 5
 	num_av = 20
 	
@@ -89,14 +92,15 @@ class PathGenerator:
 		return True
 		
 	def generateAndTestPathSet(self):
+		global speedMultiplier
 		print "I am in here"
 		peopleset = []
 		ps = PathSet()
 		
 		for j in range(0, self.num_av):
-			peopleset.append( people.a_person())
+			peopleset.append( people.a_person(speedMultiplier))
 			
-		tophat = people.a_person(1)
+		tophat = people.a_person(speedMultiplier, 1)
 		#peopleset.append(tophat)
 		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
@@ -107,11 +111,11 @@ class PathGenerator:
 		
 		#save the path
 		for person in peopleset:
-			ps.peoplePaths.append(person.getPath())
-		ps.abePath = tophat.getPath()
+			ps.peoplePaths.append(person.get_path())
+		ps.abePath = tophat.get_path()
 		
 		#vizact.removeEvent(rpt)
-		vizact.removeEvent(tophat.arev)
+		#vizact.removeEvent(tophat.arev)
 		tophat.pointAR.remove()
 		tophat.avatar.clearActions()
 		tophat.avatar.remove()
@@ -119,7 +123,7 @@ class PathGenerator:
 		tophat.stop()
 		for person in peopleset:
 			person.pointAR.remove()
-			vizact.removeEvent(person.arev)
+			#vizact.removeEvent(person.arev)
 			person.avatar.clearActions()
 			person.avatar.remove()
 			person.stop()
