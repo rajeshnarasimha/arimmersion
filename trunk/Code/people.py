@@ -4,6 +4,7 @@ import quadrants
 import path
 import random
 import math
+import vizact
 
 #viz.go()
 
@@ -92,7 +93,8 @@ class a_person:
 		self.coll = 1
 		
 	def start_custom_walk(self):
-		walk = vizact.walkTo(self.next_point, self.next_speed, 90)
+		#self.avatar.lookat(self.next_point)
+		walk = vizact.walkTo(self.next_point, self.next_speed, 270)
 		yield viztask.addAction(self.avatar, walk)
 		if(self.place_points < len(self.points)):			
 			self.next_point = self.points[self.place_points][0]
@@ -110,11 +112,11 @@ class a_person:
 	
 	def walk_around( self ):
 		global quadrants
-		
-		if random.random() > 1:
-			walk = vizact.walkTo(self.next_point)
-		else:
-			walk = vizact.walkTo(self.next_point, self.next_speed, 90) #change everyone else speed here
+		#self.avatar.lookat(self.next_point)
+		##if random.random() > 1:
+			##walk = vizact.walkTo(self.next_point)
+		##else:
+		walk = vizact.walkTo(self.next_point, self.next_speed, 270) #change everyone else speed here
 		yield viztask.addAction(self.avatar, walk)
 		theq = quadSet.get_quadrant(self.avatar.getPosition())
 		if theq != -1:

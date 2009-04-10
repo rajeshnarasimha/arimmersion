@@ -37,6 +37,7 @@ class PathGenerator:
 	pointsWalkedToRange = [5, 10]
 	numberPeopleNearbyRange = [10,20]
 	quadrantsReachedRange = [1,8]
+	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
 	taskTime = 200
 	numPaths = 5
@@ -46,7 +47,7 @@ class PathGenerator:
 	def __init__(self, filename = "pathGen" + str(random.randrange(1,100000))):
 		print "AA"
 		self.pathSets = []
-		self.nextPath = 0
+		#self.nextPath = 0
 		self.filename = filename
 		#save the new path to a file
 		file = open(self.filename, 'w')
@@ -96,16 +97,16 @@ class PathGenerator:
 			peopleset.append( people.a_person())
 			
 		tophat = people.a_person(1)
-		peopleset.append(tophat)
+		#peopleset.append(tophat)
 		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
 		for person in peopleset:
 			viztask.schedule(person.walk_around())
 		
-		yield viztask.waitTime(self.task_time)
+		yield viztask.waitTime(self.taskTime)
 		
 		#save the path
-		for person in peppleset:
+		for person in peopleset:
 			ps.peoplePaths.append(person.getPath())
 		ps.abePath = tophat.getPath()
 		
