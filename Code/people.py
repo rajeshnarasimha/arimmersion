@@ -121,6 +121,8 @@ class a_person:
 		yield viztask.addAction(self.avatar, walk)
 		theq = quadSet.get_quadrant(self.avatar.getPosition())
 		if theq != -1:
+			# is this right????????
+			self.save_path.quadrantsReached += 1
 			self.next_point = theq.get_random_walk()
 			self.next_speed = get_next_speed()
 			self.save_path.addPoint(self.next_point, self.next_speed)
@@ -133,6 +135,7 @@ class a_person:
 		#yield viztask.addAction(self.avatar, vizact.waittime(0.5))
 		#self.coll = 0
 		#viztask.schedule(self.walk_around())
+		self.save_path.collisions += 1
 		a = 0
 		
 	def get_path(self):
