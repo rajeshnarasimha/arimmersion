@@ -13,6 +13,12 @@ class Path:
 	startPoint = []
 	points = []
 	
+	collisions = 0
+	timeNotVisible = 0
+	pointsWalkedTo = 0
+	numberPeopleNearby = 0
+	quadrantsReached = 0
+	
 	def setStart(self, point):
 		points = point
 	
@@ -36,7 +42,7 @@ class PathGenerator:
 	global speedMultipler
 	speedRange = [2,5]
 	collisionRange = [10,15]
-	timeNotVisilbleRange = [20,30]
+	timeNotVisibleRange = [20,30]
 	pointsWalkedToRange = [5, 10]
 	numberPeopleNearbyRange = [10,20]
 	quadrantsReachedRange = [1,8]
@@ -114,6 +120,13 @@ class PathGenerator:
 			ps.peoplePaths.append(person.get_path())
 		ps.abePath = tophat.get_path()
 		
+		#ps.speed = ??
+		ps.collisions = ps.abePath.collisions
+		#ps.timeNotVisible = ??
+		#pointsWalkedTo = ??
+		#numberPeopleNearby = ??
+		quadrantsReached = ps.abePath.quadrantsReached
+	
 		#vizact.removeEvent(rpt)
 		#vizact.removeEvent(tophat.arev)
 		tophat.pointAR.remove()
