@@ -126,7 +126,8 @@ class PathGenerator:
 		#pointsWalkedTo = ??
 		#numberPeopleNearby = ??
 		quadrantsReached = ps.abePath.quadrantsReached
-	
+		print "quadrants reached: ",quadrantsReached
+		
 		#vizact.removeEvent(rpt)
 		#vizact.removeEvent(tophat.arev)
 		tophat.pointAR.remove()

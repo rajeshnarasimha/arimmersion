@@ -49,7 +49,7 @@ class a_person:
 			
 		self.avatar.setPosition(quadSet.get_random_point())
 		self.save_path.setStart(self.avatar.getPosition())
-		self.next_point = quadSet.get_quadrant(self.avatar.getPosition()).get_random_walk()
+		self.next_point = quadSet.get_quadrant(self.avatar.getPosition())[0].get_random_walk()
 		self.next_speed = get_next_speed()
 		self.save_path.addPoint(self.next_point, self.next_speed)
 		self.coll = 0
@@ -68,8 +68,10 @@ class a_person:
 		self.pointAR = viz.endlayer(viz.WORLD, viz.Scene2)
 		self.pointAR.alpha(0.3)
 		
+		self.tracking_error = []
 		#self.arev = vizact.ontimer(.01,self.move_AR)
 		
+		self.myquadrants = [False,False,False,False,False,False,False,False]
 
 	def move_AR(self):
 		apos = self.avatar.getPosition(viz.ABS_GLOBAL)
@@ -79,10 +81,19 @@ class a_person:
 		angle = angle * 180. / math.pi
 		self.pointAR.setAxisAngle([0,1,0,90-angle])
 		
+	def check_quadrants(self):
+		theq,index = quadSet.get_quadrant(self.next_point)
+		if theq != -1:
+			if self.myquadrants[index] == False:
+				self.save_path.quadrantsReached += 1
+			self.myquadrants[index] = True
+		return [theq,index]
+		
 	def custom_walk(self, points):
 		self.points = points
 		self.place_points = 0
 		self.avatar.setPosition(points[0][0])
+		self.check_quadrants()
 		self.save_path.setStart(points[0][0])
 		self.next_point = points[0][0]
 		self.next_speed = points[0][1]
@@ -97,17 +108,17 @@ class a_person:
 		#self.avatar.lookat(self.next_point)
 		walk = vizact.walkTo(self.next_point, self.next_speed*self.speedMultiplier, 270*self.speedMultiplier)
 		yield viztask.addAction(self.avatar, walk)
-		if(self.place_points < len(self.points)):			
+		theq,index = self.check_quadrants()
+		if(self.place_points < len(self.points)):		
 			self.next_point = self.points[self.place_points][0]
 			self.next_speed = self.points[self.place_points][1]
 			self.save_path.addPoint(self.next_point, self.next_speed)
 			self.place_points += 1
-		else:
-			theq = quadSet.get_quadrant(self.next_point)
-			if theq != -1:
-				self.next_point = theq.get_random_walk()
-				self.next_speed = get_next_speed() #change tophat speed here
-				self.save_path.addPoint(self.next_point, self.next_speed)
+		elif theq != -1:
+			self.myquadrants[index] = True
+			self.next_point = theq.get_random_walk()
+			self.next_speed = get_next_speed() #change tophat speed here
+			self.save_path.addPoint(self.next_point, self.next_speed)
 		if self.coll == 0:
 			viztask.schedule(self.start_custom_walk())
 	
@@ -118,16 +129,21 @@ class a_person:
 			##walk = vizact.walkTo(self.next_point)
 		##else:
 		walk = vizact.walkTo(self.next_point, self.next_speed*self.speedMultiplier, 270*self.speedMultiplier) #change everyone else speed here
+		
+		# this makes the person walk to the next point
 		yield viztask.addAction(self.avatar, walk)
-		theq = quadSet.get_quadrant(self.avatar.getPosition())
+		
+		[theq,index] = self.check_quadrants()
 		if theq != -1:
 			# is this right????????
-			self.save_path.quadrantsReached += 1
 			self.next_point = theq.get_random_walk()
 			self.next_speed = get_next_speed()
 			self.save_path.addPoint(self.next_point, self.next_speed)
+			
+		# self.coll == 0 always for now
 		if self.coll == 0:
 			viztask.schedule(self.walk_around())
+		# if self.coll = 1, let collision() handle it
 			
 	def collision( self ):
 		#do nothing for collisions
@@ -140,6 +156,22 @@ class a_person:
 		
 	def get_path(self):
 		return self.save_path
+	
+	def getEuler(self):
+		[x,y,z] = self.avatar.getPosition()
+		#print z/x
+		yaw = math.atan(z/x)
+		yaw *= 180. / math.pi
+		if ( x < 0 ): yaw += 180.
+		yaw += 90
+		yaw = 360-yaw
+		
+		# ???
+		pitch = 0
+		
+		roll = 0
+		
+		return [yaw,pitch,roll]
 		
 def get_next_speed():
 	global min_speed, max_speed
