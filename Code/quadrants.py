@@ -89,12 +89,14 @@ class QuadrantSet:
 
 
 	def get_quadrant(self, current_point ):
+		i = 0
 		for quad in self.quadrants:
 			if quad.contains(current_point):
-				return quad
+				return [quad,i]
+			i += 1
 		print "Error not in a quadrant!!!!!!!!!!!!!!"
 		print current_point
-		return -1
+		return [-1,-1]
 		#return quadrants[0]
 		
 		
