@@ -37,6 +37,11 @@ vizact.whilekeydown(viz.KEY_LEFT,viz.rotate,viz.BODY_ORI,-ROTATION_INC,0,0) #Tur
 vizact.whilekeydown(viz.KEY_RIGHT,viz.rotate,viz.BODY_ORI,ROTATION_INC,0,0) #Turn right while right arrow pressed
 
 
+def onCollideBegin(e):
+	global pg
+	if pg.abe.avatar == e.obj1:
+		pg.abe.collision()
+viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
 
 pg = path.PathGenerator()
 viztask.schedule(pg.generatePaths())
