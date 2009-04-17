@@ -42,11 +42,11 @@ class PathSet:
 class PathGenerator:
 	global speedMultipler
 	speedRange = [2,5]
-	collisionRange = [10,15]
-	timeNotVisibleRange = [20,30]
-	pointsWalkedToRange = [5, 10]
-	numberPeopleNearbyRange = [10,20]
-	quadrantsReachedRange = [1,8]
+	collisionRange = [0,1000]#[10,15] #doesn't matter
+	timeNotVisibleRange = [60,90]
+	pointsWalkedToRange = [15, 23]
+	numberPeopleNearbyRange = [2,6]
+	quadrantsReachedRange = [5,8]
 	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
 	taskTime = 100/speedMultiplier
@@ -60,9 +60,9 @@ class PathGenerator:
 		#self.nextPath = 0
 		self.filename = filename
 		#save the new path to a file
-		file = open(self.filename, 'w')
-		pickle.dump(self,file)
-		file.close()
+		#file = open(self.filename, 'w')
+		#pickle.dump(self,file)
+		#file.close()
 		#just to test working
 		##unpicklefile = open(self.filename, 'r')
 		##picklepg = pickle.load(unpicklefile)
@@ -88,7 +88,7 @@ class PathGenerator:
 			return False
 		if not(pathSet.collisions >= self.collisionRange[0] and pathSet.collisions <= self.collisionRange[1]):
 			return False
-		if not(pathSet.timeNotVisible >= self.timeNotVisilbleRange[0] and pathSet.timeNotVisible <= self.timeNotVisilbleRange[1]):
+		if not(pathSet.timeNotVisible >= self.timeNotVisibleRange[0] and pathSet.timeNotVisible <= self.timeNotVisibleRange[1]):
 			return False
 		if not(pathSet.pointsWalkedTo >= self.pointsWalkedToRange[0] and pathSet.pointsWalkedTo <= self.pointsWalkedToRange[1]):
 			return False
@@ -119,6 +119,7 @@ class PathGenerator:
 			peopleset.append( people.a_person(speedMultiplier))
 			
 		tophat = people.a_person(speedMultiplier, 1)
+		self.abe = tophat
 		#peopleset.append(tophat)
 		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
@@ -150,6 +151,7 @@ class PathGenerator:
 		ps.pointsWalkedTo = len( ps.abePath.points )
 		ps.numberPeopleNearby = self.num_nearby / self.num_samples
 		ps.quadrantsReached = ps.abePath.quadrantsReached
+		print "num collisions: ",ps.collisions
 		print "quadrants reached: ",ps.quadrantsReached
 		print "points to which Abe walked: ",ps.pointsWalkedTo
 		print "avg. speed: ",ps.speed
@@ -173,3 +175,14 @@ class PathGenerator:
 		
 		self.nextPath = ps
 		
+def onCollideBegin(e):
+	global people
+	
+	for person in people:
+		if person.avatar == e.obj1:
+			viztask.schedule(person.collision())
+			##print "Collision detection"
+
+
+viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
+

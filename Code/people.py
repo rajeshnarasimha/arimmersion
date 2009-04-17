@@ -154,7 +154,6 @@ class a_person:
 		#self.coll = 0
 		#viztask.schedule(self.walk_around())
 		self.save_path.collisions += 1
-		a = 0
 		
 	def get_path(self):
 		return self.save_path
@@ -198,3 +197,5 @@ class a_person:
 def get_next_speed():
 	global min_speed, max_speed
 	return random.uniform(min_speed, max_speed)
+	
+
