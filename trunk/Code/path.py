@@ -5,6 +5,7 @@ import viztask
 import pickle
 import random
 import vizact
+import math
 
 quadSet = quadrants.QuadrantSet()
 speedMultiplier = 50.0
@@ -96,6 +97,17 @@ class PathGenerator:
 		if not(pathSet.quadrantsReached >= self.quadrantsReachedRange[0] and pathSet.quadrantsReached <= self.quadrantsReachedRange[0]):
 			return False
 		return True
+	
+	def checkNearby(self,tophat,peopleset):
+		tophat_pt = tophat.avatar.getPosition()
+		num_nearby = 0
+		for p in peopleset:
+			pt = p.avatar.getPosition()
+			dist = math.pow(pt[0]-tophat_pt[0],2) + math.pow(pt[1]-tophat_pt[1],2)
+			if dist < 7*7:
+				num_nearby += 1
+		self.num_nearby += num_nearby
+		self.num_samples += 1
 		
 	def generateAndTestPathSet(self):
 		global speedMultiplier
@@ -113,21 +125,36 @@ class PathGenerator:
 		for person in peopleset:
 			viztask.schedule(person.walk_around())
 		
+		self.num_nearby = 0
+		self.num_samples = 0
+		nearby_timer = vizact.ontimer(1/speedMultiplier,self.checkNearby,tophat,peopleset)
+		
+		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
+		
 		yield viztask.waitTime(self.taskTime)
+		
+		vizact.removeEvent(visible_timer)
+		vizact.removeEvent(nearby_timer)
 		
 		#save the path
 		for person in peopleset:
 			ps.peoplePaths.append(person.get_path())
 		ps.abePath = tophat.get_path()
 		
-		#ps.speed = ??
+		ps.speed = 0
+		for pt in ps.abePath.points:
+			ps.speed += pt[1]
+		ps.speed /= len(ps.abePath.points)
 		ps.collisions = ps.abePath.collisions
-		#ps.timeNotVisible = ??
-		#pointsWalkedTo = ??
-		#numberPeopleNearby = ??
-		quadrantsReached = ps.abePath.quadrantsReached
-		print "quadrants reached: ",quadrantsReached
-		
+		ps.timeNotVisible = tophat.timeNotVisible*speedMultiplier
+		ps.pointsWalkedTo = len( ps.abePath.points )
+		ps.numberPeopleNearby = self.num_nearby / self.num_samples
+		ps.quadrantsReached = ps.abePath.quadrantsReached
+		print "quadrants reached: ",ps.quadrantsReached
+		print "points to which Abe walked: ",ps.pointsWalkedTo
+		print "avg. speed: ",ps.speed
+		print "time not visible: ",ps.timeNotVisible
+		print "avg. num people nearby: ",ps.numberPeopleNearby
 		#vizact.removeEvent(rpt)
 		#vizact.removeEvent(tophat.arev)
 		tophat.pointAR.remove()

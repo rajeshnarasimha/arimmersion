@@ -5,6 +5,7 @@ import path
 import random
 import math
 import vizact
+import time
 
 #viz.go()
 
@@ -72,7 +73,9 @@ class a_person:
 		#self.arev = vizact.ontimer(.01,self.move_AR)
 		
 		self.myquadrants = [False,False,False,False,False,False,False,False]
-
+		self.lastTime = 0
+		self.timeNotVisible = 0
+		
 	def move_AR(self):
 		apos = self.avatar.getPosition(viz.ABS_GLOBAL)
 		self.pointAR.setPosition(apos, viz.ABS_GLOBAL)
@@ -135,7 +138,6 @@ class a_person:
 		
 		[theq,index] = self.check_quadrants()
 		if theq != -1:
-			# is this right????????
 			self.next_point = theq.get_random_walk()
 			self.next_speed = get_next_speed()
 			self.save_path.addPoint(self.next_point, self.next_speed)
@@ -172,6 +174,26 @@ class a_person:
 		roll = 0
 		
 		return [yaw,pitch,roll]
+		
+	def getWindow(self):
+		[angle,foo,bar] = self.getEuler()
+		i = 0
+		windows = [[170, 192.3], [246.4, 257.3], [281.9, 292.9],[342.2, 4.2], [76.6, 100.8]]
+		for window in windows:
+			if ( (window[0]<window[1] and angle >= window[0] and angle <= window[1]) or ( window[1]<window[0] and (angle <= window[1] or angle>=window[0]))):
+				return i
+			i += 1
+		else:
+			return -1
+	
+	def checkVisibleTime(self):
+		if self.lastTime == 0:
+			self.lastTime = time.time()
+			return
+		now = time.time()
+		if self.getWindow() == -1:			
+			self.timeNotVisible += now - self.lastTime
+		self.lastTime = now
 		
 def get_next_speed():
 	global min_speed, max_speed
