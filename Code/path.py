@@ -6,9 +6,10 @@ import pickle
 import random
 import vizact
 import math
+import error
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 50.0
+speedMultiplier = 1.0#50.0
 
 class Path:
 	startPoint = []
@@ -109,6 +110,10 @@ class PathGenerator:
 		self.num_nearby += num_nearby
 		self.num_samples += 1
 		
+	def checkError(self,tophat):
+		err =  error.MeasureError(tophat)
+		print "current error: ",err
+		
 	def generateAndTestPathSet(self):
 		global speedMultiplier
 		print "I am in here"
@@ -132,10 +137,13 @@ class PathGenerator:
 		
 		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
 		
+		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat)
+		
 		yield viztask.waitTime(self.taskTime)
 		
 		vizact.removeEvent(visible_timer)
 		vizact.removeEvent(nearby_timer)
+		vizact.removeEvent(error_timer)
 		
 		#save the path
 		for person in peopleset:
