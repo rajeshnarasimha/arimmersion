@@ -4,10 +4,10 @@ import viztask
 import math
 
 tracker = viz.add('intersense.dls')
-viz.mouse.setVisible(viz.OFF)
+#viz.mouse.setVisible(viz.OFF)
 viz.window.setFullscreen(viz.ON)
 viz.window.setBorder( viz.BORDER_NONE )
-viz.go()
+viz.go( viz.STENCIL_BUFFER )
 viz.phys.enable()
 #viz.disable( viz.LIGHTING )
 light1 = viz.addLight()
@@ -58,9 +58,12 @@ vizact.onmousedown(viz.MOUSEBUTTON_LEFT,onclick)
 HMDfov_vert = 36.
 HMDwidth = 640.
 HMDheight = 480.
+HMDnear = 1
+HMDfar = 1000
 HMDaspect = HMDwidth/HMDheight
 
 viz.fov( HMDfov_vert, HMDaspect )
+#viz.clip( HMDnear, HMDfar )
 viz.window.setSize( HMDwidth, HMDheight )
 
 ground = viz.add('tut_ground.wrl')
@@ -78,19 +81,26 @@ node.setBuffer( viz.RENDER_FRAME_BUFFER )
 node.setOrder( viz.POST_RENDER )
 node.setInheritView( 0 )
 node.setClearMask( 0 )
-node.disable( viz.DEPTH_TEST );
+#node.disable( viz.DEPTH_TEST );
 
 hmdview = 0
 def setARfov( val ):
 	global node, ARfov_vert, hmdview	
 	ARfov_vert = val
-	ARheight = HMDheight / HMDfov_vert * ARfov_vert
+	#ARfov_vert = HMDfov_vert
+	#ARfov_vert = 20
+	ARheight = (int) (HMDheight / HMDfov_vert * ARfov_vert)
 	ARwidth = ARheight * HMDaspect
+	
+	#recalculate ARfov_vert
+	#ARfov_vert = (ARheight / HMDheight) * HMDfov_vert
+	
 	ARx = (HMDwidth - ARwidth)/2
 	ARy = (HMDheight - ARheight)/2
-	print ARwidth,ARheight,ARx,ARy
-	node.setFov( ARfov_vert, HMDaspect, 0.1, 10 )
+	#print "AR view dimensions:",ARwidth,ARheight,ARx,ARy,ARfov_vert
 	node.setSize( ARwidth,ARheight,ARx,ARy )
+	node.setFov( ARfov_vert, HMDaspect, HMDnear, HMDfar )
+	#return
 	
 	if(hmdview != 0):
 		hmdview.remove()
@@ -154,9 +164,9 @@ def UpdateMovement():
 	elapsed_N = elapsed_N + 1
 	
 	if ( elapsed_N == 50 ):
-		print 'upp latency:',(elapsed_sum/elapsed_N)*12*1000,' ms'
-		print 'med latency:',(elapsed_sum/elapsed_N)*6*1000,' ms'
-		print 'low latency:',(elapsed_sum/elapsed_N)*1*1000,' ms'
+		#print 'upp latency:',(elapsed_sum/elapsed_N)*12*1000,' ms'
+		#print 'med latency:',(elapsed_sum/elapsed_N)*6*1000,' ms'
+		#print 'low latency:',(elapsed_sum/elapsed_N)*1*1000,' ms'
 		elapsed_sum = 0
 		elapsed_N = 0
 	
@@ -165,7 +175,8 @@ def UpdateMovement():
 	roll = roll_ringbuffer[ringbuffer_idx]
 
 	node.setPosition( viz.MainView.getPosition() )
-	node.setEuler( yaw,pitch,roll )
+	node.setEuler( viz.MainView.getEuler() )
+	#node.setEuler( yaw,pitch,roll )
 	
 	#Get tracker euler rotation
 	yaw,pitch,roll = tracker.getEuler()
@@ -180,17 +191,19 @@ def UpdateMovement():
 	
 vizact.ontimer(0,UpdateMovement)
 
-#fovslider = viz.addSlider()
-#fovslider.translate(0.2,0.1)
-#fovslider.set(ARfov_vert/HMDfov_vert)
 
-#def onButton(obj,state):
-#	global fovslider, HMDfov_vert
-#	if obj == fovslider:
-#		setARfov( HMDfov_vert * fovslider.get() )
-#
-#viz.callback(viz.BUTTON_EVENT,onButton)
+#fovslider-------------------
+fovslider = viz.addSlider()
+fovslider.translate(0.2,0.1)
+fovslider.set(ARfov_vert/HMDfov_vert)
 
+def onButton(obj,state):
+	global fovslider, HMDfov_vert
+	if obj == fovslider:
+		setARfov( HMDfov_vert * fovslider.get() )
+
+viz.callback(viz.BUTTON_EVENT,onButton)
+#----------------------------
 
 
 #Create custom camera handler
@@ -378,13 +391,19 @@ class a_person:
 		viz.vertex(0.3,2,0)
 		viz.vertex(-0.3,2,0)
 		self.pointAR = viz.endlayer(viz.WORLD, viz.Scene2)
-		self.pointAR.alpha(0.3)
+		self.set_AR(True)
+		#self.pointAR.alpha(0.3)
 		
 		
 		self.arev = vizact.ontimer(.01,self.move_AR)
 			
 			
 		
+	def set_AR(self,visible):
+		if visible:
+			self.pointAR.alpha(0.3)
+		else:
+			self.pointAR.alpha(0)
 
 	def move_AR(self):
 		#why is this in the wrong position?
