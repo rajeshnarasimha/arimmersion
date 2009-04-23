@@ -49,7 +49,8 @@ class a_person:
 			HatLink.preEuler( [0,-10,0] )
 			
 		self.avatar.setPosition(quadSet.get_random_point())
-		self.save_path.setStart(self.avatar.getPosition())
+		#self.save_path.setStart(self.avatar.getPosition())
+		self.save_path.addPoint(self.avatar.getPosition(), 0)
 		self.next_point = quadSet.get_quadrant(self.avatar.getPosition())[0].get_random_walk()
 		self.next_speed = get_next_speed()
 		self.save_path.addPoint(self.next_point, self.next_speed)
@@ -97,12 +98,12 @@ class a_person:
 		self.place_points = 0
 		self.avatar.setPosition(points[0][0])
 		self.check_quadrants()
-		self.save_path.setStart(points[0][0])
+		#self.save_path.setStart(points[0][0])
 		self.next_point = points[0][0]
 		self.next_speed = points[0][1]
 		self.save_path.points = []
 		self.save_path.addPoint(self.next_point, self.next_speed)
-		viztask.schedule(self.start_custom_walk())
+		#viztask.schedule(self.start_custom_walk())
 		
 	def stop(self):
 		self.coll = 1
