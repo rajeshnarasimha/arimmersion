@@ -6,13 +6,13 @@ import pickle
 import random
 import vizact
 import math
-import error
+#import error
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 1.0#50.0
+speedMultiplier = 30.0#50.0
 
 class Path:
-	startPoint = []
+	#startPoint = []
 	points = []
 	
 	collisions = 0
@@ -21,8 +21,15 @@ class Path:
 	numberPeopleNearby = 0
 	quadrantsReached = 0
 	
-	def setStart(self, point):
-		points = point
+	def getFullPath(self):
+		L = []
+		L = self.points[:]
+		#L.insert(0, self.startPoint)
+		return L
+	
+	#def setStart(self, point):
+		#points = point
+		#self.startPoint = point
 	
 	def addPoint(self, loc, speed):
 		self.points.append([loc,speed])
@@ -30,7 +37,7 @@ class Path:
 
 class PathSet:
 	peoplePaths = []
-	abePath = []
+	abePath = 0
 	
 	#need to set these variables during generateAndTestPathSet()
 	speed = 0
@@ -111,25 +118,18 @@ class PathGenerator:
 		self.num_samples += 1
 		
 	def checkError(self,tophat):
-		err =  error.MeasureError(tophat)
-		print "current error: ",err
-		
-	def generateAndTestPathSet(self):
-		global speedMultiplier
-		print "I am in here"
-		peopleset = []
-		ps = PathSet()
-		
-		for j in range(0, self.num_av):
-			peopleset.append( people.a_person(speedMultiplier))
-			
-		tophat = people.a_person(speedMultiplier, 1)
-		self.abe = tophat
-		#peopleset.append(tophat)
-		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
-		
+		#err =  error.MeasureError(tophat)
+		#print "current error: ",err
+		a = 0
+	
+	
+	def runPathSet(self, peopleset, ps, tophat, custom):
+		viztask.schedule(tophat.start_custom_walk())
 		for person in peopleset:
-			viztask.schedule(person.walk_around())
+			if custom:
+				viztask.schedule(person.start_custom_walk())
+			else:
+				viztask.schedule(person.walk_around())
 		
 		self.num_nearby = 0
 		self.num_samples = 0
@@ -178,6 +178,48 @@ class PathGenerator:
 			person.avatar.clearActions()
 			person.avatar.remove()
 			person.stop()
+		
+	
+	def validatePathSet(self):
+		global speedMultiplier
+		#speedMultipler = 1
+		for ps in self.pathSets:
+			peopleset = []
+			newPs = PathSet()
+			for personPath in ps.peoplePaths:
+				p = people.a_person(speedMultiplier)
+				p.custom_walk(personPath.getFullPath())
+				peopleset.append(p)
+			tophat = people.a_person(speedMultiplier, 1)
+			self.abe = tophat
+			tophat.custom_walk(ps.abePath.getFullPath())
+			
+			yield self.runPathSet(peopleset, newPs, tophat, 1)
+			
+			print "Checking Differences"
+			print "num collisions: ",ps.collisions,",",newPs.collisions
+			print "quadrants reached: ",ps.quadrantsReached,",",newPs.quadrantsReached
+			print "points to which Abe walked: ",ps.pointsWalkedTo,",",newPs.pointsWalkedTo
+			print "avg. speed: ",ps.speed,",",newPs.speed
+			print "time not visible: ",ps.timeNotVisible,",",newPs.timeNotVisible
+			print "avg. num people nearby: ",ps.numberPeopleNearby,",",newPs.numberPeopleNearby
+			
+	
+	def generateAndTestPathSet(self):
+		global speedMultiplier
+		print "I am in here"
+		peopleset = []
+		ps = PathSet()
+		
+		for j in range(0, self.num_av):
+			peopleset.append( people.a_person(speedMultiplier))
+			
+		tophat = people.a_person(speedMultiplier, 1)
+		self.abe = tophat
+		#peopleset.append(tophat)
+		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
+		
+		yield self.runPathSet(peopleset, ps, tophat, 0)
 			
 		peopleset = []
 		
