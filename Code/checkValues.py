@@ -45,11 +45,11 @@ def onCollideBegin(e):
 viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
 
 
-unpicklefile = open('pathGen72172', 'r')
+unpicklefile = open('pathGen68199', 'r')
 
-picklepg = pickle.load(unpicklefile)
+pg = pickle.load(unpicklefile)
 
 unpicklefile.close()
 
-viztask.schedule(picklepg.validatePathSet())
+viztask.schedule(pg.validatePathSet())
 
