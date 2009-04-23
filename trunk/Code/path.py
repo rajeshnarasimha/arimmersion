@@ -13,19 +13,21 @@ speedMultiplier = 30.0#50.0
 
 class Path:
 	#startPoint = []
-	points = []
 	
-	collisions = 0
-	timeNotVisible = 0
-	pointsWalkedTo = 0
-	numberPeopleNearby = 0
-	quadrantsReached = 0
+	def __init__(self):
+		self.points = []
+	
+		self.collisions = 0
+		self.timeNotVisible = 0
+		self.pointsWalkedTo = 0
+		self.numberPeopleNearby = 0
+		self.quadrantsReached = 0
 	
 	def getFullPath(self):
-		L = []
-		L = self.points[:]
+		#L = []
+		#L = self.points[:]
 		#L.insert(0, self.startPoint)
-		return L
+		return self.points
 	
 	#def setStart(self, point):
 		#points = point
@@ -132,8 +134,7 @@ class PathGenerator:
 		viztask.schedule(tophat.start_custom_walk())
 		for person in peopleset:
 			if custom:
-				#viztask.schedule(person.start_custom_walk())
-				a=0
+				viztask.schedule(person.start_custom_walk())
 			else:
 				viztask.schedule(person.walk_around())
 				ps = self.nextPath
@@ -145,9 +146,9 @@ class PathGenerator:
 		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
 		
 		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat)
-		
+		print "here7"
 		yield viztask.waitTime(self.taskTime)
-		
+		print "here8"
 		vizact.removeEvent(visible_timer)
 		vizact.removeEvent(nearby_timer)
 		vizact.removeEvent(error_timer)
@@ -200,6 +201,8 @@ class PathGenerator:
 			print "here1"
 			for personPath in ps.peoplePaths:
 				p = people.a_person(speedMultiplier)
+				print "lencustompath:",len(personPath.getFullPath())
+				print personPath.getFullPath()
 				p.custom_walk(personPath.getFullPath())
 				peopleset.append(p)
 				print "here2"
