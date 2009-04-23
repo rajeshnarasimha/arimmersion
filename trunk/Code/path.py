@@ -36,17 +36,20 @@ class Path:
 
 
 class PathSet:
-	peoplePaths = []
-	abePath = 0
 	
-	#need to set these variables during generateAndTestPathSet()
-	speed = 0
-	collisions = 0
-	timeNotVisible = 0
-	pointsWalkedTo = 0
-	numberPeopleNearby = 0
-	quadrantsReached = 0
-
+	
+	def __init__(self):
+		self.peoplePaths = []
+		self.abePath = 0
+		
+		#need to set these variables during generateAndTestPathSet()
+		self.speed = 0
+		self.collisions = 0
+		self.timeNotVisible = 0
+		self.pointsWalkedTo = 0
+		self.numberPeopleNearby = 0
+		self.quadrantsReached = 0
+		
 class PathGenerator:
 	global speedMultipler
 	speedRange = [2,5]
@@ -84,6 +87,7 @@ class PathGenerator:
 			yield self.generateAndTestPathSet()
 			if self.checkPathSet(self.nextPath):
 				self.pathSets.append(self.nextPath)
+				print "Saving,people:",len(self.nextPath.peoplePaths)
 				#save the new path to a file
 				file = open(self.filename, 'w')
 				pickle.dump(self,file)
@@ -124,13 +128,16 @@ class PathGenerator:
 	
 	
 	def runPathSet(self, peopleset, ps, tophat, custom):
+		print "here5"
 		viztask.schedule(tophat.start_custom_walk())
 		for person in peopleset:
 			if custom:
-				viztask.schedule(person.start_custom_walk())
+				#viztask.schedule(person.start_custom_walk())
+				a=0
 			else:
 				viztask.schedule(person.walk_around())
-		
+				ps = self.nextPath
+		print "here6"
 		self.num_nearby = 0
 		self.num_samples = 0
 		nearby_timer = vizact.ontimer(1/speedMultiplier,self.checkNearby,tophat,peopleset)
@@ -146,8 +153,11 @@ class PathGenerator:
 		vizact.removeEvent(error_timer)
 		
 		#save the path
+		print "peopleSetLength:",len(peopleset)
+		print "peopelPathsLenght:",len(ps.peoplePaths)
 		for person in peopleset:
 			ps.peoplePaths.append(person.get_path())
+			print "peopelPathsLenght:",len(ps.peoplePaths)
 		ps.abePath = tophat.get_path()
 		
 		ps.speed = 0
@@ -186,14 +196,17 @@ class PathGenerator:
 		for ps in self.pathSets:
 			peopleset = []
 			newPs = PathSet()
+			print "num people",len(ps.peoplePaths)
+			print "here1"
 			for personPath in ps.peoplePaths:
 				p = people.a_person(speedMultiplier)
 				p.custom_walk(personPath.getFullPath())
 				peopleset.append(p)
+				print "here2"
 			tophat = people.a_person(speedMultiplier, 1)
 			self.abe = tophat
 			tophat.custom_walk(ps.abePath.getFullPath())
-			
+			print "here3"
 			yield self.runPathSet(peopleset, newPs, tophat, 1)
 			
 			print "Checking Differences"
@@ -209,7 +222,8 @@ class PathGenerator:
 		global speedMultiplier
 		print "I am in here"
 		peopleset = []
-		ps = PathSet()
+		#ps = PathSet()
+		self.nextPath = PathSet()
 		
 		for j in range(0, self.num_av):
 			peopleset.append( people.a_person(speedMultiplier))
@@ -219,11 +233,11 @@ class PathGenerator:
 		#peopleset.append(tophat)
 		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
-		yield self.runPathSet(peopleset, ps, tophat, 0)
+		yield self.runPathSet(peopleset, self.nextPath, tophat, 0)
 			
-		peopleset = []
+		#peopleset = []
 		
-		self.nextPath = ps
+		
 		
 def onCollideBegin(e):
 	global people
