@@ -131,6 +131,14 @@ node2D.disable(viz.DEPTH_TEST)
 #viz.vertex([HMDwidth/2,HMDheight,0])
 #viz.endlayer(viz.WORLD,viz.Scene3)
 
+viz.startlayer(viz.LINES)
+viz.vertexcolor([1,0,0])
+viz.vertex([HMDwidth/2-10,HMDheight/2,0])
+viz.vertex([HMDwidth/2+10,HMDheight/2,0])
+viz.vertex([HMDwidth/2,HMDheight/2-10,0])
+viz.vertex([HMDwidth/2,HMDheight/2+10,0])
+viz.vertexcolor([1,1,1])
+viz.endlayer(viz.WORLD,viz.Scene3)
 
 
 
