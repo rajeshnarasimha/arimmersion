@@ -1,4 +1,6 @@
 import random
+import pickle
+import time
 
 #This script creates a timeline, which is just a list of events.  Each event
 #is a chunk of time, either with registration dropout or without.  The createTimeline
@@ -82,5 +84,19 @@ def printLiveEvents(timeline):
 	for i in range(len(liveEvents)):
 		print liveEvents[i]
 
+def printAllEvents(timeline):
+	allEvents = timeline.getAllEvents()
+	for i in range(len(allEvents)):
+		print allEvents[i]
+
 timeline = createTimeline()
-printLiveEvents(timeline)
+printAllEvents(timeline)
+
+filename = "pickleTimeline" + str(int(time.time()) - 1240892802)
+fw = open(filename, "w")
+pickle.dump(timeline, fw)
+fw.close()
+
+fr = open(filename, "r")
+openedTimeline = pickle.load(fr)
+printAllEvents(openedTimeline)
