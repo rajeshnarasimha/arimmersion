@@ -102,7 +102,7 @@ class a_person:
 		self.next_point = points[0][0]
 		self.next_speed = points[0][1]
 		self.save_path.points = []
-		self.save_path.addPoint(self.next_point, self.next_speed)
+		#self.save_path.addPoint(self.next_point, self.next_speed)
 		#viztask.schedule(self.start_custom_walk())
 		
 	def stop(self):
