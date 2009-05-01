@@ -17,6 +17,8 @@ class LatinSquare:
 			self.square[0].append(inc)
 			dec -= 1
 			inc += 1
+		if (self.n % 2) != 0:
+			self.square[0].append(dec)
 		
 		for i in range(1,self.n):
 			self.square.append([])
@@ -29,6 +31,6 @@ class LatinSquare:
 	def printSquare(self):
 		print self.square
 			
-a = LatinSquare(10)
+a = LatinSquare(5)
 
 a.printSquare()
