@@ -220,6 +220,20 @@ class PathGenerator:
 			print "time not visible: ",ps.timeNotVisible,",",newPs.timeNotVisible
 			print "avg. num people nearby: ",ps.numberPeopleNearby,",",newPs.numberPeopleNearby
 			
+	def runExperimentPathSet(self):
+		global speedMultiplier
+		#speedMultipler = 1
+		for ps in self.pathSets:
+			peopleset = []
+			newPs = PathSet()
+			for personPath in ps.peoplePaths:
+				p = people.a_person(speedMultiplier)
+				p.custom_walk(personPath.getFullPath())
+				peopleset.append(p)
+			tophat = people.a_person(speedMultiplier, 1)
+			self.abe = tophat
+			tophat.custom_walk(ps.abePath.getFullPath())
+			yield self.runPathSet(peopleset, newPs, tophat, 1)
 	
 	def generateAndTestPathSet(self):
 		global speedMultiplier
