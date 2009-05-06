@@ -1,9 +1,11 @@
 import viz
+import vizact
 
 # general graphics setup
 viz.mouse.setVisible(viz.OFF)
 viz.window.setFullscreen(viz.ON)
-viz.window.setBorder( viz.BORDER_NONE )	
+viz.window.setBorder( viz.BORDER_NONE )
+viz.go()
 viz.phys.enable()
 light1 = viz.addLight()
 light1.position(0,5,0)
@@ -76,7 +78,9 @@ viz.endlayer(viz.WORLD,viz.Scene3)
 # function to display AR view
 ARgraybox = 0
 def setARfov( val ):
-	global node, ARfov_vert, ARgraybox	
+	global HMDheight, HMDwidth, HMDfov_vert, HMDaspect, HMDnear, HMDfar
+	global node, ARfov_vert, ARgraybox
+	
 	ARfov_vert = val
 	ARheight = (int) (HMDheight / HMDfov_vert * ARfov_vert)
 	ARwidth = ARheight * HMDaspect

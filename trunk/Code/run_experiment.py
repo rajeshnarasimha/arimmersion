@@ -2,6 +2,7 @@ import viz
 import random
 import viztask
 import math
+import pickle
 import environment_setup
 
 
@@ -30,7 +31,7 @@ for i in xrange(2):
 			conditions.append([fov_values[j]])
 random.shuffle(conditions)
 random_seeds = []
-for i in range(1,numtasks + 1):
+for i in range(1,numtrials + 1):
 	random_seeds.append(i * 3)
 random.shuffle(random_seeds)
 
@@ -52,15 +53,17 @@ def run_tasks():
 
 		# load path set from file
 		# (latin square tells us which file to load?)
-		unpicklefile = open('pathGen52235', 'r')
+		unpicklefile = open('pathGen54565', 'r')
 		pg = pickle.load(unpicklefile)
 		unpicklefile.close()
 
-		setARfov( conditions[i][0] )
+		environment_setup.setARfov( conditions[i][0] )
 
 		# run the path set
-		viztask.schedule(pg.runExperimentPathSet())
-
+		#viztask.schedule(pg.runExperimentPathSet())
+		# should this be a yield?
+		yield pg.runExperimentPathSet()
+		
 		# append the results
 		# results.append([ncorrect, nfalsepos, nfalseneg])
 		
