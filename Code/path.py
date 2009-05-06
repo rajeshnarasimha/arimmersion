@@ -123,10 +123,11 @@ class PathGenerator:
 		self.num_nearby += num_nearby
 		self.num_samples += 1
 		
-	def checkError(self,tophat):
-		#err =  error.MeasureError(tophat)
+	def checkError(self,tophat,errlist):
+		err =  error.MeasureError(tophat)
+		errlist.append(err)
 		#print "current error: ",err
-		a = 0
+		#a = 0
 	
 	
 	def runPathSet(self, peopleset, ps, tophat, custom):
@@ -233,7 +234,11 @@ class PathGenerator:
 			tophat = people.a_person(speedMultiplier, 1)
 			self.abe = tophat
 			tophat.custom_walk(ps.abePath.getFullPath())
+			errlist = []
+			error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,errlist)
 			yield self.runPathSet(peopleset, newPs, tophat, 1)
+			vizact.removeEvent(error_timer)
+			# what to do with errlist now?
 	
 	def generateAndTestPathSet(self):
 		global speedMultiplier
