@@ -6,7 +6,7 @@ import pickle
 import random
 import vizact
 import math
-#import error
+import error
 
 quadSet = quadrants.QuadrantSet()
 speedMultiplier = 30.0#50.0
@@ -56,7 +56,7 @@ class PathGenerator:
 	global speedMultipler
 	speedRange = [2,5]
 	collisionRange = [0,1000]#[10,15] #doesn't matter
-	timeNotVisibleRange = [60,90]
+	timeNotVisibleRange = [0,100]#[60,90]
 	pointsWalkedToRange = [15, 23]
 	numberPeopleNearbyRange = [2,6]
 	quadrantsReachedRange = [5,8]
@@ -146,7 +146,8 @@ class PathGenerator:
 		
 		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
 		
-		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat)
+		errlist = []
+		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,errlist)
 		print "here7"
 		yield viztask.waitTime(self.taskTime)
 		print "here8"
@@ -221,24 +222,26 @@ class PathGenerator:
 			print "time not visible: ",ps.timeNotVisible,",",newPs.timeNotVisible
 			print "avg. num people nearby: ",ps.numberPeopleNearby,",",newPs.numberPeopleNearby
 			
-	def runExperimentPathSet(self):
+	def runExperimentPathSet(self, pathNum):
 		global speedMultiplier
 		#speedMultipler = 1
-		for ps in self.pathSets:
-			peopleset = []
-			newPs = PathSet()
-			for personPath in ps.peoplePaths:
-				p = people.a_person(speedMultiplier)
-				p.custom_walk(personPath.getFullPath())
-				peopleset.append(p)
-			tophat = people.a_person(speedMultiplier, 1)
-			self.abe = tophat
-			tophat.custom_walk(ps.abePath.getFullPath())
-			errlist = []
-			error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,errlist)
-			yield self.runPathSet(peopleset, newPs, tophat, 1)
-			vizact.removeEvent(error_timer)
-			# what to do with errlist now?
+		#for ps in self.pathSets:
+		print pathNum
+		print len(self.pathSets)
+		ps = self.pathSets[pathNum]
+		peopleset = []
+		newPs = PathSet()
+		for personPath in ps.peoplePaths:
+			p = people.a_person(speedMultiplier)
+			p.custom_walk(personPath.getFullPath())
+			peopleset.append(p)
+		tophat = people.a_person(speedMultiplier, 1)
+		self.abe = tophat
+		tophat.custom_walk(ps.abePath.getFullPath())
+		self.errlist = []
+		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,self.errlist)
+		yield self.runPathSet(peopleset, newPs, tophat, 1)
+		vizact.removeEvent(error_timer)
 	
 	def generateAndTestPathSet(self):
 		global speedMultiplier
@@ -261,14 +264,14 @@ class PathGenerator:
 		
 		
 		
-def onCollideBegin(e):
-	global people
-	
-	for person in people:
-		if person.avatar == e.obj1:
-			viztask.schedule(person.collision())
-			##print "Collision detection"
-
-
-viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
+#def onCollideBegin(e):
+#	global people
+#	
+#	for person in people:
+#		if person.avatar == e.obj1:
+#			viztask.schedule(person.collision())
+#			##print "Collision detection"
+#
+#
+#viz.callback(viz.COLLIDE_BEGIN_EVENT, onCollideBegin)
 

@@ -3,6 +3,7 @@ import random
 import viztask
 import math
 import pickle
+import latinSquare
 import environment_setup
 
 
@@ -12,7 +13,7 @@ tbox.setPosition(0.5,0.35)
 
 
 # experiment values
-numtrials = 18
+numtrials = 27
 fov_values = [10, 20, 34]
 results = []
 
@@ -25,19 +26,30 @@ results = []
 # should use latin square to do this
 # instead of random
 conditions = []
-for i in xrange(2):
+for i in xrange(3):
 	for j in xrange(3):
 		for k in xrange(3):
 			conditions.append([fov_values[j]])
-random.shuffle(conditions)
-random_seeds = []
-for i in range(1,numtrials + 1):
-	random_seeds.append(i * 3)
-random.shuffle(random_seeds)
+#random.shuffle(conditions)
+#random_seeds = []
+#for i in range(1,numtrials + 1):
+#	random_seeds.append(i * 3)
+#random.shuffle(random_seeds)
 
 # function to run the experiment
 def run_tasks():
 	global tbox, message, numtrials, conditions, results
+
+	participantNumber = 0 #change for each participant
+	ls = latinSquare.LatinSquare(numtrials)
+	order = ls.getOrder(participantNumber)
+	order[0]=0# temporary debug
+	print "order:",order
+	
+	# load path set from file
+	unpicklefile = open('pathGen65577', 'r')
+	pg = pickle.load(unpicklefile)
+	unpicklefile.close()
 
 	# show space bar message
 	tbox.message("Press space to start")
@@ -51,21 +63,16 @@ def run_tasks():
 		# hide message box
 		tbox.visible(viz.OFF)
 
-		# load path set from file
-		# (latin square tells us which file to load?)
-		unpicklefile = open('pathGen54565', 'r')
-		pg = pickle.load(unpicklefile)
-		unpicklefile.close()
-
-		environment_setup.setARfov( conditions[i][0] )
+		# set up variables for this condition
+		environment_setup.setARfov( conditions[order[i]][0] )
 
 		# run the path set
-		#viztask.schedule(pg.runExperimentPathSet())
-		# should this be a yield?
-		yield pg.runExperimentPathSet()
+		yield pg.runExperimentPathSet(order[i])
 		
 		# append the results
 		# results.append([ncorrect, nfalsepos, nfalseneg])
+		results.append( pg.errlist )
+		print pg.errlist
 		
 		# show trial over message
 		tbox.visible(viz.ON)
