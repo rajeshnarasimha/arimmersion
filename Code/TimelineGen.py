@@ -9,8 +9,8 @@ import time
 #live events.  All live events will have at least the minimum specified length of minLiveLength
 
 class Event:
-	def __init__(self, isDead = False, length = 0):
-		self.isDead = isDead
+	def __init__(self, dead = False, length = 0):
+		self.dead = dead
 		self.length = length
 		self.startTime = 0
 
@@ -24,7 +24,7 @@ class Event:
 		self.length = newLength
 	
 	def isDead(self):
-		return self.isDead
+		return self.dead
 		
 	def setStartTime(self, startTime):
 		self.startTime = startTime
@@ -33,7 +33,7 @@ class Event:
 		return self.startTime
 
 	def __str__(self):
-		return "Event: isDead: " + str(self.isDead) + ", length: " + str(self.length) + ", start time: " + str(self.startTime)
+		return "Event: isDead: " + str(self.dead) + ", length: " + str(self.length) + ", start time: " + str(self.startTime)
 
 class Timeline:
 	#global settings
@@ -99,7 +99,7 @@ class Timeline:
 			
 	def schedule(self, regFunction):
 		for event in self.timeline:
-			if(event.isDead()):
+			if (event.isDead()):
 				vizact.ontimer2(event.getStartTime(), 0, regFunction, False)
 			else:
 				vizact.ontimer2(event.getStartTime(), 0, regFunction, True);
@@ -117,3 +117,4 @@ fw.close()
 fr = open(filename, "r")
 openedTimeline = pickle.load(fr)
 openedTimeline.printAllEvents()
+#openedTimeline.schedule(None)
