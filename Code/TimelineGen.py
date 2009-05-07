@@ -1,3 +1,4 @@
+import viz
 import random
 import pickle
 import time
@@ -95,6 +96,13 @@ class Timeline:
 	def printAllEvents(self):
 		for event in self.timeline:
 			print event
+			
+	def schedule(self, regFunction):
+		for event in self.timeline:
+			if(event.isDead()):
+				vizact.ontimer2(event.getStartTime(), 0, regFunction, False)
+			else:
+				vizact.ontimer2(event.getStartTime(), 0, regFunction, True);
 
 #create timeline
 timeline = Timeline()
