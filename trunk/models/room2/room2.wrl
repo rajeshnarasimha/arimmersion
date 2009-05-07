@@ -201,10 +201,10 @@ coordIndex [
 }
 }
 Shape {
-appearance DEF TEX_Cladding_Stucco_White Appearance {
+appearance DEF TEX_Brick_Tumbled Appearance {
 material Material {}
 texture ImageTexture {
-url ["Cladding_Stucco_White.jpg"]
+url ["Brick_Tumbled.jpg"]
 }
 }
 geometry IndexedFaceSet {
@@ -226,10 +226,10 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--9.72 4.096,
--9.72 0.458,
--8.942 0.458,
--8.942 4.096,
+-4.86 6.145,
+-4.86 0.686,
+-4.471 0.686,
+-4.471 6.145,
 ]
 }
 }
@@ -256,7 +256,12 @@ coordIndex [
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance DEF TEX_Cladding_Stucco_White Appearance {
+material Material {}
+texture ImageTexture {
+url ["Cladding_Stucco_White.jpg"]
+}
+}
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
@@ -469,12 +474,7 @@ coordIndex [
 }
 }
 Shape {
-appearance DEF TEX_Brick_Tumbled Appearance {
-material Material {}
-texture ImageTexture {
-url ["Brick_Tumbled.jpg"]
-}
-}
+appearance USE TEX_Brick_Tumbled
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
@@ -4747,7 +4747,7 @@ coordIndex [
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE TEX_Brick_Tumbled
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
@@ -4767,10 +4767,10 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
-1.712 6.48,
--2.135 6.48,
--2.135 5.962,
-1.712 5.962,
+0.856 9.72,
+-1.068 9.72,
+-1.068 8.942,
+0.856 8.942,
 ]
 }
 }
@@ -15255,11 +15255,4 @@ coordIndex [ 0 1 -1]
 }
 }
 ]
-}
-Viewpoint {
-position -1531.485 506.679 -187.827
-orientation -0.109767 -0.987227 -0.115476 1.634312
-fieldOfView 0.61087
-description "Camera"
-jump FALSE
 }
