@@ -11,6 +11,7 @@ class Event:
 	def __init__(self, isDead = False, length = 0):
 		self.isDead = isDead
 		self.length = length
+		self.startTime = 0
 
 	def addTime(self):
 		self.length += 1
@@ -23,9 +24,15 @@ class Event:
 	
 	def isDead(self):
 		return self.isDead
+		
+	def setStartTime(self, startTime):
+		self.startTime = startTime
+		
+	def getStartTime(self):
+		return self.startTime
 
 	def __str__(self):
-		return "Event: isDead: " + str(self.isDead) + ", length: " + str(self.length)
+		return "Event: isDead: " + str(self.isDead) + ", length: " + str(self.length) + ", start time: " + str(self.startTime)
 
 class Timeline:
 	#global settings
@@ -65,6 +72,12 @@ class Timeline:
 		for x in range(self.timeLeft):
 			index = random.randrange(0, len(self.onlyLiveTime))
 			self.onlyLiveTime[index].addTime()
+			
+		#set start time of all events
+		startTime = 0
+		for event in self.timeline:
+			event.setStartTime(startTime)
+			startTime += event.getLength()
 
 	def getAllEvents(self):
 		return self.timeline
@@ -87,7 +100,7 @@ class Timeline:
 timeline = Timeline()
 
 #pickle the timeline to disk
-filename = "pickleTimeline" + str(int(time.time()) - 1240999999)
+filename = "pickleTimeline" + str(int(time.time()) - 1241599999)
 fw = open(filename, "w")
 pickle.dump(timeline, fw)
 fw.close()
