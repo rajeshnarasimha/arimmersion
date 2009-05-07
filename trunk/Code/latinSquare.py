@@ -31,6 +31,6 @@ class LatinSquare:
 	def printSquare(self):
 		print self.square
 			
-a = LatinSquare(5)
+#a = LatinSquare(5)
 
-a.printSquare()
+#a.printSquare()
