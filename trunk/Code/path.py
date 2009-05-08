@@ -7,10 +7,10 @@ import random
 import vizact
 import math
 import error
-#import TimelineGen
+import TimelineGen
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 30.0#50.0
+speedMultiplier = 1.0#30.0#50.0
 
 class Path:
 	#startPoint = []
@@ -91,7 +91,7 @@ class PathGenerator:
 			yield self.generateAndTestPathSet()
 			if True:#self.checkPathSet(self.nextPath):
 				self.pathSets.append(self.nextPath)
-				#self.timelines.append(self.nextTimeline)
+				self.timelines.append(self.nextTimeline)
 				print "Saving,people:",len(self.nextPath.peoplePaths)
 				#save the new path to a file
 				file = open(self.filename, 'w')
@@ -132,18 +132,10 @@ class PathGenerator:
 		#print "current error: ",err
 		#a = 0
 	
-#	def scheduleTimeline(self,timeline):
-#		for event in timeline.timeline:
-#			if (event.isDead()):
-#				vizact.ontimer2(event.getStartTime(), 0, self.toggleAR, False)
-#			else:
-#				vizact.ontimer2(event.getStartTime(), 0, self.toggleAR, True);
-#	
 	def runPathSet(self, peopleset, ps, tophat, custom, timeline=None):
 		print "here5"
 		viztask.schedule(tophat.start_custom_walk())
-		#if timeline != None: scheduleTimeline(timeline)
-		#timeline.schedule(self.toggleAR)
+		if timeline != None: timeline.schedule(self.toggleAR)
 		for person in peopleset:
 			if custom:
 				viztask.schedule(person.start_custom_walk())
@@ -191,6 +183,7 @@ class PathGenerator:
 		print "avg. num people nearby: ",ps.numberPeopleNearby
 		#vizact.removeEvent(rpt)
 		vizact.removeEvent(tophat.arev)
+		tophat.arev = None	# this is so we can pickle it
 		tophat.pointAR.remove()
 		tophat.avatar.clearActions()
 		tophat.avatar.remove()
@@ -198,6 +191,7 @@ class PathGenerator:
 		tophat.stop()
 		for person in peopleset:
 			vizact.removeEvent(person.arev)
+			person.arev = None
 			person.pointAR.remove()
 			person.avatar.clearActions()
 			person.avatar.remove()
@@ -234,6 +228,10 @@ class PathGenerator:
 			print "avg. num people nearby: ",ps.numberPeopleNearby,",",newPs.numberPeopleNearby
 			
 	def toggleAR( self, ARon ):
+		if ARon:
+			print "#############  lights back on"
+		else:
+			print "######### blackout"
 		for p in self.peopleset:
 			p.toggle_AR( ARon )
 		
@@ -266,7 +264,7 @@ class PathGenerator:
 		peopleset = []
 		#ps = PathSet()
 		self.nextPath = PathSet()
-		#self.nextTimeline = TimelineGen.Timeline()
+		self.nextTimeline = TimelineGen.Timeline()
 		
 		for j in range(0, self.num_av):
 			peopleset.append( people.a_person(speedMultiplier))
