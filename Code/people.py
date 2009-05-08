@@ -16,7 +16,7 @@ max_speed = 5
 
 class a_person:
 	
-	def __init__( self , speedMultiplier = 1.0, av_type = 0):
+	def __init__( self , speedMultiplier = 1.0, av_type = 0 ):
 		print "Creating a person"
 		self.speedMultiplier = speedMultiplier
 		self.save_path = path.Path()
