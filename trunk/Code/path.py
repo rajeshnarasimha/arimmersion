@@ -7,6 +7,7 @@ import random
 import vizact
 import math
 import error
+#import TimelineGen
 
 quadSet = quadrants.QuadrantSet()
 speedMultiplier = 30.0#50.0
@@ -70,6 +71,7 @@ class PathGenerator:
 	def __init__(self, filename = "pathGen" + str(random.randrange(1,100000))):
 		print "AA"
 		self.pathSets = []
+		self.timelines = []
 		#self.nextPath = 0
 		self.filename = filename
 		#save the new path to a file
@@ -87,8 +89,9 @@ class PathGenerator:
 		while len(self.pathSets) < self.numPaths:
 			print "I am right here2"
 			yield self.generateAndTestPathSet()
-			if self.checkPathSet(self.nextPath):
+			if True:#self.checkPathSet(self.nextPath):
 				self.pathSets.append(self.nextPath)
+				#self.timelines.append(self.nextTimeline)
 				print "Saving,people:",len(self.nextPath.peoplePaths)
 				#save the new path to a file
 				file = open(self.filename, 'w')
@@ -129,10 +132,18 @@ class PathGenerator:
 		#print "current error: ",err
 		#a = 0
 	
-	
-	def runPathSet(self, peopleset, ps, tophat, custom):
+#	def scheduleTimeline(self,timeline):
+#		for event in timeline.timeline:
+#			if (event.isDead()):
+#				vizact.ontimer2(event.getStartTime(), 0, self.toggleAR, False)
+#			else:
+#				vizact.ontimer2(event.getStartTime(), 0, self.toggleAR, True);
+#	
+	def runPathSet(self, peopleset, ps, tophat, custom, timeline=None):
 		print "here5"
 		viztask.schedule(tophat.start_custom_walk())
+		#if timeline != None: scheduleTimeline(timeline)
+		#timeline.schedule(self.toggleAR)
 		for person in peopleset:
 			if custom:
 				viztask.schedule(person.start_custom_walk())
@@ -179,15 +190,15 @@ class PathGenerator:
 		print "time not visible: ",ps.timeNotVisible
 		print "avg. num people nearby: ",ps.numberPeopleNearby
 		#vizact.removeEvent(rpt)
-		#vizact.removeEvent(tophat.arev)
+		vizact.removeEvent(tophat.arev)
 		tophat.pointAR.remove()
 		tophat.avatar.clearActions()
 		tophat.avatar.remove()
 		tophat.hat.remove()
 		tophat.stop()
 		for person in peopleset:
+			vizact.removeEvent(person.arev)
 			person.pointAR.remove()
-			#vizact.removeEvent(person.arev)
 			person.avatar.clearActions()
 			person.avatar.remove()
 			person.stop()
@@ -222,6 +233,10 @@ class PathGenerator:
 			print "time not visible: ",ps.timeNotVisible,",",newPs.timeNotVisible
 			print "avg. num people nearby: ",ps.numberPeopleNearby,",",newPs.numberPeopleNearby
 			
+	def toggleAR( self, ARon ):
+		for p in self.peopleset:
+			p.toggle_AR( ARon )
+		
 	def runExperimentPathSet(self, pathNum):
 		global speedMultiplier
 		#speedMultipler = 1
@@ -229,18 +244,20 @@ class PathGenerator:
 		print pathNum
 		print len(self.pathSets)
 		ps = self.pathSets[pathNum]
-		peopleset = []
+		timeline = self.timelines[pathNum]
+		self.peopleset = []
 		newPs = PathSet()
 		for personPath in ps.peoplePaths:
 			p = people.a_person(speedMultiplier)
 			p.custom_walk(personPath.getFullPath())
-			peopleset.append(p)
+			self.peopleset.append(p)
 		tophat = people.a_person(speedMultiplier, 1)
 		self.abe = tophat
 		tophat.custom_walk(ps.abePath.getFullPath())
+		self.peopleset.append(tophat)
 		self.errlist = []
 		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,self.errlist)
-		yield self.runPathSet(peopleset, newPs, tophat, 1)
+		yield self.runPathSet(self.peopleset, newPs, tophat, 1, timeline)
 		vizact.removeEvent(error_timer)
 	
 	def generateAndTestPathSet(self):
@@ -249,6 +266,7 @@ class PathGenerator:
 		peopleset = []
 		#ps = PathSet()
 		self.nextPath = PathSet()
+		#self.nextTimeline = TimelineGen.Timeline()
 		
 		for j in range(0, self.num_av):
 			peopleset.append( people.a_person(speedMultiplier))
@@ -258,7 +276,7 @@ class PathGenerator:
 		#peopleset.append(tophat)
 		tophat.custom_walk([[[0.1, 0, 10], 2]])#, [[-10, 0, 10], 3], [[-10, 0, -10], 4], [[10, 0, -10], 5], [[10, 0, 10], 6]])
 		
-		yield self.runPathSet(peopleset, self.nextPath, tophat, 0)
+		yield self.runPathSet(peopleset, self.nextPath, tophat, 0 )
 			
 		#peopleset = []
 		
