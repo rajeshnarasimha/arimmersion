@@ -36,6 +36,13 @@ for i in xrange(3):
 #	random_seeds.append(i * 3)
 #random.shuffle(random_seeds)
 
+def scheduleTimeline(pg,timeline):
+	for event in timeline.timeline:
+		if (event.isDead()):
+			vizact.ontimer2(event.getStartTime(), 0, pg.toggleAR, False)
+		else:
+			vizact.ontimer2(event.getStartTime(), 0, pg.toggleAR, True);
+
 # function to run the experiment
 def run_tasks():
 	global tbox, message, numtrials, conditions, results
@@ -66,6 +73,9 @@ def run_tasks():
 		# set up variables for this condition
 		environment_setup.setARfov( conditions[order[i]][0] )
 
+		# schedule the tracking drop-out timeline
+		scheduleTimeline( pg.timelines[order[i]] )
+		
 		# run the path set
 		yield pg.runExperimentPathSet(order[i])
 		
@@ -96,3 +106,7 @@ def run_tasks():
 viztask.schedule(run_tasks())
 
 
+# call timeline() to create
+# get events
+# iterate through list
+# get start time, isdead

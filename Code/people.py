@@ -71,12 +71,18 @@ class a_person:
 		self.pointAR.alpha(0.3)
 		
 		self.tracking_error = []
-		#self.arev = vizact.ontimer(.01,self.move_AR)
+		self.arev = vizact.ontimer(.01,self.move_AR)
 		
 		self.myquadrants = [False,False,False,False,False,False,False,False]
 		self.lastTime = 0
 		self.timeNotVisible = 0
 		
+	def toggle_AR(self,ARon):
+		if ARon:
+			self.pointAR.alpha(0.3)
+		else:
+			self.pointAR.alpha(0)
+	
 	def move_AR(self):
 		apos = self.avatar.getPosition(viz.ABS_GLOBAL)
 		self.pointAR.setPosition(apos, viz.ABS_GLOBAL)
