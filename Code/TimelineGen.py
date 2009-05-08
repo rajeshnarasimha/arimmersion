@@ -104,17 +104,17 @@ class Timeline:
 			else:
 				vizact.ontimer2(event.getStartTime(), 0, regFunction, True);
 
-#create timeline
-timeline = Timeline()
-
-#pickle the timeline to disk
-filename = "pickleTimeline" + str(int(time.time()) - 1241599999)
-fw = open(filename, "w")
-pickle.dump(timeline, fw)
-fw.close()
-
-#test opening the pickled file and printing info to screen
-fr = open(filename, "r")
-openedTimeline = pickle.load(fr)
-openedTimeline.printAllEvents()
-#openedTimeline.schedule(None)
+##create timeline
+#timeline = Timeline()
+#
+##pickle the timeline to disk
+#filename = "pickleTimeline" + str(int(time.time()) - 1241599999)
+#fw = open(filename, "w")
+#pickle.dump(timeline, fw)
+#fw.close()
+#
+##test opening the pickled file and printing info to screen
+#fr = open(filename, "r")
+#openedTimeline = pickle.load(fr)
+#openedTimeline.printAllEvents()
+##openedTimeline.schedule(None)
