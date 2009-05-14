@@ -10,7 +10,7 @@ import error
 import TimelineGen
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 1.0#30.0#50.0
+speedMultiplier = 1.0
 
 class Path:
 	#startPoint = []
@@ -58,13 +58,13 @@ class PathGenerator:
 	speedRange = [2,5]
 	collisionRange = [0,1000]#[10,15] #doesn't matter
 	timeNotVisibleRange = [0,100]#[60,90]
-	pointsWalkedToRange = [15, 23]
-	numberPeopleNearbyRange = [2,6]
-	quadrantsReachedRange = [5,8]
+	pointsWalkedToRange = [0, 100]
+	numberPeopleNearbyRange = [0,100]
+	quadrantsReachedRange = [0,100]
 	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
 	taskTime = 100/speedMultiplier
-	numPaths = 5
+	numPaths = 20
 	num_av = 20
 	
 	
@@ -235,14 +235,17 @@ class PathGenerator:
 		for p in self.peopleset:
 			p.toggle_AR( ARon )
 		
-	def runExperimentPathSet(self, pathNum):
+	def runExperimentPathSet(self, pathNum, myTimeline=None):
 		global speedMultiplier
 		#speedMultipler = 1
 		#for ps in self.pathSets:
 		print pathNum
 		print len(self.pathSets)
 		ps = self.pathSets[pathNum]
-		timeline = self.timelines[pathNum]
+		if myTimeline != None:
+			timeline = myTimeline
+		else:
+			timeline = self.timelines[pathNum]
 		self.peopleset = []
 		newPs = PathSet()
 		for personPath in ps.peoplePaths:

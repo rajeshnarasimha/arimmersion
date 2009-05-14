@@ -53,6 +53,7 @@ node.setBuffer( viz.RENDER_FRAME_BUFFER )
 node.setOrder( viz.POST_RENDER )
 node.setInheritView( 0 )
 node.setClearMask( 0 )
+node.disable(viz.DEPTH_TEST)
 
 # set up 2D AR overlay for gray box and crosshairs (Scene 3)
 node2D = viz.addRenderNode()
