@@ -6,7 +6,6 @@ import pickle
 import latinSquare
 import environment_setup
 
-
 # text box for showing messages
 tbox = viz.addTextbox()	
 tbox.setPosition(0.5,0.35)
