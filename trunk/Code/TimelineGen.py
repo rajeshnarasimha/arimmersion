@@ -47,6 +47,7 @@ class Timeline:
 	minTotalTime = 0;
 	
 	def __init__(self):
+		Timeline.totalEvents = (Timeline.numDead * 2) + 1
 		self.onlyLiveTime = []
 		self.timeline = []
 		self.timeLeft = Timeline.trialTime
