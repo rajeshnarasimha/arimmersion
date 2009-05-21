@@ -37,6 +37,7 @@ class Event:
 
 class Timeline:
 	#global settings
+	#time granularity is in 1/10 of a second!
 	trialTime = 60									#total time of a trial in seconds
 	deadLength = .5									#time of each dropout
 	numDead = 10									#total number of dropouts
