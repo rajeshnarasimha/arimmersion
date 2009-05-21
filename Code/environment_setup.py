@@ -82,7 +82,7 @@ def setARfov( val ):
 	global HMDheight, HMDwidth, HMDfov_vert, HMDaspect, HMDnear, HMDfar
 	global node, ARfov_vert, ARgraybox
 	
-	ARfov_vert = val
+	ARfov_vert = 10
 	ARheight = (int) (HMDheight / HMDfov_vert * ARfov_vert)
 	ARwidth = ARheight * HMDaspect
 	

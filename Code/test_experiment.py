@@ -8,15 +8,14 @@ import environment_setup
 from TimelineGen import Timeline
 
 # file to unpickle
-pickle_path = 'pathGen81367'
+pickle_path = 'pathGen93238'
 
 # experiment settings go here
-test_fov = 34
-Timeline.trialTime = 100
-Timeline.numDead = 4
-Timeline.deadLength = 2
+test_fov = 5
+Timeline.trialTime = 60
+Timeline.numDead = 5
+Timeline.deadLength = 1.5
 Timeline.minLiveLength = 4
-Timeline.totalEvents = (Timeline.numDead * 2) + 1
 numtrials = 27
 test_timeline = Timeline()
 
