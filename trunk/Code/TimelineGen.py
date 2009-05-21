@@ -14,8 +14,8 @@ class Event:
 		self.length = length
 		self.startTime = 0
 
-	def addTime(self, subsecond):
-		self.length += subsecond
+	def addTime(self, addTime):
+		self.length += addTime
 
 	def getLength(self):
 		return self.length
@@ -39,11 +39,10 @@ class Timeline:
 	#global settings
 	trialTime = 60									#total time of a trial in seconds
 	deadLength = .5									#time of each dropout
-	totalDeadTime = 15								#cumulative time of all dropouts
-	numDead = int(totalDeadTime / deadLength)		#total number of dropouts
+	numDead = 10									#total number of dropouts
 	minLiveLength = 1								#mininum time of each live (or non-dropout) chunk of time
 	totalEvents = (numDead * 2) + 1					#total number of events in trial (both dropouts and non-dropouts)
-	subsecond = .1									#subsecond granularity of events (currently 1/10th of a second)
+	maxRandomTime = 4								#maximum randomly chosen time to add to a live event
 	minTotalTime = 0;
 	
 	def __init__(self):
@@ -72,11 +71,14 @@ class Timeline:
 
 		#randomize length of live events		
 		random.seed(time.time())
-		while self.timeLeft > 0.001:	#compare with something slightly greater than 0 because of imperfect floating point math
-			print self.timeLeft
+		timeChunk = 0.0
+		while self.timeLeft > 0.0:
+			timeChunk = random.randrange(1, Timeline.maxRandomTime*10) / 10.0
+			if(self.timeLeft < timeChunk):
+				timeChunk = self.timeLeft
 			index = random.randrange(0, len(self.onlyLiveTime))
-			self.onlyLiveTime[index].addTime(Timeline.subsecond)
-			self.timeLeft -= Timeline.subsecond
+			self.onlyLiveTime[index].addTime(timeChunk)
+			self.timeLeft -= timeChunk
 			
 		#set start time of all events
 		startTime = 0
@@ -116,3 +118,4 @@ class Timeline:
 
 timeline = Timeline()
 timeline.printAllEvents()
+timeline.printTotalTime()
