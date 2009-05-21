@@ -55,15 +55,15 @@ class PathSet:
 		
 class PathGenerator:
 	global speedMultipler
-	speedRange = [2,5]
+	speedRange = [4,6]
 	collisionRange = [0,1000]#[10,15] #doesn't matter
-	timeNotVisibleRange = [0,100]#[60,90]
+	timeNotVisibleRange = [40,60]#[60,90]
 	pointsWalkedToRange = [0, 100]
 	numberPeopleNearbyRange = [0,100]
-	quadrantsReachedRange = [0,100]
+	quadrantsReachedRange = [6,8]
 	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
-	taskTime = 100/speedMultiplier
+	taskTime = 60/speedMultiplier
 	numPaths = 20
 	num_av = 20
 	

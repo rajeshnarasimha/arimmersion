@@ -12,7 +12,7 @@ import time
 quadSet = quadrants.QuadrantSet()
 
 min_speed = 4
-max_speed = 5
+max_speed = 7
 
 class a_person:
 	
