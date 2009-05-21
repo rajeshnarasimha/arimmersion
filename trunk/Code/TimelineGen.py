@@ -38,7 +38,6 @@ class Event:
 class Timeline:
 	#global settings
 	trialTime = 60									#total time of a trial in seconds
-	
 	deadLength = .5									#time of each dropout
 	totalDeadTime = 15								#cumulative time of all dropouts
 	numDead = int(totalDeadTime / deadLength)		#total number of dropouts
@@ -71,9 +70,10 @@ class Timeline:
 				self.timeLeft -= Timeline.deadLength
 				self.timeline.append(Event(True, Timeline.deadLength)) 
 
-		#randomize length of live events
+		#randomize length of live events		
 		random.seed(time.time())
-		while self.timeLeft > 0.0:
+		while self.timeLeft > 0.001:	#compare with something slightly greater than 0 because of imperfect floating point math
+			print self.timeLeft
 			index = random.randrange(0, len(self.onlyLiveTime))
 			self.onlyLiveTime[index].addTime(Timeline.subsecond)
 			self.timeLeft -= Timeline.subsecond
@@ -107,6 +107,12 @@ class Timeline:
 				vizact.ontimer2(event.getStartTime(), 0, regFunction, False)
 			else:
 				vizact.ontimer2(event.getStartTime(), 0, regFunction, True);
+				
+	def printTotalTime(self):
+		total = 0.0
+		for event in self.timeline:
+			total += event.getLength()
+		print "total time : " + str(total)
 
-#timeline = Timeline()
-#timeline.printAllEvents()
+timeline = Timeline()
+timeline.printAllEvents()
