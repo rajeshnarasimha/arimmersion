@@ -10,7 +10,7 @@ import error
 import TimelineGen
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 1.0
+speedMultiplier = 5.0
 
 class Path:
 	#startPoint = []
@@ -55,16 +55,16 @@ class PathSet:
 		
 class PathGenerator:
 	global speedMultipler
-	speedRange = [4,6]
+	speedRange = [4,7]
 	collisionRange = [0,1000]#[10,15] #doesn't matter
-	timeNotVisibleRange = [40,60]#[60,90]
+	timeNotVisibleRange = [0,50]#[60,90]
 	pointsWalkedToRange = [0, 100]
 	numberPeopleNearbyRange = [0,100]
-	quadrantsReachedRange = [6,8]
+	quadrantsReachedRange = [7,8]
 	##turnarounds[0,0]	##max number of avatar turn-arounds allowed in a trial
 	
 	taskTime = 60/speedMultiplier
-	numPaths = 20
+	numPaths = 50
 	num_av = 20
 	
 	
@@ -89,7 +89,7 @@ class PathGenerator:
 		while len(self.pathSets) < self.numPaths:
 			print "I am right here2"
 			yield self.generateAndTestPathSet()
-			if True:#self.checkPathSet(self.nextPath):
+			if self.checkPathSet(self.nextPath):
 				self.pathSets.append(self.nextPath)
 				self.timelines.append(self.nextTimeline)
 				print "Saving,people:",len(self.nextPath.peoplePaths)
@@ -102,17 +102,24 @@ class PathGenerator:
 			
 	def checkPathSet(self, pathSet):
 		if not(pathSet.speed >= self.speedRange[0] and pathSet.speed <= self.speedRange[1]):
+			print "Not in speed range"
 			return False
 		if not(pathSet.collisions >= self.collisionRange[0] and pathSet.collisions <= self.collisionRange[1]):
+			print "Not in collision range"
 			return False
 		if not(pathSet.timeNotVisible >= self.timeNotVisibleRange[0] and pathSet.timeNotVisible <= self.timeNotVisibleRange[1]):
+			print "Not in time visible range"
 			return False
 		if not(pathSet.pointsWalkedTo >= self.pointsWalkedToRange[0] and pathSet.pointsWalkedTo <= self.pointsWalkedToRange[1]):
+			print "Not in points walked to range"
 			return False
 		if not(pathSet.numberPeopleNearby >= self.numberPeopleNearbyRange[0] and pathSet.numberPeopleNearby <= self.numberPeopleNearbyRange[1]):
+			print "Not in people nearby to range"
 			return False
-		if not(pathSet.quadrantsReached >= self.quadrantsReachedRange[0] and pathSet.quadrantsReached <= self.quadrantsReachedRange[0]):
+		if not(pathSet.quadrantsReached >= self.quadrantsReachedRange[0] and pathSet.quadrantsReached <= self.quadrantsReachedRange[1]):
+			print "Not in quadrants reached range"
 			return False
+		print "Saving this path"
 		return True
 	
 	def checkNearby(self,tophat,peopleset):
