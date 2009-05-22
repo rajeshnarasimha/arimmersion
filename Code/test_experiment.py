@@ -5,6 +5,7 @@ import math
 import pickle
 import latinSquare
 import environment_setup
+from path import PathGenerator
 from TimelineGen import Timeline
 
 # file to unpickle
@@ -13,10 +14,10 @@ pickle_path = 'pathGen93238'
 # experiment settings go here
 test_fov = 5
 Timeline.trialTime = 60
-Timeline.numDead = 5
+Timeline.numDead = 0
 Timeline.deadLength = 1.5
-Timeline.minLiveLength = 4
-numtrials = 27
+Timeline.minLiveLength = 2
+numtrials = PathGenerator.numPaths
 test_timeline = Timeline()
 
 # text box for showing messages
@@ -32,6 +33,8 @@ def run_tasks():
 	unpicklefile = open(pickle_path, 'r')
 	pg = pickle.load(unpicklefile)
 	unpicklefile.close()
+	
+	PathGenerator newPg = PathGenerator()
 
 	# show space bar message
 	tbox.message("Press space to start")
@@ -39,8 +42,13 @@ def run_tasks():
 	# for each trial
 	for i in range(0,numtrials):
 		
+		d = viz.Data()
+		
 		# wait for space bar
-		yield viztask.waitKeyDown(' ')
+		yield viztask.waitKeyDown(('y', 'n'),d)
+		
+		if d.key == 'y':
+			newPg.pathSets.append(pg.pathSets[i])
 
 		# hide message box
 		tbox.visible(viz.OFF)
@@ -57,6 +65,9 @@ def run_tasks():
 
 	# show done message
 	tbox.message("Done!")
+	file = open("SavedPaths", 'w')
+	pickle.dump(newPg,file)
+	file.close()
 
 # run it
 viztask.schedule(run_tasks())
