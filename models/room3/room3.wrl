@@ -75,7 +75,7 @@ coord Coordinate {
 point [
 -23.384 174.957 12.356,
 -211.611 174.957 -6.188,
--136.709 174.957 60.669,
+-133.395 174.957 40.542,
 ]
 }
 coordIndex [
@@ -130,7 +130,7 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-128.032 174.957 63.404,
+122.645 174.957 35.575,
 213.745 174.957 -6.188,
 20.874 174.957 12.356,
 ]
@@ -149,9 +149,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-132.215 174.957 66.689,
+127.535 174.957 37.666,
 213.745 174.957 -6.188,
-128.032 174.957 63.404,
+122.645 174.957 35.575,
 ]
 }
 coordIndex [
@@ -168,9 +168,47 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-135.405 174.957 70.946,
+131.718 174.957 40.952,
 213.745 174.957 -6.188,
-132.215 174.957 66.689,
+127.535 174.957 37.666,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.908 174.957 45.208,
+213.745 174.957 -6.188,
+131.718 174.957 40.952,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.887 174.957 50.145,
+213.745 174.957 -6.188,
+134.908 174.957 45.208,
 ]
 }
 coordIndex [
@@ -188,7 +226,7 @@ solid TRUE
 coord Coordinate {
 point [
 213.745 174.957 -6.188,
-135.405 174.957 70.946,
+136.887 174.957 50.145,
 213.745 174.957 256.424,
 ]
 }
@@ -207,7 +245,7 @@ solid TRUE
 coord Coordinate {
 point [
 213.745 174.957 256.424,
-135.405 174.957 70.946,
+136.887 174.957 50.145,
 213.745 174.957 -6.188,
 ]
 }
@@ -226,8 +264,8 @@ solid TRUE
 coord Coordinate {
 point [
 213.745 174.957 256.424,
-135.405 174.957 70.946,
-137.384 174.957 75.883,
+136.887 174.957 50.145,
+137.521 174.957 55.426,
 ]
 }
 coordIndex [
@@ -244,8 +282,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-137.384 174.957 75.883,
-135.405 174.957 70.946,
+137.521 174.957 55.426,
+136.887 174.957 50.145,
 213.745 174.957 256.424,
 ]
 }
@@ -268,60 +306,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-135.405 160.962 70.946,
-137.384 160.962 75.883,
-137.384 174.957 75.883,
-135.405 174.957 70.946,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-3.408 -0.777,
-3.556 -0.777,
-3.556 0,
-3.408 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.405 174.957 70.946,
-137.384 174.957 75.883,
-137.384 160.962 75.883,
-135.405 160.962 70.946,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.384 160.962 75.883,
-138.018 160.962 81.164,
-138.018 174.957 81.164,
-137.384 174.957 75.883,
+136.887 160.962 50.145,
+137.521 160.962 55.426,
+137.521 174.957 55.426,
+136.887 174.957 50.145,
 ]
 }
 coordIndex [
@@ -342,1129 +330,239 @@ point [
 }
 }
 Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.384 174.957 75.883,
-138.018 174.957 81.164,
-138.018 160.962 81.164,
-137.384 160.962 75.883,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-137.384 174.957 75.883,
-138.018 174.957 81.164,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-138.018 174.957 81.164,
-137.384 174.957 75.883,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-138.018 174.957 81.164,
-137.264 174.957 86.429,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.264 174.957 86.429,
-138.018 174.957 81.164,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-138.018 160.962 81.164,
-137.264 160.962 86.429,
-137.264 174.957 86.429,
-138.018 174.957 81.164,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.148 -0.777,
-0.296 -0.777,
-0.296 -0,
-0.148 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-138.018 174.957 81.164,
-137.264 174.957 86.429,
-137.264 160.962 86.429,
-138.018 160.962 81.164,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.264 160.962 86.429,
-135.173 160.962 91.32,
-135.173 174.957 91.32,
-137.264 174.957 86.429,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.296 -0.777,
-0.445 -0.777,
-0.445 -0,
-0.296 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.264 174.957 86.429,
-135.173 174.957 91.32,
-135.173 160.962 91.32,
-137.264 160.962 86.429,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-137.264 174.957 86.429,
-135.173 174.957 91.32,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.173 174.957 91.32,
-137.264 174.957 86.429,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-135.173 174.957 91.32,
-131.887 174.957 95.502,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-131.887 174.957 95.502,
-135.173 174.957 91.32,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.173 160.962 91.32,
-131.887 160.962 95.502,
-131.887 174.957 95.502,
-135.173 174.957 91.32,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.445 -0.777,
-0.593 -0.777,
-0.593 0,
-0.445 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.173 174.957 91.32,
-131.887 174.957 95.502,
-131.887 160.962 95.502,
-135.173 160.962 91.32,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-131.887 160.962 95.502,
-127.63 160.962 98.692,
-127.63 174.957 98.692,
-131.887 174.957 95.502,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.593 -0.777,
-0.741 -0.777,
-0.741 0,
-0.593 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-131.887 174.957 95.502,
-127.63 174.957 98.692,
-127.63 160.962 98.692,
-131.887 160.962 95.502,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-131.887 174.957 95.502,
-127.63 174.957 98.692,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-127.63 174.957 98.692,
-131.887 174.957 95.502,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-127.63 174.957 98.692,
-122.693 174.957 100.671,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-122.693 174.957 100.671,
-127.63 174.957 98.692,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-127.63 160.962 98.692,
-122.693 160.962 100.671,
-122.693 174.957 100.671,
-127.63 174.957 98.692,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.741 -0.777,
-0.889 -0.777,
-0.889 -0,
-0.741 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-127.63 174.957 98.692,
-122.693 174.957 100.671,
-122.693 160.962 100.671,
-127.63 160.962 98.692,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-122.693 160.962 100.671,
-117.412 160.962 101.305,
-117.412 174.957 101.305,
-122.693 174.957 100.671,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.889 -0.777,
-1.037 -0.777,
-1.037 0,
-0.889 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-122.693 174.957 100.671,
-117.412 174.957 101.305,
-117.412 160.962 101.305,
-122.693 160.962 100.671,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-122.693 174.957 100.671,
-117.412 174.957 101.305,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 174.957 101.305,
-122.693 174.957 100.671,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-213.745 174.957 256.424,
-117.412 174.957 101.305,
-20.874 174.957 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 110.602,
-117.412 174.957 101.305,
-213.745 174.957 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.147 174.957 100.551,
-20.874 174.957 110.602,
-117.412 174.957 101.305,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.257 174.957 98.46,
-20.874 174.957 110.602,
-112.147 174.957 100.551,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.074 174.957 95.174,
-20.874 174.957 110.602,
-107.257 174.957 98.46,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-99.884 174.957 90.917,
-20.874 174.957 110.602,
-103.074 174.957 95.174,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.905 174.957 85.981,
-20.874 174.957 110.602,
-99.884 174.957 90.917,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.271 174.957 80.7,
-20.874 174.957 110.602,
-97.905 174.957 85.981,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-98.025 174.957 75.434,
-20.874 174.957 110.602,
-97.271 174.957 80.7,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-100.116 174.957 70.544,
-20.874 174.957 110.602,
-98.025 174.957 75.434,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.402 174.957 66.361,
-20.874 174.957 110.602,
-100.116 174.957 70.544,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 174.957 63.171,
-20.874 174.957 110.602,
-103.402 174.957 66.361,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 174.957 63.171,
-20.874 174.957 12.356,
-20.874 174.957 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.596 174.957 61.192,
-20.874 174.957 12.356,
-107.659 174.957 63.171,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 12.356,
-112.596 174.957 61.192,
-117.877 174.957 60.558,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 174.957 60.558,
-112.596 174.957 61.192,
-20.874 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.596 160.962 61.192,
-117.877 160.962 60.558,
-117.877 174.957 60.558,
-112.596 174.957 61.192,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.667 -0.777,
-2.815 -0.777,
-2.815 0,
-2.667 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.596 174.957 61.192,
-117.877 174.957 60.558,
-117.877 160.962 60.558,
-112.596 160.962 61.192,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 160.962 60.558,
-123.142 160.962 61.312,
-123.142 174.957 61.312,
-117.877 174.957 60.558,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.815 -0.777,
-2.963 -0.777,
-2.963 0,
-2.815 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 174.957 60.558,
-123.142 174.957 61.312,
-123.142 160.962 61.312,
-117.877 160.962 60.558,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-123.142 174.957 61.312,
-20.874 174.957 12.356,
-117.877 174.957 60.558,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-128.032 174.957 63.404,
-20.874 174.957 12.356,
-123.142 174.957 61.312,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 12.356,
-213.745 174.957 -6.188,
-128.032 174.957 63.404,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 174.957 12.356,
-213.745 174.957 -6.188,
-20.874 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 12.356,
--23.384 174.957 12.356,
--23.384 160.962 12.356,
-20.874 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.58 9.72,
--0.65 9.72,
--0.65 8.942,
-0.58 8.942,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 12.356,
--23.384 160.962 12.356,
--23.384 174.957 12.356,
-20.874 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
 appearance DEF TEX_Cladding_Stucco_White Appearance {
 material Material {}
 texture ImageTexture {
 url ["Cladding_Stucco_White.jpg"]
 }
 }
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.887 160.962 50.145,
+199.559 160.962 256.424,
+137.521 160.962 55.426,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.605 1.857,
+11.087 9.497,
+7.64 2.053,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.887 160.962 50.145,
+199.559 160.962 9.432,
+199.559 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.605 1.857,
+11.087 0.349,
+11.087 9.497,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.908 160.962 45.208,
+199.559 160.962 9.432,
+136.887 160.962 50.145,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.495 1.674,
+11.087 0.349,
+7.605 1.857,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.718 160.962 40.952,
+199.559 160.962 9.432,
+134.908 160.962 45.208,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.318 1.517,
+11.087 0.349,
+7.495 1.674,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.535 160.962 37.666,
+199.559 160.962 9.432,
+131.718 160.962 40.952,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.085 1.395,
+11.087 0.349,
+7.318 1.517,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 160.962 35.575,
+199.559 160.962 9.432,
+127.535 160.962 37.666,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+6.814 1.318,
+11.087 0.349,
+7.085 1.395,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 12.356,
+199.559 160.962 9.432,
+122.645 160.962 35.575,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 0.458,
+11.087 0.349,
+6.814 1.318,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+199.559 160.962 9.432,
+20.874 160.962 12.356,
+-199.629 160.962 9.432,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+11.087 0.349,
+1.16 0.458,
+-11.09 0.349,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 9.432,
+20.874 160.962 12.356,
+199.559 160.962 9.432,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
@@ -1495,7 +593,7 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--136.709 160.962 60.669,
+-133.395 160.962 40.542,
 -199.629 160.962 9.432,
 -23.384 160.962 12.356,
 ]
@@ -1508,7 +606,7 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--7.595 2.247,
+-7.411 1.502,
 -11.09 0.349,
 -1.299 0.458,
 ]
@@ -1521,9 +619,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--141.18 160.962 63.551,
+-138.459 160.962 42.169,
 -199.629 160.962 9.432,
--136.709 160.962 60.669,
+-133.395 160.962 40.542,
 ]
 }
 coordIndex [
@@ -1534,9 +632,9 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--7.843 2.354,
+-7.692 1.562,
 -11.09 0.349,
--7.595 2.247,
+-7.411 1.502,
 ]
 }
 }
@@ -1547,9 +645,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--144.753 160.962 67.491,
+-142.93 160.962 45.051,
 -199.629 160.962 9.432,
--141.18 160.962 63.551,
+-138.459 160.962 42.169,
 ]
 }
 coordIndex [
@@ -1560,9 +658,9 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--8.042 2.5,
+-7.941 1.669,
 -11.09 0.349,
--7.843 2.354,
+-7.692 1.562,
 ]
 }
 }
@@ -1573,9 +671,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--147.183 160.962 72.222,
+-146.503 160.962 48.991,
 -199.629 160.962 9.432,
--144.753 160.962 67.491,
+-142.93 160.962 45.051,
 ]
 }
 coordIndex [
@@ -1586,9 +684,35 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--8.177 2.675,
+-8.139 1.814,
 -11.09 0.349,
--8.042 2.5,
+-7.941 1.669,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.933 160.962 53.722,
+-199.629 160.962 9.432,
+-146.503 160.962 48.991,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-8.274 1.99,
+-11.09 0.349,
+-8.139 1.814,
 ]
 }
 }
@@ -1600,7 +724,7 @@ solid TRUE
 coord Coordinate {
 point [
 -199.629 160.962 9.432,
--147.183 160.962 72.222,
+-148.933 160.962 53.722,
 -199.629 160.962 256.424,
 ]
 }
@@ -1613,7 +737,7 @@ coordIndex [
 texCoord TextureCoordinate {
 point [
 -11.09 0.349,
--8.177 2.675,
+-8.274 1.99,
 -11.09 9.497,
 ]
 }
@@ -1626,7 +750,7 @@ solid TRUE
 coord Coordinate {
 point [
 -199.629 160.962 256.424,
--147.183 160.962 72.222,
+-148.933 160.962 53.722,
 -199.629 160.962 9.432,
 ]
 }
@@ -1645,8 +769,8 @@ solid TRUE
 coord Coordinate {
 point [
 -199.629 160.962 256.424,
--147.183 160.962 72.222,
--148.307 160.962 77.421,
+-148.933 160.962 53.722,
+-150.057 160.962 58.921,
 ]
 }
 coordIndex [
@@ -1658,8 +782,8 @@ coordIndex [
 texCoord TextureCoordinate {
 point [
 -11.09 9.497,
--8.177 2.675,
--8.239 2.867,
+-8.274 1.99,
+-8.336 2.182,
 ]
 }
 }
@@ -1670,8 +794,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.307 160.962 77.421,
--147.183 160.962 72.222,
+-150.057 160.962 58.921,
+-148.933 160.962 53.722,
 -199.629 160.962 256.424,
 ]
 }
@@ -1689,10 +813,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.307 160.962 77.421,
--147.183 160.962 72.222,
--147.183 174.957 72.222,
--148.307 174.957 77.421,
+-150.057 160.962 58.921,
+-148.933 160.962 53.722,
+-148.933 174.957 53.722,
+-150.057 174.957 58.921,
 ]
 }
 coordIndex [
@@ -1718,10 +842,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.307 174.957 77.421,
--147.183 174.957 72.222,
--147.183 160.962 72.222,
--148.307 160.962 77.421,
+-150.057 174.957 58.921,
+-148.933 174.957 53.722,
+-148.933 160.962 53.722,
+-150.057 160.962 58.921,
 ]
 }
 coordIndex [
@@ -1739,9 +863,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--147.183 174.957 72.222,
+-148.933 174.957 53.722,
 -211.611 174.957 256.424,
--148.307 174.957 77.421,
+-150.057 174.957 58.921,
 ]
 }
 coordIndex [
@@ -1758,7 +882,7 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--147.183 174.957 72.222,
+-148.933 174.957 53.722,
 -211.611 174.957 -6.188,
 -211.611 174.957 256.424,
 ]
@@ -1777,9 +901,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--144.753 174.957 67.491,
+-146.503 174.957 48.991,
 -211.611 174.957 -6.188,
--147.183 174.957 72.222,
+-148.933 174.957 53.722,
 ]
 }
 coordIndex [
@@ -1796,9 +920,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--141.18 174.957 63.551,
+-142.93 174.957 45.051,
 -211.611 174.957 -6.188,
--144.753 174.957 67.491,
+-146.503 174.957 48.991,
 ]
 }
 coordIndex [
@@ -1815,9 +939,28 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--136.709 174.957 60.669,
+-138.459 174.957 42.169,
 -211.611 174.957 -6.188,
--141.18 174.957 63.551,
+-142.93 174.957 45.051,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-133.395 174.957 40.542,
+-211.611 174.957 -6.188,
+-138.459 174.957 42.169,
 ]
 }
 coordIndex [
@@ -1834,7 +977,7 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--136.709 174.957 60.669,
+-133.395 174.957 40.542,
 -211.611 174.957 -6.188,
 -23.384 174.957 12.356,
 ]
@@ -1853,9 +996,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--141.18 174.957 63.551,
+-138.459 174.957 42.169,
 -211.611 174.957 -6.188,
--136.709 174.957 60.669,
+-133.395 174.957 40.542,
 ]
 }
 coordIndex [
@@ -1872,9 +1015,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--144.753 174.957 67.491,
+-142.93 174.957 45.051,
 -211.611 174.957 -6.188,
--141.18 174.957 63.551,
+-138.459 174.957 42.169,
 ]
 }
 coordIndex [
@@ -1891,9 +1034,28 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--147.183 174.957 72.222,
+-146.503 174.957 48.991,
 -211.611 174.957 -6.188,
--144.753 174.957 67.491,
+-142.93 174.957 45.051,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.933 174.957 53.722,
+-211.611 174.957 -6.188,
+-146.503 174.957 48.991,
 ]
 }
 coordIndex [
@@ -1912,7 +1074,7 @@ coord Coordinate {
 point [
 -211.611 174.957 256.424,
 -211.611 174.957 -6.188,
--147.183 174.957 72.222,
+-148.933 174.957 53.722,
 ]
 }
 coordIndex [
@@ -13504,14 +12666,14 @@ coordIndex [
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-137.384 160.962 75.883,
-199.559 160.962 9.432,
 199.559 160.962 256.424,
+199.559 160.962 9.432,
+136.887 160.962 50.145,
 ]
 }
 coordIndex [
@@ -13520,24 +12682,17 @@ coordIndex [
 2
 -1
 ]
-texCoord TextureCoordinate {
-point [
-7.632 2.81,
-11.087 0.349,
-11.087 9.497,
-]
-}
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-135.405 160.962 70.946,
+136.887 160.962 50.145,
 199.559 160.962 9.432,
-137.384 160.962 75.883,
+134.908 160.962 45.208,
 ]
 }
 coordIndex [
@@ -13546,24 +12701,17 @@ coordIndex [
 2
 -1
 ]
-texCoord TextureCoordinate {
-point [
-7.522 2.628,
-11.087 0.349,
-7.632 2.81,
-]
-}
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-132.215 160.962 66.689,
+134.908 160.962 45.208,
 199.559 160.962 9.432,
-135.405 160.962 70.946,
+131.718 160.962 40.952,
 ]
 }
 coordIndex [
@@ -13572,24 +12720,17 @@ coordIndex [
 2
 -1
 ]
-texCoord TextureCoordinate {
-point [
-7.345 2.47,
-11.087 0.349,
-7.522 2.628,
-]
-}
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-128.032 160.962 63.404,
+131.718 160.962 40.952,
 199.559 160.962 9.432,
-132.215 160.962 66.689,
+127.535 160.962 37.666,
 ]
 }
 coordIndex [
@@ -13598,13 +12739,44 @@ coordIndex [
 2
 -1
 ]
-texCoord TextureCoordinate {
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
 point [
-7.113 2.348,
-11.087 0.349,
-7.345 2.47,
+127.535 160.962 37.666,
+199.559 160.962 9.432,
+122.645 160.962 35.575,
 ]
 }
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 160.962 35.575,
+199.559 160.962 9.432,
+20.874 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
 }
 }
 Shape {
@@ -13614,8 +12786,8 @@ solid TRUE
 coord Coordinate {
 point [
 20.874 160.962 12.356,
-199.559 160.962 9.432,
-128.032 160.962 63.404,
+122.645 160.962 35.575,
+117.38 160.962 34.82,
 ]
 }
 coordIndex [
@@ -13627,142 +12799,21 @@ coordIndex [
 texCoord TextureCoordinate {
 point [
 1.16 0.458,
-11.087 0.349,
-7.113 2.348,
+6.814 1.318,
+6.521 1.29,
 ]
 }
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
+appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
-199.559 160.962 9.432,
+117.38 160.962 34.82,
+122.645 160.962 35.575,
 20.874 160.962 12.356,
--199.629 160.962 9.432,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-11.087 0.349,
-1.16 0.458,
--11.09 0.349,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 9.432,
-20.874 160.962 12.356,
-199.559 160.962 9.432,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 12.356,
--199.629 160.962 9.432,
--23.384 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 12.356,
--199.629 160.962 9.432,
--136.709 160.962 60.669,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--136.709 160.962 60.669,
--199.629 160.962 9.432,
--141.18 160.962 63.551,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--141.18 160.962 63.551,
--199.629 160.962 9.432,
--144.753 160.962 67.491,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--144.753 160.962 67.491,
--199.629 160.962 9.432,
--147.183 160.962 72.222,
 ]
 }
 coordIndex [
@@ -13779,110 +12830,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--147.183 160.962 72.222,
--144.753 160.962 67.491,
--144.753 174.957 67.491,
--147.183 174.957 72.222,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.519 -0.777,
-2.667 -0.777,
-2.667 -0,
-2.519 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--147.183 174.957 72.222,
--144.753 174.957 67.491,
--144.753 160.962 67.491,
--147.183 160.962 72.222,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--144.753 160.962 67.491,
--141.18 160.962 63.551,
--141.18 174.957 63.551,
--144.753 174.957 67.491,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.667 -0.777,
-2.815 -0.777,
-2.815 -0,
-2.667 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--144.753 174.957 67.491,
--141.18 174.957 63.551,
--141.18 160.962 63.551,
--144.753 160.962 67.491,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--141.18 160.962 63.551,
--136.709 160.962 60.669,
--136.709 174.957 60.669,
--141.18 174.957 63.551,
+117.38 160.962 34.82,
+122.645 160.962 35.575,
+122.645 174.957 35.575,
+117.38 174.957 34.82,
 ]
 }
 coordIndex [
@@ -13908,10 +12859,281 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--141.18 174.957 63.551,
--136.709 174.957 60.669,
--136.709 160.962 60.669,
--141.18 160.962 63.551,
+117.38 174.957 34.82,
+122.645 174.957 35.575,
+122.645 160.962 35.575,
+117.38 160.962 34.82,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 174.957 35.575,
+20.874 174.957 12.356,
+117.38 174.957 34.82,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 12.356,
+213.745 174.957 -6.188,
+122.645 174.957 35.575,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 174.957 12.356,
+213.745 174.957 -6.188,
+20.874 174.957 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 12.356,
+-23.384 174.957 12.356,
+-23.384 160.962 12.356,
+20.874 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.58 9.72,
+-0.65 9.72,
+-0.65 8.942,
+0.58 8.942,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 12.356,
+-23.384 160.962 12.356,
+-23.384 174.957 12.356,
+20.874 174.957 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 12.356,
+-199.629 160.962 9.432,
+-23.384 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 12.356,
+-199.629 160.962 9.432,
+-133.395 160.962 40.542,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-133.395 160.962 40.542,
+-199.629 160.962 9.432,
+-138.459 160.962 42.169,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-138.459 160.962 42.169,
+-199.629 160.962 9.432,
+-142.93 160.962 45.051,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-142.93 160.962 45.051,
+-199.629 160.962 9.432,
+-146.503 160.962 48.991,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-146.503 160.962 48.991,
+-199.629 160.962 9.432,
+-148.933 160.962 53.722,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.933 160.962 53.722,
+-146.503 160.962 48.991,
+-146.503 174.957 48.991,
+-148.933 174.957 53.722,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.519 -0.777,
+2.667 -0.777,
+2.667 -0,
+2.519 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.933 174.957 53.722,
+-146.503 174.957 48.991,
+-146.503 160.962 48.991,
+-148.933 160.962 53.722,
 ]
 }
 coordIndex [
@@ -13929,10 +13151,110 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--136.709 160.962 60.669,
--131.645 160.962 59.042,
--131.645 174.957 59.042,
--136.709 174.957 60.669,
+-146.503 160.962 48.991,
+-142.93 160.962 45.051,
+-142.93 174.957 45.051,
+-146.503 174.957 48.991,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.667 -0.777,
+2.815 -0.777,
+2.815 -0,
+2.667 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-146.503 174.957 48.991,
+-142.93 174.957 45.051,
+-142.93 160.962 45.051,
+-146.503 160.962 48.991,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-142.93 160.962 45.051,
+-138.459 160.962 42.169,
+-138.459 174.957 42.169,
+-142.93 174.957 45.051,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.815 -0.777,
+2.963 -0.777,
+2.963 0,
+2.815 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-142.93 174.957 45.051,
+-138.459 174.957 42.169,
+-138.459 160.962 42.169,
+-142.93 160.962 45.051,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-138.459 160.962 42.169,
+-133.395 160.962 40.542,
+-133.395 174.957 40.542,
+-138.459 174.957 42.169,
 ]
 }
 coordIndex [
@@ -13958,10 +13280,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--136.709 174.957 60.669,
--131.645 174.957 59.042,
--131.645 160.962 59.042,
--136.709 160.962 60.669,
+-138.459 174.957 42.169,
+-133.395 174.957 40.542,
+-133.395 160.962 40.542,
+-138.459 160.962 42.169,
 ]
 }
 coordIndex [
@@ -13974,91 +13296,15 @@ coordIndex [
 }
 }
 Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 174.957 12.356,
--136.709 174.957 60.669,
--131.645 174.957 59.042,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--131.645 174.957 59.042,
--136.709 174.957 60.669,
--23.384 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_FrontColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 174.957 12.356,
--131.645 174.957 59.042,
--126.333 174.957 58.782,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--126.333 174.957 58.782,
--131.645 174.957 59.042,
--23.384 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
 appearance USE TEX_Brick_Tumbled
 geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--131.645 160.962 59.042,
--126.333 160.962 58.782,
--126.333 174.957 58.782,
--131.645 174.957 59.042,
+-133.395 160.962 40.542,
+-128.083 160.962 40.282,
+-128.083 174.957 40.282,
+-133.395 174.957 40.542,
 ]
 }
 coordIndex [
@@ -14072,58 +13318,8 @@ texCoord TextureCoordinate {
 point [
 3.112 -0.777,
 3.26 -0.777,
-3.26 -0,
-3.112 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--131.645 174.957 59.042,
--126.333 174.957 58.782,
--126.333 160.962 58.782,
--131.645 160.962 59.042,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--126.333 160.962 58.782,
--121.134 160.962 59.906,
--121.134 174.957 59.906,
--126.333 174.957 58.782,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-3.26 -0.777,
-3.408 -0.777,
-3.408 0,
 3.26 0,
+3.112 0,
 ]
 }
 }
@@ -14134,10 +13330,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--126.333 174.957 58.782,
--121.134 174.957 59.906,
--121.134 160.962 59.906,
--126.333 160.962 58.782,
+-133.395 174.957 40.542,
+-128.083 174.957 40.282,
+-128.083 160.962 40.282,
+-133.395 160.962 40.542,
 ]
 }
 coordIndex [
@@ -14155,9 +13351,28 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--121.134 174.957 59.906,
 -23.384 174.957 12.356,
--126.333 174.957 58.782,
+-133.395 174.957 40.542,
+-128.083 174.957 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 174.957 40.282,
+-133.395 174.957 40.542,
+-23.384 174.957 12.356,
 ]
 }
 coordIndex [
@@ -14174,9 +13389,28 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--116.403 174.957 62.336,
+-122.884 174.957 41.406,
 -23.384 174.957 12.356,
--121.134 174.957 59.906,
+-128.083 174.957 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-118.153 174.957 43.836,
+-23.384 174.957 12.356,
+-122.884 174.957 41.406,
 ]
 }
 coordIndex [
@@ -14194,7 +13428,7 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 12.356,
--116.403 174.957 62.336,
+-118.153 174.957 43.836,
 -23.384 174.957 110.602,
 ]
 }
@@ -14213,7 +13447,7 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--116.403 174.957 62.336,
+-118.153 174.957 43.836,
 -23.384 174.957 12.356,
 ]
 }
@@ -14232,8 +13466,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--116.403 174.957 62.336,
--112.462 174.957 65.909,
+-118.153 174.957 43.836,
+-114.212 174.957 47.409,
 ]
 }
 coordIndex [
@@ -14250,8 +13484,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--112.462 174.957 65.909,
--116.403 174.957 62.336,
+-114.212 174.957 47.409,
+-118.153 174.957 43.836,
 -23.384 174.957 110.602,
 ]
 }
@@ -14269,10 +13503,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--116.403 160.962 62.336,
--112.462 160.962 65.909,
--112.462 174.957 65.909,
--116.403 174.957 62.336,
+-118.153 160.962 43.836,
+-114.212 160.962 47.409,
+-114.212 174.957 47.409,
+-118.153 174.957 43.836,
 ]
 }
 coordIndex [
@@ -14284,10 +13518,10 @@ coordIndex [
 ]
 texCoord TextureCoordinate {
 point [
--0 -0.777,
+0 -0.777,
 0.148 -0.777,
 0.148 -0,
--0 -0,
+0 -0,
 ]
 }
 }
@@ -14298,10 +13532,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--116.403 174.957 62.336,
--112.462 174.957 65.909,
--112.462 160.962 65.909,
--116.403 160.962 62.336,
+-118.153 174.957 43.836,
+-114.212 174.957 47.409,
+-114.212 160.962 47.409,
+-118.153 160.962 43.836,
 ]
 }
 coordIndex [
@@ -14319,10 +13553,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--112.462 160.962 65.909,
--109.58 160.962 70.379,
--109.58 174.957 70.379,
--112.462 174.957 65.909,
+-114.212 160.962 47.409,
+-111.33 160.962 51.879,
+-111.33 174.957 51.879,
+-114.212 174.957 47.409,
 ]
 }
 coordIndex [
@@ -14348,10 +13582,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--112.462 174.957 65.909,
--109.58 174.957 70.379,
--109.58 160.962 70.379,
--112.462 160.962 65.909,
+-114.212 174.957 47.409,
+-111.33 174.957 51.879,
+-111.33 160.962 51.879,
+-114.212 160.962 47.409,
 ]
 }
 coordIndex [
@@ -14370,8 +13604,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--112.462 174.957 65.909,
--109.58 174.957 70.379,
+-114.212 174.957 47.409,
+-111.33 174.957 51.879,
 ]
 }
 coordIndex [
@@ -14388,8 +13622,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--109.58 174.957 70.379,
--112.462 174.957 65.909,
+-111.33 174.957 51.879,
+-114.212 174.957 47.409,
 -23.384 174.957 110.602,
 ]
 }
@@ -14408,8 +13642,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--109.58 174.957 70.379,
--107.954 174.957 75.444,
+-111.33 174.957 51.879,
+-109.704 174.957 56.944,
 ]
 }
 coordIndex [
@@ -14426,8 +13660,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.954 174.957 75.444,
--109.58 174.957 70.379,
+-109.704 174.957 56.944,
+-111.33 174.957 51.879,
 -23.384 174.957 110.602,
 ]
 }
@@ -14445,10 +13679,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--109.58 160.962 70.379,
--107.954 160.962 75.444,
--107.954 174.957 75.444,
--109.58 174.957 70.379,
+-111.33 160.962 51.879,
+-109.704 160.962 56.944,
+-109.704 174.957 56.944,
+-111.33 174.957 51.879,
 ]
 }
 coordIndex [
@@ -14474,10 +13708,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--109.58 174.957 70.379,
--107.954 174.957 75.444,
--107.954 160.962 75.444,
--109.58 160.962 70.379,
+-111.33 174.957 51.879,
+-109.704 174.957 56.944,
+-109.704 160.962 56.944,
+-111.33 160.962 51.879,
 ]
 }
 coordIndex [
@@ -14495,10 +13729,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.954 160.962 75.444,
--107.694 160.962 80.756,
--107.694 174.957 80.756,
--107.954 174.957 75.444,
+-109.704 160.962 56.944,
+-109.444 160.962 62.256,
+-109.444 174.957 62.256,
+-109.704 174.957 56.944,
 ]
 }
 coordIndex [
@@ -14524,10 +13758,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.954 174.957 75.444,
--107.694 174.957 80.756,
--107.694 160.962 80.756,
--107.954 160.962 75.444,
+-109.704 174.957 56.944,
+-109.444 174.957 62.256,
+-109.444 160.962 62.256,
+-109.704 160.962 56.944,
 ]
 }
 coordIndex [
@@ -14546,8 +13780,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--107.954 174.957 75.444,
--107.694 174.957 80.756,
+-109.704 174.957 56.944,
+-109.444 174.957 62.256,
 ]
 }
 coordIndex [
@@ -14564,8 +13798,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.694 174.957 80.756,
--107.954 174.957 75.444,
+-109.444 174.957 62.256,
+-109.704 174.957 56.944,
 -23.384 174.957 110.602,
 ]
 }
@@ -14584,8 +13818,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--107.694 174.957 80.756,
--108.817 174.957 85.955,
+-109.444 174.957 62.256,
+-110.567 174.957 67.455,
 ]
 }
 coordIndex [
@@ -14602,8 +13836,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--108.817 174.957 85.955,
--107.694 174.957 80.756,
+-110.567 174.957 67.455,
+-109.444 174.957 62.256,
 -23.384 174.957 110.602,
 ]
 }
@@ -14621,10 +13855,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.694 160.962 80.756,
--108.817 160.962 85.955,
--108.817 174.957 85.955,
--107.694 174.957 80.756,
+-109.444 160.962 62.256,
+-110.567 160.962 67.455,
+-110.567 174.957 67.455,
+-109.444 174.957 62.256,
 ]
 }
 coordIndex [
@@ -14650,10 +13884,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--107.694 174.957 80.756,
--108.817 174.957 85.955,
--108.817 160.962 85.955,
--107.694 160.962 80.756,
+-109.444 174.957 62.256,
+-110.567 174.957 67.455,
+-110.567 160.962 67.455,
+-109.444 160.962 62.256,
 ]
 }
 coordIndex [
@@ -14671,10 +13905,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--108.817 160.962 85.955,
--111.248 160.962 90.686,
--111.248 174.957 90.686,
--108.817 174.957 85.955,
+-110.567 160.962 67.455,
+-112.998 160.962 72.186,
+-112.998 174.957 72.186,
+-110.567 174.957 67.455,
 ]
 }
 coordIndex [
@@ -14700,10 +13934,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--108.817 174.957 85.955,
--111.248 174.957 90.686,
--111.248 160.962 90.686,
--108.817 160.962 85.955,
+-110.567 174.957 67.455,
+-112.998 174.957 72.186,
+-112.998 160.962 72.186,
+-110.567 160.962 67.455,
 ]
 }
 coordIndex [
@@ -14722,8 +13956,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--108.817 174.957 85.955,
--111.248 174.957 90.686,
+-110.567 174.957 67.455,
+-112.998 174.957 72.186,
 ]
 }
 coordIndex [
@@ -14740,8 +13974,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--111.248 174.957 90.686,
--108.817 174.957 85.955,
+-112.998 174.957 72.186,
+-110.567 174.957 67.455,
 -23.384 174.957 110.602,
 ]
 }
@@ -14760,8 +13994,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--111.248 174.957 90.686,
--114.82 174.957 94.627,
+-112.998 174.957 72.186,
+-116.57 174.957 76.127,
 ]
 }
 coordIndex [
@@ -14778,8 +14012,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--114.82 174.957 94.627,
--111.248 174.957 90.686,
+-116.57 174.957 76.127,
+-112.998 174.957 72.186,
 -23.384 174.957 110.602,
 ]
 }
@@ -14797,10 +14031,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--111.248 160.962 90.686,
--114.82 160.962 94.627,
--114.82 174.957 94.627,
--111.248 174.957 90.686,
+-112.998 160.962 72.186,
+-116.57 160.962 76.127,
+-116.57 174.957 76.127,
+-112.998 174.957 72.186,
 ]
 }
 coordIndex [
@@ -14826,10 +14060,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--111.248 174.957 90.686,
--114.82 174.957 94.627,
--114.82 160.962 94.627,
--111.248 160.962 90.686,
+-112.998 174.957 72.186,
+-116.57 174.957 76.127,
+-116.57 160.962 76.127,
+-112.998 160.962 72.186,
 ]
 }
 coordIndex [
@@ -14847,10 +14081,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--114.82 160.962 94.627,
--119.291 160.962 97.509,
--119.291 174.957 97.509,
--114.82 174.957 94.627,
+-116.57 160.962 76.127,
+-121.041 160.962 79.009,
+-121.041 174.957 79.009,
+-116.57 174.957 76.127,
 ]
 }
 coordIndex [
@@ -14864,8 +14098,8 @@ texCoord TextureCoordinate {
 point [
 1.037 -0.777,
 1.185 -0.777,
-1.185 0,
-1.037 0,
+1.185 -0,
+1.037 -0,
 ]
 }
 }
@@ -14876,10 +14110,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--114.82 174.957 94.627,
--119.291 174.957 97.509,
--119.291 160.962 97.509,
--114.82 160.962 94.627,
+-116.57 174.957 76.127,
+-121.041 174.957 79.009,
+-121.041 160.962 79.009,
+-116.57 160.962 76.127,
 ]
 }
 coordIndex [
@@ -14898,8 +14132,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--114.82 174.957 94.627,
--119.291 174.957 97.509,
+-116.57 174.957 76.127,
+-121.041 174.957 79.009,
 ]
 }
 coordIndex [
@@ -14916,8 +14150,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--119.291 174.957 97.509,
--114.82 174.957 94.627,
+-121.041 174.957 79.009,
+-116.57 174.957 76.127,
 -23.384 174.957 110.602,
 ]
 }
@@ -14936,8 +14170,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--119.291 174.957 97.509,
--124.355 174.957 99.135,
+-121.041 174.957 79.009,
+-126.105 174.957 80.635,
 ]
 }
 coordIndex [
@@ -14954,8 +14188,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--124.355 174.957 99.135,
--119.291 174.957 97.509,
+-126.105 174.957 80.635,
+-121.041 174.957 79.009,
 -23.384 174.957 110.602,
 ]
 }
@@ -14973,10 +14207,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--119.291 160.962 97.509,
--124.355 160.962 99.135,
--124.355 174.957 99.135,
--119.291 174.957 97.509,
+-121.041 160.962 79.009,
+-126.105 160.962 80.635,
+-126.105 174.957 80.635,
+-121.041 174.957 79.009,
 ]
 }
 coordIndex [
@@ -15002,10 +14236,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--119.291 174.957 97.509,
--124.355 174.957 99.135,
--124.355 160.962 99.135,
--119.291 160.962 97.509,
+-121.041 174.957 79.009,
+-126.105 174.957 80.635,
+-126.105 160.962 80.635,
+-121.041 160.962 79.009,
 ]
 }
 coordIndex [
@@ -15023,10 +14257,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--124.355 160.962 99.135,
--129.668 160.962 99.395,
--129.668 174.957 99.395,
--124.355 174.957 99.135,
+-126.105 160.962 80.635,
+-131.418 160.962 80.895,
+-131.418 174.957 80.895,
+-126.105 174.957 80.635,
 ]
 }
 coordIndex [
@@ -15052,10 +14286,10 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--124.355 174.957 99.135,
--129.668 174.957 99.395,
--129.668 160.962 99.395,
--124.355 160.962 99.135,
+-126.105 174.957 80.635,
+-131.418 174.957 80.895,
+-131.418 160.962 80.895,
+-126.105 160.962 80.635,
 ]
 }
 coordIndex [
@@ -15074,8 +14308,8 @@ solid TRUE
 coord Coordinate {
 point [
 -23.384 174.957 110.602,
--124.355 174.957 99.135,
--129.668 174.957 99.395,
+-126.105 174.957 80.635,
+-131.418 174.957 80.895,
 ]
 }
 coordIndex [
@@ -15092,8 +14326,8 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--129.668 174.957 99.395,
--124.355 174.957 99.135,
+-131.418 174.957 80.895,
+-126.105 174.957 80.635,
 -23.384 174.957 110.602,
 ]
 }
@@ -15111,7 +14345,7 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--129.668 174.957 99.395,
+-131.418 174.957 80.895,
 -211.611 174.957 256.424,
 -23.384 174.957 110.602,
 ]
@@ -15130,9 +14364,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--134.867 174.957 98.272,
+-136.617 174.957 79.772,
 -211.611 174.957 256.424,
--129.668 174.957 99.395,
+-131.418 174.957 80.895,
 ]
 }
 coordIndex [
@@ -15149,9 +14383,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--139.598 174.957 95.841,
+-141.348 174.957 77.341,
 -211.611 174.957 256.424,
--134.867 174.957 98.272,
+-136.617 174.957 79.772,
 ]
 }
 coordIndex [
@@ -15168,9 +14402,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--143.538 174.957 92.268,
+-145.288 174.957 73.768,
 -211.611 174.957 256.424,
--139.598 174.957 95.841,
+-141.348 174.957 77.341,
 ]
 }
 coordIndex [
@@ -15187,9 +14421,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--146.42 174.957 87.798,
+-148.17 174.957 69.298,
 -211.611 174.957 256.424,
--143.538 174.957 92.268,
+-145.288 174.957 73.768,
 ]
 }
 coordIndex [
@@ -15206,9 +14440,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.047 174.957 82.734,
+-149.797 174.957 64.234,
 -211.611 174.957 256.424,
--146.42 174.957 87.798,
+-148.17 174.957 69.298,
 ]
 }
 coordIndex [
@@ -15225,9 +14459,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.307 174.957 77.421,
+-150.057 174.957 58.921,
 -211.611 174.957 256.424,
--148.047 174.957 82.734,
+-149.797 174.957 64.234,
 ]
 }
 coordIndex [
@@ -15244,9 +14478,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.307 174.957 77.421,
+-150.057 174.957 58.921,
 -211.611 174.957 256.424,
--147.183 174.957 72.222,
+-148.933 174.957 53.722,
 ]
 }
 coordIndex [
@@ -15263,9 +14497,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--148.047 174.957 82.734,
+-149.797 174.957 64.234,
 -211.611 174.957 256.424,
--148.307 174.957 77.421,
+-150.057 174.957 58.921,
 ]
 }
 coordIndex [
@@ -15282,9 +14516,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--146.42 174.957 87.798,
+-148.17 174.957 69.298,
 -211.611 174.957 256.424,
--148.047 174.957 82.734,
+-149.797 174.957 64.234,
 ]
 }
 coordIndex [
@@ -15301,9 +14535,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--143.538 174.957 92.268,
+-145.288 174.957 73.768,
 -211.611 174.957 256.424,
--146.42 174.957 87.798,
+-148.17 174.957 69.298,
 ]
 }
 coordIndex [
@@ -15320,9 +14554,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--139.598 174.957 95.841,
+-141.348 174.957 77.341,
 -211.611 174.957 256.424,
--143.538 174.957 92.268,
+-145.288 174.957 73.768,
 ]
 }
 coordIndex [
@@ -15339,9 +14573,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--134.867 174.957 98.272,
+-136.617 174.957 79.772,
 -211.611 174.957 256.424,
--139.598 174.957 95.841,
+-141.348 174.957 77.341,
 ]
 }
 coordIndex [
@@ -15358,9 +14592,9 @@ geometry IndexedFaceSet {
 solid TRUE
 coord Coordinate {
 point [
--129.668 174.957 99.395,
+-131.418 174.957 80.895,
 -211.611 174.957 256.424,
--134.867 174.957 98.272,
+-136.617 174.957 79.772,
 ]
 }
 coordIndex [
@@ -15379,7 +14613,7 @@ coord Coordinate {
 point [
 -23.384 174.957 110.602,
 -211.611 174.957 256.424,
--129.668 174.957 99.395,
+-131.418 174.957 80.895,
 ]
 }
 coordIndex [
@@ -15443,6 +14677,4201 @@ coordIndex [
 0
 1
 2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+116.915 174.957 75.568,
+20.874 174.957 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+122.196 174.957 74.934,
+116.915 174.957 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+127.133 174.957 72.954,
+122.196 174.957 74.934,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+131.39 174.957 69.765,
+127.133 174.957 72.954,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+134.676 174.957 65.582,
+131.39 174.957 69.765,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+136.767 174.957 60.691,
+134.676 174.957 65.582,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+213.745 174.957 256.424,
+137.521 174.957 55.426,
+136.767 174.957 60.691,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.767 174.957 60.691,
+137.521 174.957 55.426,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+137.521 160.962 55.426,
+136.767 160.962 60.691,
+136.767 174.957 60.691,
+137.521 174.957 55.426,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.148 -0.777,
+0.296 -0.777,
+0.296 -0,
+0.148 -0,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+137.521 160.962 55.426,
+199.559 160.962 256.424,
+136.767 160.962 60.691,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.64 2.053,
+11.087 9.497,
+7.598 2.248,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+137.521 160.962 55.426,
+199.559 160.962 256.424,
+136.887 160.962 50.145,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.767 160.962 60.691,
+199.559 160.962 256.424,
+137.521 160.962 55.426,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.767 160.962 60.691,
+199.559 160.962 256.424,
+134.676 160.962 65.582,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.598 2.248,
+11.087 9.497,
+7.482 2.429,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.676 160.962 65.582,
+199.559 160.962 256.424,
+136.767 160.962 60.691,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.676 160.962 65.582,
+199.559 160.962 256.424,
+131.39 160.962 69.765,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.482 2.429,
+11.087 9.497,
+7.299 2.584,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.39 160.962 69.765,
+199.559 160.962 256.424,
+134.676 160.962 65.582,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.39 160.962 69.765,
+199.559 160.962 256.424,
+127.133 160.962 72.954,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.299 2.584,
+11.087 9.497,
+7.063 2.702,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.133 160.962 72.954,
+199.559 160.962 256.424,
+131.39 160.962 69.765,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.133 160.962 72.954,
+199.559 160.962 256.424,
+122.196 160.962 74.934,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+7.063 2.702,
+11.087 9.497,
+6.789 2.775,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.196 160.962 74.934,
+199.559 160.962 256.424,
+127.133 160.962 72.954,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.196 160.962 74.934,
+199.559 160.962 256.424,
+116.915 160.962 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+6.789 2.775,
+11.087 9.497,
+6.495 2.799,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 160.962 75.568,
+199.559 160.962 256.424,
+122.196 160.962 74.934,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 160.962 75.568,
+199.559 160.962 256.424,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+6.495 2.799,
+11.087 9.497,
+1.16 4.096,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+199.559 160.962 256.424,
+116.915 160.962 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+199.559 160.962 256.424,
+-23.384 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+11.087 9.497,
+-1.299 4.096,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 110.602,
+199.559 160.962 256.424,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-23.384 160.962 110.602,
+199.559 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-1.299 4.096,
+11.087 9.497,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-131.418 160.962 80.895,
+-23.384 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-7.301 2.996,
+-1.299 4.096,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-136.617 160.962 79.772,
+-131.418 160.962 80.895,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-7.59 2.955,
+-7.301 2.996,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-141.348 160.962 77.341,
+-136.617 160.962 79.772,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-7.853 2.864,
+-7.59 2.955,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-145.288 160.962 73.768,
+-141.348 160.962 77.341,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-8.072 2.732,
+-7.853 2.864,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-148.17 160.962 69.298,
+-145.288 160.962 73.768,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-8.232 2.567,
+-8.072 2.732,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-149.797 160.962 64.234,
+-148.17 160.962 69.298,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-8.322 2.379,
+-8.232 2.567,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-199.629 160.962 256.424,
+-150.057 160.962 58.921,
+-149.797 160.962 64.234,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-11.09 9.497,
+-8.336 2.182,
+-8.322 2.379,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-149.797 160.962 64.234,
+-150.057 160.962 58.921,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-149.797 160.962 64.234,
+-150.057 160.962 58.921,
+-150.057 174.957 58.921,
+-149.797 174.957 64.234,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.223 -0.777,
+2.371 -0.777,
+2.371 0,
+2.223 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-149.797 174.957 64.234,
+-150.057 174.957 58.921,
+-150.057 160.962 58.921,
+-149.797 160.962 64.234,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.17 160.962 69.298,
+-149.797 160.962 64.234,
+-149.797 174.957 64.234,
+-148.17 174.957 69.298,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.074 -0.777,
+2.223 -0.777,
+2.223 -0,
+2.074 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.17 174.957 69.298,
+-149.797 174.957 64.234,
+-149.797 160.962 64.234,
+-148.17 160.962 69.298,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-148.17 160.962 69.298,
+-149.797 160.962 64.234,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-145.288 160.962 73.768,
+-148.17 160.962 69.298,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-145.288 160.962 73.768,
+-148.17 160.962 69.298,
+-148.17 174.957 69.298,
+-145.288 174.957 73.768,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.926 -0.777,
+2.074 -0.777,
+2.074 0,
+1.926 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-145.288 174.957 73.768,
+-148.17 174.957 69.298,
+-148.17 160.962 69.298,
+-145.288 160.962 73.768,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-141.348 160.962 77.341,
+-145.288 160.962 73.768,
+-145.288 174.957 73.768,
+-141.348 174.957 77.341,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.778 -0.777,
+1.926 -0.777,
+1.926 -0,
+1.778 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-141.348 174.957 77.341,
+-145.288 174.957 73.768,
+-145.288 160.962 73.768,
+-141.348 160.962 77.341,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-141.348 160.962 77.341,
+-145.288 160.962 73.768,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-136.617 160.962 79.772,
+-141.348 160.962 77.341,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-136.617 160.962 79.772,
+-141.348 160.962 77.341,
+-141.348 174.957 77.341,
+-136.617 174.957 79.772,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.63 -0.777,
+1.778 -0.777,
+1.778 -0,
+1.63 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-136.617 174.957 79.772,
+-141.348 174.957 77.341,
+-141.348 160.962 77.341,
+-136.617 160.962 79.772,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-131.418 160.962 80.895,
+-136.617 160.962 79.772,
+-136.617 174.957 79.772,
+-131.418 174.957 80.895,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.482 -0.777,
+1.63 -0.777,
+1.63 0,
+1.482 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-131.418 174.957 80.895,
+-136.617 174.957 79.772,
+-136.617 160.962 79.772,
+-131.418 160.962 80.895,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-131.418 160.962 80.895,
+-136.617 160.962 79.772,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 110.602,
+-131.418 160.962 80.895,
+-199.629 160.962 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-126.105 160.962 80.635,
+-23.384 160.962 110.602,
+-131.418 160.962 80.895,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-7.006 2.986,
+-1.299 4.096,
+-7.301 2.996,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-121.041 160.962 79.009,
+-23.384 160.962 110.602,
+-126.105 160.962 80.635,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.725 2.926,
+-1.299 4.096,
+-7.006 2.986,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-116.57 160.962 76.127,
+-23.384 160.962 110.602,
+-121.041 160.962 79.009,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.476 2.82,
+-1.299 4.096,
+-6.725 2.926,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-112.998 160.962 72.186,
+-23.384 160.962 110.602,
+-116.57 160.962 76.127,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.278 2.674,
+-1.299 4.096,
+-6.476 2.82,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-110.567 160.962 67.455,
+-23.384 160.962 110.602,
+-112.998 160.962 72.186,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.143 2.498,
+-1.299 4.096,
+-6.278 2.674,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-109.444 160.962 62.256,
+-23.384 160.962 110.602,
+-110.567 160.962 67.455,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.08 2.306,
+-1.299 4.096,
+-6.143 2.498,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-109.704 160.962 56.944,
+-23.384 160.962 110.602,
+-109.444 160.962 62.256,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.095 2.109,
+-1.299 4.096,
+-6.08 2.306,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-111.33 160.962 51.879,
+-23.384 160.962 110.602,
+-109.704 160.962 56.944,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.185 1.921,
+-1.299 4.096,
+-6.095 2.109,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-114.212 160.962 47.409,
+-23.384 160.962 110.602,
+-111.33 160.962 51.879,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.345 1.756,
+-1.299 4.096,
+-6.185 1.921,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-118.153 160.962 43.836,
+-23.384 160.962 110.602,
+-114.212 160.962 47.409,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.564 1.624,
+-1.299 4.096,
+-6.345 1.756,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-118.153 160.962 43.836,
+-23.384 160.962 12.356,
+-23.384 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.564 1.624,
+-1.299 0.458,
+-1.299 4.096,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-122.884 160.962 41.406,
+-23.384 160.962 12.356,
+-118.153 160.962 43.836,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-6.827 1.534,
+-1.299 0.458,
+-6.564 1.624,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 12.356,
+-122.884 160.962 41.406,
+-128.083 160.962 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-1.299 0.458,
+-6.827 1.534,
+-7.116 1.492,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 160.962 40.282,
+-122.884 160.962 41.406,
+-23.384 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 160.962 40.282,
+-122.884 160.962 41.406,
+-122.884 174.957 41.406,
+-128.083 174.957 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+3.26 -0.777,
+3.408 -0.777,
+3.408 0,
+3.26 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 174.957 40.282,
+-122.884 174.957 41.406,
+-122.884 160.962 41.406,
+-128.083 160.962 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 174.957 40.282,
+-23.384 174.957 12.356,
+-122.884 174.957 41.406,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-122.884 174.957 41.406,
+-23.384 174.957 12.356,
+-118.153 174.957 43.836,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-122.884 160.962 41.406,
+-118.153 160.962 43.836,
+-118.153 174.957 43.836,
+-122.884 174.957 41.406,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+3.408 -0.777,
+3.556 -0.777,
+3.556 0,
+3.408 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-122.884 174.957 41.406,
+-118.153 174.957 43.836,
+-118.153 160.962 43.836,
+-122.884 160.962 41.406,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-118.153 160.962 43.836,
+-23.384 160.962 12.356,
+-122.884 160.962 41.406,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 110.602,
+-23.384 160.962 12.356,
+-118.153 160.962 43.836,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 174.957 12.356,
+-23.384 174.957 110.602,
+-23.384 160.962 110.602,
+-23.384 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+4.86 0.686,
+4.86 6.145,
+4.471 6.145,
+4.471 0.686,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 12.356,
+-23.384 160.962 110.602,
+-23.384 174.957 110.602,
+-23.384 174.957 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 174.957 110.602,
+20.874 174.957 110.602,
+20.874 160.962 110.602,
+-23.384 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.65 9.72,
+-0.58 9.72,
+-0.58 8.942,
+0.65 8.942,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-23.384 160.962 110.602,
+20.874 160.962 110.602,
+20.874 174.957 110.602,
+-23.384 174.957 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 110.602,
+20.874 174.957 12.356,
+20.874 160.962 12.356,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+-4.86 6.145,
+-4.86 0.686,
+-4.471 0.686,
+-4.471 6.145,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+20.874 160.962 12.356,
+20.874 174.957 12.356,
+20.874 174.957 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 12.356,
+102.905 160.962 40.624,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 0.458,
+5.717 1.505,
+1.16 4.096,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 160.962 40.624,
+20.874 160.962 12.356,
+107.162 160.962 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+5.717 1.505,
+1.16 0.458,
+5.953 1.386,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+102.905 160.962 40.624,
+20.874 160.962 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+102.905 160.962 40.624,
+99.62 160.962 44.806,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.717 1.505,
+5.534 1.659,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.62 160.962 44.806,
+102.905 160.962 40.624,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.62 160.962 44.806,
+102.905 160.962 40.624,
+102.905 174.957 40.624,
+99.62 174.957 44.806,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.223 -0.777,
+2.371 -0.777,
+2.371 -0,
+2.223 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.62 174.957 44.806,
+102.905 174.957 40.624,
+102.905 160.962 40.624,
+99.62 160.962 44.806,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 174.957 40.624,
+20.874 174.957 110.602,
+99.62 174.957 44.806,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 174.957 40.624,
+20.874 174.957 12.356,
+20.874 174.957 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 174.957 37.434,
+20.874 174.957 12.356,
+102.905 174.957 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+112.099 174.957 35.455,
+20.874 174.957 12.356,
+107.162 174.957 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 12.356,
+112.099 174.957 35.455,
+117.38 174.957 34.82,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+117.38 174.957 34.82,
+112.099 174.957 35.455,
+20.874 174.957 12.356,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+112.099 160.962 35.455,
+117.38 160.962 34.82,
+117.38 174.957 34.82,
+112.099 174.957 35.455,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.667 -0.777,
+2.815 -0.777,
+2.815 0,
+2.667 0,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+112.099 160.962 35.455,
+20.874 160.962 12.356,
+117.38 160.962 34.82,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+6.228 1.313,
+1.16 0.458,
+6.521 1.29,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 160.962 37.434,
+20.874 160.962 12.356,
+112.099 160.962 35.455,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+5.953 1.386,
+1.16 0.458,
+6.228 1.313,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 160.962 37.434,
+20.874 160.962 12.356,
+102.905 160.962 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+112.099 160.962 35.455,
+20.874 160.962 12.356,
+107.162 160.962 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+117.38 160.962 34.82,
+20.874 160.962 12.356,
+112.099 160.962 35.455,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+112.099 174.957 35.455,
+117.38 174.957 34.82,
+117.38 160.962 34.82,
+112.099 160.962 35.455,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 160.962 37.434,
+112.099 160.962 35.455,
+112.099 174.957 35.455,
+107.162 174.957 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.519 -0.777,
+2.667 -0.777,
+2.667 0,
+2.519 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 174.957 37.434,
+112.099 174.957 35.455,
+112.099 160.962 35.455,
+107.162 160.962 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+107.162 174.957 37.434,
+20.874 174.957 12.356,
+112.099 174.957 35.455,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 174.957 40.624,
+20.874 174.957 12.356,
+107.162 174.957 37.434,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 110.602,
+20.874 174.957 12.356,
+102.905 174.957 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.62 174.957 44.806,
+20.874 174.957 110.602,
+102.905 174.957 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.62 174.957 44.806,
+20.874 174.957 110.602,
+97.528 174.957 49.697,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.528 174.957 49.697,
+20.874 174.957 110.602,
+99.62 174.957 44.806,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.528 174.957 49.697,
+20.874 174.957 110.602,
+96.774 174.957 54.962,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+96.774 174.957 54.962,
+20.874 174.957 110.602,
+97.528 174.957 49.697,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+96.774 174.957 54.962,
+20.874 174.957 110.602,
+97.408 174.957 60.243,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.408 174.957 60.243,
+20.874 174.957 110.602,
+96.774 174.957 54.962,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.408 174.957 60.243,
+20.874 174.957 110.602,
+99.387 174.957 65.18,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.387 174.957 65.18,
+20.874 174.957 110.602,
+97.408 174.957 60.243,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.387 174.957 65.18,
+20.874 174.957 110.602,
+102.577 174.957 69.436,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.577 174.957 69.436,
+20.874 174.957 110.602,
+99.387 174.957 65.18,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.577 174.957 69.436,
+20.874 174.957 110.602,
+106.76 174.957 72.722,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+106.76 174.957 72.722,
+20.874 174.957 110.602,
+102.577 174.957 69.436,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+106.76 174.957 72.722,
+20.874 174.957 110.602,
+111.65 174.957 74.814,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+111.65 174.957 74.814,
+20.874 174.957 110.602,
+106.76 174.957 72.722,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_FrontColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+111.65 174.957 74.814,
+20.874 174.957 110.602,
+116.915 174.957 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 174.957 75.568,
+20.874 174.957 110.602,
+111.65 174.957 74.814,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 174.957 110.602,
+116.915 174.957 75.568,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 174.957 75.568,
+122.196 174.957 74.934,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.196 160.962 74.934,
+116.915 160.962 75.568,
+116.915 174.957 75.568,
+122.196 174.957 74.934,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.889 -0.777,
+1.037 -0.777,
+1.037 -0,
+0.889 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.196 174.957 74.934,
+116.915 174.957 75.568,
+116.915 160.962 75.568,
+122.196 160.962 74.934,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 160.962 75.568,
+111.65 160.962 74.814,
+111.65 174.957 74.814,
+116.915 174.957 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.037 -0.777,
+1.185 -0.777,
+1.185 -0,
+1.037 -0,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+111.65 160.962 74.814,
+116.915 160.962 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+6.203 2.771,
+6.495 2.799,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+106.76 160.962 72.722,
+111.65 160.962 74.814,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.931 2.693,
+6.203 2.771,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+102.577 160.962 69.436,
+106.76 160.962 72.722,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.699 2.572,
+5.931 2.693,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+99.387 160.962 65.18,
+102.577 160.962 69.436,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.522 2.414,
+5.699 2.572,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+97.408 160.962 60.243,
+99.387 160.962 65.18,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.412 2.231,
+5.522 2.414,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+96.774 160.962 54.962,
+97.408 160.962 60.243,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.376 2.036,
+5.412 2.231,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+97.528 160.962 49.697,
+96.774 160.962 54.962,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.418 1.841,
+5.376 2.036,
+]
+}
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+20.874 160.962 110.602,
+99.62 160.962 44.806,
+97.528 160.962 49.697,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.16 4.096,
+5.534 1.659,
+5.418 1.841,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.528 160.962 49.697,
+99.62 160.962 44.806,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.528 160.962 49.697,
+99.62 160.962 44.806,
+99.62 174.957 44.806,
+97.528 174.957 49.697,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.074 -0.777,
+2.223 -0.777,
+2.223 -0,
+2.074 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.528 174.957 49.697,
+99.62 174.957 44.806,
+99.62 160.962 44.806,
+97.528 160.962 49.697,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+96.774 160.962 54.962,
+97.528 160.962 49.697,
+97.528 174.957 49.697,
+96.774 174.957 54.962,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.926 -0.777,
+2.074 -0.777,
+2.074 0,
+1.926 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+96.774 160.962 54.962,
+97.528 160.962 49.697,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+96.774 174.957 54.962,
+97.528 174.957 49.697,
+97.528 160.962 49.697,
+96.774 160.962 54.962,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.408 160.962 60.243,
+96.774 160.962 54.962,
+96.774 174.957 54.962,
+97.408 174.957 60.243,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.778 -0.777,
+1.926 -0.777,
+1.926 -0,
+1.778 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.408 160.962 60.243,
+96.774 160.962 54.962,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+97.408 174.957 60.243,
+96.774 174.957 54.962,
+96.774 160.962 54.962,
+97.408 160.962 60.243,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.387 160.962 65.18,
+97.408 160.962 60.243,
+97.408 174.957 60.243,
+99.387 174.957 65.18,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.63 -0.777,
+1.778 -0.777,
+1.778 -0,
+1.63 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.387 160.962 65.18,
+97.408 160.962 60.243,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+99.387 174.957 65.18,
+97.408 174.957 60.243,
+97.408 160.962 60.243,
+99.387 160.962 65.18,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.577 160.962 69.436,
+99.387 160.962 65.18,
+99.387 174.957 65.18,
+102.577 174.957 69.436,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.482 -0.777,
+1.63 -0.777,
+1.63 0,
+1.482 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.577 160.962 69.436,
+99.387 160.962 65.18,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.577 174.957 69.436,
+99.387 174.957 65.18,
+99.387 160.962 65.18,
+102.577 160.962 69.436,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+106.76 160.962 72.722,
+102.577 160.962 69.436,
+102.577 174.957 69.436,
+106.76 174.957 72.722,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.334 -0.777,
+1.482 -0.777,
+1.482 0,
+1.334 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+106.76 160.962 72.722,
+102.577 160.962 69.436,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+106.76 174.957 72.722,
+102.577 174.957 69.436,
+102.577 160.962 69.436,
+106.76 160.962 72.722,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+111.65 160.962 74.814,
+106.76 160.962 72.722,
+106.76 174.957 72.722,
+111.65 174.957 74.814,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+1.185 -0.777,
+1.334 -0.777,
+1.334 0,
+1.185 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+111.65 160.962 74.814,
+106.76 160.962 72.722,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+111.65 174.957 74.814,
+106.76 174.957 72.722,
+106.76 160.962 72.722,
+111.65 160.962 74.814,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 174.957 75.568,
+111.65 174.957 74.814,
+111.65 160.962 74.814,
+116.915 160.962 75.568,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+116.915 160.962 75.568,
+111.65 160.962 74.814,
+20.874 160.962 110.602,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.133 160.962 72.954,
+122.196 160.962 74.934,
+122.196 174.957 74.934,
+127.133 174.957 72.954,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.741 -0.777,
+0.889 -0.777,
+0.889 -0,
+0.741 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.133 174.957 72.954,
+122.196 174.957 74.934,
+122.196 160.962 74.934,
+127.133 160.962 72.954,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.196 174.957 74.934,
+127.133 174.957 72.954,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.133 174.957 72.954,
+131.39 174.957 69.765,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.39 160.962 69.765,
+127.133 160.962 72.954,
+127.133 174.957 72.954,
+131.39 174.957 69.765,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.593 -0.777,
+0.741 -0.777,
+0.741 0,
+0.593 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.39 174.957 69.765,
+127.133 174.957 72.954,
+127.133 160.962 72.954,
+131.39 160.962 69.765,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.676 160.962 65.582,
+131.39 160.962 69.765,
+131.39 174.957 69.765,
+134.676 174.957 65.582,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.445 -0.777,
+0.593 -0.777,
+0.593 -0,
+0.445 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.676 174.957 65.582,
+131.39 174.957 69.765,
+131.39 160.962 69.765,
+134.676 160.962 65.582,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.39 174.957 69.765,
+134.676 174.957 65.582,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.676 174.957 65.582,
+136.767 174.957 60.691,
+213.745 174.957 256.424,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.767 160.962 60.691,
+134.676 160.962 65.582,
+134.676 174.957 65.582,
+136.767 174.957 60.691,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+0.296 -0.777,
+0.445 -0.777,
+0.445 0,
+0.296 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.767 174.957 60.691,
+134.676 174.957 65.582,
+134.676 160.962 65.582,
+136.767 160.962 60.691,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+137.521 174.957 55.426,
+136.767 174.957 60.691,
+136.767 160.962 60.691,
+137.521 160.962 55.426,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+136.887 174.957 50.145,
+137.521 174.957 55.426,
+137.521 160.962 55.426,
+136.887 160.962 50.145,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.908 160.962 45.208,
+136.887 160.962 50.145,
+136.887 174.957 50.145,
+134.908 174.957 45.208,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+3.408 -0.777,
+3.556 -0.777,
+3.556 0,
+3.408 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.908 174.957 45.208,
+136.887 174.957 50.145,
+136.887 160.962 50.145,
+134.908 160.962 45.208,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+134.908 174.957 45.208,
+213.745 174.957 -6.188,
+136.887 174.957 50.145,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.718 174.957 40.952,
+213.745 174.957 -6.188,
+134.908 174.957 45.208,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.535 174.957 37.666,
+213.745 174.957 -6.188,
+131.718 174.957 40.952,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 174.957 35.575,
+213.745 174.957 -6.188,
+127.535 174.957 37.666,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 160.962 35.575,
+127.535 160.962 37.666,
+127.535 174.957 37.666,
+122.645 174.957 35.575,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.963 -0.777,
+3.112 -0.777,
+3.112 0,
+2.963 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+122.645 174.957 35.575,
+127.535 174.957 37.666,
+127.535 160.962 37.666,
+122.645 160.962 35.575,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.535 160.962 37.666,
+131.718 160.962 40.952,
+131.718 174.957 40.952,
+127.535 174.957 37.666,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+3.112 -0.777,
+3.26 -0.777,
+3.26 0,
+3.112 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+127.535 174.957 37.666,
+131.718 174.957 40.952,
+131.718 160.962 40.952,
+127.535 160.962 37.666,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.718 160.962 40.952,
+134.908 160.962 45.208,
+134.908 174.957 45.208,
+131.718 174.957 40.952,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+3.26 -0.777,
+3.408 -0.777,
+3.408 -0,
+3.26 -0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+131.718 174.957 40.952,
+134.908 174.957 45.208,
+134.908 160.962 45.208,
+131.718 160.962 40.952,
+]
+}
+coordIndex [
+0
+1
+2
+3
 -1
 ]
 }
@@ -15562,3062 +18991,6 @@ coordIndex [
 }
 }
 Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--23.384 160.962 110.602,
-199.559 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--1.299 4.096,
-11.087 9.497,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--129.668 160.962 99.395,
--23.384 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--7.204 3.681,
--1.299 4.096,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--134.867 160.962 98.272,
--129.668 160.962 99.395,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--7.493 3.64,
--7.204 3.681,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--139.598 160.962 95.841,
--134.867 160.962 98.272,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--7.755 3.55,
--7.493 3.64,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--143.538 160.962 92.268,
--139.598 160.962 95.841,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--7.974 3.417,
--7.755 3.55,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--146.42 160.962 87.798,
--143.538 160.962 92.268,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--8.134 3.252,
--7.974 3.417,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--148.047 160.962 82.734,
--146.42 160.962 87.798,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--8.225 3.064,
--8.134 3.252,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--199.629 160.962 256.424,
--148.307 160.962 77.421,
--148.047 160.962 82.734,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--11.09 9.497,
--8.239 2.867,
--8.225 3.064,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--148.047 160.962 82.734,
--148.307 160.962 77.421,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--148.047 160.962 82.734,
--148.307 160.962 77.421,
--148.307 174.957 77.421,
--148.047 174.957 82.734,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.223 -0.777,
-2.371 -0.777,
-2.371 -0,
-2.223 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--148.047 174.957 82.734,
--148.307 174.957 77.421,
--148.307 160.962 77.421,
--148.047 160.962 82.734,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--146.42 160.962 87.798,
--148.047 160.962 82.734,
--148.047 174.957 82.734,
--146.42 174.957 87.798,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.074 -0.777,
-2.223 -0.777,
-2.223 -0,
-2.074 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--146.42 174.957 87.798,
--148.047 174.957 82.734,
--148.047 160.962 82.734,
--146.42 160.962 87.798,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--146.42 160.962 87.798,
--148.047 160.962 82.734,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--143.538 160.962 92.268,
--146.42 160.962 87.798,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--143.538 160.962 92.268,
--146.42 160.962 87.798,
--146.42 174.957 87.798,
--143.538 174.957 92.268,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.926 -0.777,
-2.074 -0.777,
-2.074 0,
-1.926 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--143.538 174.957 92.268,
--146.42 174.957 87.798,
--146.42 160.962 87.798,
--143.538 160.962 92.268,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--139.598 160.962 95.841,
--143.538 160.962 92.268,
--143.538 174.957 92.268,
--139.598 174.957 95.841,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.778 -0.777,
-1.926 -0.777,
-1.926 -0,
-1.778 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--139.598 174.957 95.841,
--143.538 174.957 92.268,
--143.538 160.962 92.268,
--139.598 160.962 95.841,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--139.598 160.962 95.841,
--143.538 160.962 92.268,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--134.867 160.962 98.272,
--139.598 160.962 95.841,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--134.867 160.962 98.272,
--139.598 160.962 95.841,
--139.598 174.957 95.841,
--134.867 174.957 98.272,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.63 -0.777,
-1.778 -0.777,
-1.778 -0,
-1.63 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--134.867 174.957 98.272,
--139.598 174.957 95.841,
--139.598 160.962 95.841,
--134.867 160.962 98.272,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--129.668 160.962 99.395,
--134.867 160.962 98.272,
--134.867 174.957 98.272,
--129.668 174.957 99.395,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.482 -0.777,
-1.63 -0.777,
-1.63 -0,
-1.482 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--129.668 174.957 99.395,
--134.867 174.957 98.272,
--134.867 160.962 98.272,
--129.668 160.962 99.395,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--129.668 160.962 99.395,
--134.867 160.962 98.272,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 110.602,
--129.668 160.962 99.395,
--199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--124.355 160.962 99.135,
--23.384 160.962 110.602,
--129.668 160.962 99.395,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.909 3.672,
--1.299 4.096,
--7.204 3.681,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--119.291 160.962 97.509,
--23.384 160.962 110.602,
--124.355 160.962 99.135,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.627 3.611,
--1.299 4.096,
--6.909 3.672,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--114.82 160.962 94.627,
--23.384 160.962 110.602,
--119.291 160.962 97.509,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.379 3.505,
--1.299 4.096,
--6.627 3.611,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--111.248 160.962 90.686,
--23.384 160.962 110.602,
--114.82 160.962 94.627,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.18 3.359,
--1.299 4.096,
--6.379 3.505,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--108.817 160.962 85.955,
--23.384 160.962 110.602,
--111.248 160.962 90.686,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.045 3.184,
--1.299 4.096,
--6.18 3.359,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--107.694 160.962 80.756,
--23.384 160.962 110.602,
--108.817 160.962 85.955,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--5.983 2.991,
--1.299 4.096,
--6.045 3.184,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--107.954 160.962 75.444,
--23.384 160.962 110.602,
--107.694 160.962 80.756,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--5.997 2.794,
--1.299 4.096,
--5.983 2.991,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--109.58 160.962 70.379,
--23.384 160.962 110.602,
--107.954 160.962 75.444,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.088 2.607,
--1.299 4.096,
--5.997 2.794,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--112.462 160.962 65.909,
--23.384 160.962 110.602,
--109.58 160.962 70.379,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.248 2.441,
--1.299 4.096,
--6.088 2.607,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--116.403 160.962 62.336,
--23.384 160.962 110.602,
--112.462 160.962 65.909,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.467 2.309,
--1.299 4.096,
--6.248 2.441,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--116.403 160.962 62.336,
--23.384 160.962 12.356,
--23.384 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.467 2.309,
--1.299 0.458,
--1.299 4.096,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--121.134 160.962 59.906,
--23.384 160.962 12.356,
--116.403 160.962 62.336,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--6.73 2.219,
--1.299 0.458,
--6.467 2.309,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 12.356,
--121.134 160.962 59.906,
--126.333 160.962 58.782,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--1.299 0.458,
--6.73 2.219,
--7.018 2.177,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--126.333 160.962 58.782,
--121.134 160.962 59.906,
--23.384 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--116.403 160.962 62.336,
--23.384 160.962 12.356,
--121.134 160.962 59.906,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 110.602,
--23.384 160.962 12.356,
--116.403 160.962 62.336,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 174.957 12.356,
--23.384 174.957 110.602,
--23.384 160.962 110.602,
--23.384 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-4.86 0.686,
-4.86 6.145,
-4.471 6.145,
-4.471 0.686,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 12.356,
--23.384 160.962 110.602,
--23.384 174.957 110.602,
--23.384 174.957 12.356,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 174.957 110.602,
-20.874 174.957 110.602,
-20.874 160.962 110.602,
--23.384 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-0.65 9.72,
--0.58 9.72,
--0.58 8.942,
-0.65 8.942,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 110.602,
-20.874 160.962 110.602,
-20.874 174.957 110.602,
--23.384 174.957 110.602,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-199.559 160.962 256.424,
--23.384 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-11.087 9.497,
--1.299 4.096,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 160.962 101.305,
-199.559 160.962 256.424,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-6.523 3.752,
-11.087 9.497,
-1.16 4.096,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-122.693 160.962 100.671,
-199.559 160.962 256.424,
-117.412 160.962 101.305,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-6.816 3.729,
-11.087 9.497,
-6.523 3.752,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-127.63 160.962 98.692,
-199.559 160.962 256.424,
-122.693 160.962 100.671,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.091 3.655,
-11.087 9.497,
-6.816 3.729,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-131.887 160.962 95.502,
-199.559 160.962 256.424,
-127.63 160.962 98.692,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.327 3.537,
-11.087 9.497,
-7.091 3.655,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.173 160.962 91.32,
-199.559 160.962 256.424,
-131.887 160.962 95.502,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.51 3.382,
-11.087 9.497,
-7.327 3.537,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.264 160.962 86.429,
-199.559 160.962 256.424,
-135.173 160.962 91.32,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.626 3.201,
-11.087 9.497,
-7.51 3.382,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-138.018 160.962 81.164,
-199.559 160.962 256.424,
-137.264 160.962 86.429,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.668 3.006,
-11.087 9.497,
-7.626 3.201,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.384 160.962 75.883,
-199.559 160.962 256.424,
-138.018 160.962 81.164,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-7.632 2.81,
-11.087 9.497,
-7.668 3.006,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-199.559 160.962 256.424,
-199.559 160.962 9.432,
-137.384 160.962 75.883,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.384 160.962 75.883,
-199.559 160.962 9.432,
-135.405 160.962 70.946,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.405 160.962 70.946,
-199.559 160.962 9.432,
-132.215 160.962 66.689,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-132.215 160.962 66.689,
-199.559 160.962 9.432,
-128.032 160.962 63.404,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-128.032 160.962 63.404,
-199.559 160.962 9.432,
-20.874 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 12.356,
-128.032 160.962 63.404,
-123.142 160.962 61.312,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 0.458,
-7.113 2.348,
-6.841 2.271,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-123.142 160.962 61.312,
-128.032 160.962 63.404,
-20.874 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-123.142 160.962 61.312,
-128.032 160.962 63.404,
-128.032 174.957 63.404,
-123.142 174.957 61.312,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.963 -0.777,
-3.112 -0.777,
-3.112 0,
-2.963 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-123.142 174.957 61.312,
-128.032 174.957 63.404,
-128.032 160.962 63.404,
-123.142 160.962 61.312,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-123.142 174.957 61.312,
-20.874 174.957 12.356,
-128.032 174.957 63.404,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 174.957 60.558,
-20.874 174.957 12.356,
-123.142 174.957 61.312,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-128.032 160.962 63.404,
-132.215 160.962 66.689,
-132.215 174.957 66.689,
-128.032 174.957 63.404,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-3.112 -0.777,
-3.26 -0.777,
-3.26 -0,
-3.112 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-128.032 174.957 63.404,
-132.215 174.957 66.689,
-132.215 160.962 66.689,
-128.032 160.962 63.404,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-128.032 174.957 63.404,
-213.745 174.957 -6.188,
-132.215 174.957 66.689,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-132.215 174.957 66.689,
-213.745 174.957 -6.188,
-135.405 174.957 70.946,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-132.215 160.962 66.689,
-135.405 160.962 70.946,
-135.405 174.957 70.946,
-132.215 174.957 66.689,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-3.26 -0.777,
-3.408 -0.777,
-3.408 -0,
-3.26 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-132.215 174.957 66.689,
-135.405 174.957 70.946,
-135.405 160.962 70.946,
-132.215 160.962 66.689,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 12.356,
-123.142 160.962 61.312,
-117.877 160.962 60.558,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 0.458,
-6.841 2.271,
-6.549 2.243,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 160.962 60.558,
-123.142 160.962 61.312,
-20.874 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.596 160.962 61.192,
-20.874 160.962 12.356,
-117.877 160.962 60.558,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-6.255 2.266,
-1.16 0.458,
-6.549 2.243,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 160.962 63.171,
-20.874 160.962 12.356,
-112.596 160.962 61.192,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-5.981 2.34,
-1.16 0.458,
-6.255 2.266,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 12.356,
-107.659 160.962 63.171,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 0.458,
-5.981 2.34,
-1.16 4.096,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-107.659 160.962 63.171,
-20.874 160.962 12.356,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-107.659 160.962 63.171,
-103.402 160.962 66.361,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.981 2.34,
-5.745 2.458,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.402 160.962 66.361,
-107.659 160.962 63.171,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.402 160.962 66.361,
-107.659 160.962 63.171,
-107.659 174.957 63.171,
-103.402 174.957 66.361,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.371 -0.777,
-2.519 -0.777,
-2.519 0,
-2.371 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.402 174.957 66.361,
-107.659 174.957 63.171,
-107.659 160.962 63.171,
-103.402 160.962 66.361,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.402 174.957 66.361,
-20.874 174.957 110.602,
-107.659 174.957 63.171,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-100.116 174.957 70.544,
-20.874 174.957 110.602,
-103.402 174.957 66.361,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-98.025 174.957 75.434,
-20.874 174.957 110.602,
-100.116 174.957 70.544,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.271 174.957 80.7,
-20.874 174.957 110.602,
-98.025 174.957 75.434,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.905 174.957 85.981,
-20.874 174.957 110.602,
-97.271 174.957 80.7,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-99.884 174.957 90.917,
-20.874 174.957 110.602,
-97.905 174.957 85.981,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.074 174.957 95.174,
-20.874 174.957 110.602,
-99.884 174.957 90.917,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.257 174.957 98.46,
-20.874 174.957 110.602,
-103.074 174.957 95.174,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.147 174.957 100.551,
-20.874 174.957 110.602,
-107.257 174.957 98.46,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 174.957 101.305,
-20.874 174.957 110.602,
-112.147 174.957 100.551,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 160.962 101.305,
-112.147 160.962 100.551,
-112.147 174.957 100.551,
-117.412 174.957 101.305,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.037 -0.777,
-1.185 -0.777,
-1.185 -0,
-1.037 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 174.957 101.305,
-112.147 174.957 100.551,
-112.147 160.962 100.551,
-117.412 160.962 101.305,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.147 160.962 100.551,
-107.257 160.962 98.46,
-107.257 174.957 98.46,
-112.147 174.957 100.551,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.185 -0.777,
-1.334 -0.777,
-1.334 0,
-1.185 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.147 174.957 100.551,
-107.257 174.957 98.46,
-107.257 160.962 98.46,
-112.147 160.962 100.551,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.257 160.962 98.46,
-103.074 160.962 95.174,
-103.074 174.957 95.174,
-107.257 174.957 98.46,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.334 -0.777,
-1.482 -0.777,
-1.482 0,
-1.334 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.257 174.957 98.46,
-103.074 174.957 95.174,
-103.074 160.962 95.174,
-107.257 160.962 98.46,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.074 160.962 95.174,
-99.884 160.962 90.917,
-99.884 174.957 90.917,
-103.074 174.957 95.174,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.482 -0.777,
-1.63 -0.777,
-1.63 0,
-1.482 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.074 174.957 95.174,
-99.884 174.957 90.917,
-99.884 160.962 90.917,
-103.074 160.962 95.174,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-99.884 160.962 90.917,
-97.905 160.962 85.981,
-97.905 174.957 85.981,
-99.884 174.957 90.917,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.63 -0.777,
-1.778 -0.777,
-1.778 0,
-1.63 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-99.884 174.957 90.917,
-97.905 174.957 85.981,
-97.905 160.962 85.981,
-99.884 160.962 90.917,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.905 160.962 85.981,
-97.271 160.962 80.7,
-97.271 174.957 80.7,
-97.905 174.957 85.981,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.778 -0.777,
-1.926 -0.777,
-1.926 -0,
-1.778 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.905 174.957 85.981,
-97.271 174.957 80.7,
-97.271 160.962 80.7,
-97.905 160.962 85.981,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.271 160.962 80.7,
-98.025 160.962 75.434,
-98.025 174.957 75.434,
-97.271 174.957 80.7,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-1.926 -0.777,
-2.074 -0.777,
-2.074 0,
-1.926 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.271 174.957 80.7,
-98.025 174.957 75.434,
-98.025 160.962 75.434,
-97.271 160.962 80.7,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-98.025 160.962 75.434,
-100.116 160.962 70.544,
-100.116 174.957 70.544,
-98.025 174.957 75.434,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.074 -0.777,
-2.223 -0.777,
-2.223 -0,
-2.074 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-98.025 174.957 75.434,
-100.116 174.957 70.544,
-100.116 160.962 70.544,
-98.025 160.962 75.434,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-100.116 160.962 70.544,
-103.402 160.962 66.361,
-103.402 174.957 66.361,
-100.116 174.957 70.544,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.223 -0.777,
-2.371 -0.777,
-2.371 -0,
-2.223 -0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-100.116 174.957 70.544,
-103.402 174.957 66.361,
-103.402 160.962 66.361,
-100.116 160.962 70.544,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-103.402 160.962 66.361,
-100.116 160.962 70.544,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.745 2.458,
-5.562 2.613,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-100.116 160.962 70.544,
-103.402 160.962 66.361,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-100.116 160.962 70.544,
-98.025 160.962 75.434,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.562 2.613,
-5.446 2.794,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-98.025 160.962 75.434,
-100.116 160.962 70.544,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-98.025 160.962 75.434,
-97.271 160.962 80.7,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.446 2.794,
-5.404 2.989,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.271 160.962 80.7,
-98.025 160.962 75.434,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-97.271 160.962 80.7,
-97.905 160.962 85.981,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.404 2.989,
-5.439 3.184,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-97.905 160.962 85.981,
-97.271 160.962 80.7,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-97.905 160.962 85.981,
-99.884 160.962 90.917,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.439 3.184,
-5.549 3.367,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-99.884 160.962 90.917,
-97.905 160.962 85.981,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-99.884 160.962 90.917,
-103.074 160.962 95.174,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.549 3.367,
-5.726 3.525,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-103.074 160.962 95.174,
-99.884 160.962 90.917,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-103.074 160.962 95.174,
-107.257 160.962 98.46,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.726 3.525,
-5.959 3.647,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.257 160.962 98.46,
-103.074 160.962 95.174,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-107.257 160.962 98.46,
-112.147 160.962 100.551,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-5.959 3.647,
-6.23 3.724,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.147 160.962 100.551,
-107.257 160.962 98.46,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-112.147 160.962 100.551,
-117.412 160.962 101.305,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
-1.16 4.096,
-6.23 3.724,
-6.523 3.752,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 160.962 101.305,
-112.147 160.962 100.551,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-199.559 160.962 256.424,
-117.412 160.962 101.305,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--23.384 160.962 110.602,
-199.559 160.962 256.424,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
 appearance USE COL_BackColor
 geometry IndexedFaceSet {
 solid TRUE
@@ -18626,683 +18999,6 @@ point [
 199.559 160.962 256.424,
 -23.384 160.962 110.602,
 -199.629 160.962 256.424,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.412 160.962 101.305,
-199.559 160.962 256.424,
-122.693 160.962 100.671,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-122.693 160.962 100.671,
-199.559 160.962 256.424,
-127.63 160.962 98.692,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-127.63 160.962 98.692,
-199.559 160.962 256.424,
-131.887 160.962 95.502,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-131.887 160.962 95.502,
-199.559 160.962 256.424,
-135.173 160.962 91.32,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-135.173 160.962 91.32,
-199.559 160.962 256.424,
-137.264 160.962 86.429,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-137.264 160.962 86.429,
-199.559 160.962 256.424,
-138.018 160.962 81.164,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-138.018 160.962 81.164,
-199.559 160.962 256.424,
-137.384 160.962 75.883,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 110.602,
-20.874 174.957 12.356,
-107.659 174.957 63.171,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 174.957 110.602,
-20.874 174.957 12.356,
-20.874 160.962 12.356,
-20.874 160.962 110.602,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
--4.86 6.145,
--4.86 0.686,
--4.471 0.686,
--4.471 6.145,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-20.874 160.962 110.602,
-20.874 160.962 12.356,
-20.874 174.957 12.356,
-20.874 174.957 110.602,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 174.957 63.171,
-20.874 174.957 12.356,
-112.596 174.957 61.192,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 160.962 63.171,
-112.596 160.962 61.192,
-112.596 174.957 61.192,
-107.659 174.957 63.171,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-2.519 -0.777,
-2.667 -0.777,
-2.667 0,
-2.519 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-107.659 174.957 63.171,
-112.596 174.957 61.192,
-112.596 160.962 61.192,
-107.659 160.962 63.171,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-112.596 160.962 61.192,
-20.874 160.962 12.356,
-107.659 160.962 63.171,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
-117.877 160.962 60.558,
-20.874 160.962 12.356,
-112.596 160.962 61.192,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--112.462 160.962 65.909,
--23.384 160.962 110.602,
--116.403 160.962 62.336,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--109.58 160.962 70.379,
--23.384 160.962 110.602,
--112.462 160.962 65.909,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--107.954 160.962 75.444,
--23.384 160.962 110.602,
--109.58 160.962 70.379,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--107.694 160.962 80.756,
--23.384 160.962 110.602,
--107.954 160.962 75.444,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--108.817 160.962 85.955,
--23.384 160.962 110.602,
--107.694 160.962 80.756,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--111.248 160.962 90.686,
--23.384 160.962 110.602,
--108.817 160.962 85.955,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--114.82 160.962 94.627,
--23.384 160.962 110.602,
--111.248 160.962 90.686,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--119.291 160.962 97.509,
--23.384 160.962 110.602,
--114.82 160.962 94.627,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--124.355 160.962 99.135,
--23.384 160.962 110.602,
--119.291 160.962 97.509,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--129.668 160.962 99.395,
--23.384 160.962 110.602,
--124.355 160.962 99.135,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Brick_Tumbled
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--121.134 160.962 59.906,
--116.403 160.962 62.336,
--116.403 174.957 62.336,
--121.134 174.957 59.906,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-texCoord TextureCoordinate {
-point [
-3.408 -0.777,
-3.556 -0.777,
-3.556 0,
-3.408 0,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--121.134 174.957 59.906,
--116.403 174.957 62.336,
--116.403 160.962 62.336,
--121.134 160.962 59.906,
-]
-}
-coordIndex [
-0
-1
-2
-3
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--121.134 174.957 59.906,
--23.384 174.957 12.356,
--116.403 174.957 62.336,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--126.333 174.957 58.782,
--23.384 174.957 12.356,
--121.134 174.957 59.906,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--131.645 160.962 59.042,
--23.384 160.962 12.356,
--126.333 160.962 58.782,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--7.314 2.187,
--1.299 0.458,
--7.018 2.177,
-]
-}
-}
-}
-Shape {
-appearance USE TEX_Cladding_Stucco_White
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--136.709 160.962 60.669,
--23.384 160.962 12.356,
--131.645 160.962 59.042,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-texCoord TextureCoordinate {
-point [
--7.595 2.247,
--1.299 0.458,
--7.314 2.187,
-]
-}
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--131.645 160.962 59.042,
--23.384 160.962 12.356,
--136.709 160.962 60.669,
-]
-}
-coordIndex [
-0
-1
-2
--1
-]
-}
-}
-Shape {
-appearance USE COL_BackColor
-geometry IndexedFaceSet {
-solid TRUE
-coord Coordinate {
-point [
--126.333 160.962 58.782,
--23.384 160.962 12.356,
--131.645 160.962 59.042,
 ]
 }
 coordIndex [
@@ -19994,6 +19690,310 @@ point [
 -211.611 40.704 78.936,
 -211.611 174.957 256.424,
 -211.611 39.429 87.274,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Brick_Tumbled
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 160.962 40.624,
+107.162 160.962 37.434,
+107.162 174.957 37.434,
+102.905 174.957 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+texCoord TextureCoordinate {
+point [
+2.371 -0.777,
+2.519 -0.777,
+2.519 0,
+2.371 0,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+102.905 174.957 40.624,
+107.162 174.957 37.434,
+107.162 160.962 37.434,
+102.905 160.962 40.624,
+]
+}
+coordIndex [
+0
+1
+2
+3
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+117.38 174.957 34.82,
+20.874 174.957 12.356,
+122.645 174.957 35.575,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-114.212 160.962 47.409,
+-23.384 160.962 110.602,
+-118.153 160.962 43.836,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-111.33 160.962 51.879,
+-23.384 160.962 110.602,
+-114.212 160.962 47.409,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-109.704 160.962 56.944,
+-23.384 160.962 110.602,
+-111.33 160.962 51.879,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-109.444 160.962 62.256,
+-23.384 160.962 110.602,
+-109.704 160.962 56.944,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-110.567 160.962 67.455,
+-23.384 160.962 110.602,
+-109.444 160.962 62.256,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-112.998 160.962 72.186,
+-23.384 160.962 110.602,
+-110.567 160.962 67.455,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-116.57 160.962 76.127,
+-23.384 160.962 110.602,
+-112.998 160.962 72.186,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-121.041 160.962 79.009,
+-23.384 160.962 110.602,
+-116.57 160.962 76.127,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-126.105 160.962 80.635,
+-23.384 160.962 110.602,
+-121.041 160.962 79.009,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-131.418 160.962 80.895,
+-23.384 160.962 110.602,
+-126.105 160.962 80.635,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+}
+}
+Shape {
+appearance USE TEX_Cladding_Stucco_White
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-133.395 160.962 40.542,
+-23.384 160.962 12.356,
+-128.083 160.962 40.282,
+]
+}
+coordIndex [
+0
+1
+2
+-1
+]
+texCoord TextureCoordinate {
+point [
+-7.411 1.502,
+-1.299 0.458,
+-7.116 1.492,
+]
+}
+}
+}
+Shape {
+appearance USE COL_BackColor
+geometry IndexedFaceSet {
+solid TRUE
+coord Coordinate {
+point [
+-128.083 160.962 40.282,
+-23.384 160.962 12.356,
+-133.395 160.962 40.542,
 ]
 }
 coordIndex [
@@ -22804,8 +22804,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 135.405 160.962 70.946,
-132.215 160.962 66.689,
+point [ 127.133 174.957 72.954,
+131.39 174.957 69.765,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22815,8 +22815,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 137.384 160.962 75.883,
-135.405 160.962 70.946,
+point [ 122.196 174.957 74.934,
+127.133 174.957 72.954,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22826,8 +22826,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 138.018 160.962 81.164,
-137.384 160.962 75.883,
+point [ 116.915 174.957 75.568,
+122.196 174.957 74.934,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22837,8 +22837,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 137.264 160.962 86.429,
-138.018 160.962 81.164,
+point [ 111.65 174.957 74.814,
+116.915 174.957 75.568,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22848,8 +22848,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 135.173 160.962 91.32,
-137.264 160.962 86.429,
+point [ 106.76 174.957 72.722,
+111.65 174.957 74.814,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22859,8 +22859,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 131.887 160.962 95.502,
-135.173 160.962 91.32,
+point [ 102.577 174.957 69.436,
+106.76 174.957 72.722,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22870,8 +22870,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 127.63 160.962 98.692,
-131.887 160.962 95.502,
+point [ 99.387 174.957 65.18,
+102.577 174.957 69.436,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22881,8 +22881,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 122.693 160.962 100.671,
-127.63 160.962 98.692,
+point [ 97.408 174.957 60.243,
+99.387 174.957 65.18,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22892,8 +22892,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 117.412 160.962 101.305,
-122.693 160.962 100.671,
+point [ 96.774 174.957 54.962,
+97.408 174.957 60.243,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22903,8 +22903,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 112.147 160.962 100.551,
-117.412 160.962 101.305,
+point [ 97.528 174.957 49.697,
+96.774 174.957 54.962,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22914,8 +22914,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 107.257 160.962 98.46,
-112.147 160.962 100.551,
+point [ 99.62 174.957 44.806,
+97.528 174.957 49.697,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22925,8 +22925,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 103.074 160.962 95.174,
-107.257 160.962 98.46,
+point [ 102.905 174.957 40.624,
+99.62 174.957 44.806,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22936,8 +22936,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 99.884 160.962 90.917,
-103.074 160.962 95.174,
+point [ 107.162 174.957 37.434,
+102.905 174.957 40.624,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22947,8 +22947,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 97.905 160.962 85.981,
-99.884 160.962 90.917,
+point [ 112.099 174.957 35.455,
+107.162 174.957 37.434,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22958,8 +22958,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 97.271 160.962 80.7,
-97.905 160.962 85.981,
+point [ 117.38 174.957 34.82,
+112.099 174.957 35.455,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22969,8 +22969,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 98.025 160.962 75.434,
-97.271 160.962 80.7,
+point [ 122.645 174.957 35.575,
+117.38 174.957 34.82,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22980,8 +22980,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 100.116 160.962 70.544,
-98.025 160.962 75.434,
+point [ 127.535 174.957 37.666,
+122.645 174.957 35.575,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -22991,8 +22991,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 103.402 160.962 66.361,
-100.116 160.962 70.544,
+point [ 131.718 174.957 40.952,
+127.535 174.957 37.666,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23002,8 +23002,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 107.659 160.962 63.171,
-103.402 160.962 66.361,
+point [ 134.908 174.957 45.208,
+131.718 174.957 40.952,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23013,8 +23013,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 112.596 160.962 61.192,
-107.659 160.962 63.171,
+point [ 136.887 174.957 50.145,
+134.908 174.957 45.208,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23024,8 +23024,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 117.877 160.962 60.558,
-112.596 160.962 61.192,
+point [ 137.521 174.957 55.426,
+136.887 174.957 50.145,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23035,8 +23035,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 123.142 160.962 61.312,
-117.877 160.962 60.558,
+point [ 136.767 174.957 60.691,
+137.521 174.957 55.426,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23046,8 +23046,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 128.032 160.962 63.404,
-123.142 160.962 61.312,
+point [ 134.676 174.957 65.582,
+136.767 174.957 60.691,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23057,8 +23057,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 132.215 160.962 66.689,
-128.032 160.962 63.404,
+point [ 131.39 174.957 69.765,
+134.676 174.957 65.582,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23068,8 +23068,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 137.384 174.957 75.883,
-135.405 174.957 70.946,
+point [ -114.212 160.962 47.409,
+-118.153 160.962 43.836,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23079,8 +23079,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 138.018 174.957 81.164,
-137.384 174.957 75.883,
+point [ -111.33 160.962 51.879,
+-114.212 160.962 47.409,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23090,8 +23090,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 137.264 174.957 86.429,
-138.018 174.957 81.164,
+point [ -109.704 160.962 56.944,
+-111.33 160.962 51.879,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23101,8 +23101,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 135.173 174.957 91.32,
-137.264 174.957 86.429,
+point [ -109.444 160.962 62.256,
+-109.704 160.962 56.944,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23112,8 +23112,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 131.887 174.957 95.502,
-135.173 174.957 91.32,
+point [ -110.567 160.962 67.455,
+-109.444 160.962 62.256,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23123,8 +23123,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 127.63 174.957 98.692,
-131.887 174.957 95.502,
+point [ -112.998 160.962 72.186,
+-110.567 160.962 67.455,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23134,8 +23134,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 122.693 174.957 100.671,
-127.63 174.957 98.692,
+point [ -116.57 160.962 76.127,
+-112.998 160.962 72.186,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23145,8 +23145,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 117.412 174.957 101.305,
-122.693 174.957 100.671,
+point [ -121.041 160.962 79.009,
+-116.57 160.962 76.127,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23156,8 +23156,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 112.147 174.957 100.551,
-117.412 174.957 101.305,
+point [ -126.105 160.962 80.635,
+-121.041 160.962 79.009,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23167,8 +23167,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 107.257 174.957 98.46,
-112.147 174.957 100.551,
+point [ -131.418 160.962 80.895,
+-126.105 160.962 80.635,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23178,8 +23178,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 103.074 174.957 95.174,
-107.257 174.957 98.46,
+point [ -136.617 160.962 79.772,
+-131.418 160.962 80.895,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23189,8 +23189,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 99.884 174.957 90.917,
-103.074 174.957 95.174,
+point [ -141.348 160.962 77.341,
+-136.617 160.962 79.772,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23200,8 +23200,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 97.905 174.957 85.981,
-99.884 174.957 90.917,
+point [ -145.288 160.962 73.768,
+-141.348 160.962 77.341,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23211,8 +23211,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 97.271 174.957 80.7,
-97.905 174.957 85.981,
+point [ -148.17 160.962 69.298,
+-145.288 160.962 73.768,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23222,8 +23222,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 98.025 174.957 75.434,
-97.271 174.957 80.7,
+point [ -149.797 160.962 64.234,
+-148.17 160.962 69.298,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23233,8 +23233,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 100.116 174.957 70.544,
-98.025 174.957 75.434,
+point [ -150.057 160.962 58.921,
+-149.797 160.962 64.234,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23244,8 +23244,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 103.402 174.957 66.361,
-100.116 174.957 70.544,
+point [ -148.933 160.962 53.722,
+-150.057 160.962 58.921,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23255,8 +23255,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 107.659 174.957 63.171,
-103.402 174.957 66.361,
+point [ -146.503 160.962 48.991,
+-148.933 160.962 53.722,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23266,8 +23266,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 112.596 174.957 61.192,
-107.659 174.957 63.171,
+point [ -142.93 160.962 45.051,
+-146.503 160.962 48.991,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23277,8 +23277,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 117.877 174.957 60.558,
-112.596 174.957 61.192,
+point [ -138.459 160.962 42.169,
+-142.93 160.962 45.051,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23288,8 +23288,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 123.142 174.957 61.312,
-117.877 174.957 60.558,
+point [ -133.395 160.962 40.542,
+-138.459 160.962 42.169,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23299,8 +23299,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 128.032 174.957 63.404,
-123.142 174.957 61.312,
+point [ -128.083 160.962 40.282,
+-133.395 160.962 40.542,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23310,8 +23310,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 132.215 174.957 66.689,
-128.032 174.957 63.404,
+point [ -122.884 160.962 41.406,
+-128.083 160.962 40.282,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23321,8 +23321,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ 135.405 174.957 70.946,
-132.215 174.957 66.689,
+point [ -118.153 160.962 43.836,
+-122.884 160.962 41.406,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23332,8 +23332,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -112.462 160.962 65.909,
--116.403 160.962 62.336,
+point [ -118.153 174.957 43.836,
+-122.884 174.957 41.406,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23343,8 +23343,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -109.58 160.962 70.379,
--112.462 160.962 65.909,
+point [ -114.212 174.957 47.409,
+-118.153 174.957 43.836,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23354,8 +23354,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -107.954 160.962 75.444,
--109.58 160.962 70.379,
+point [ -111.33 174.957 51.879,
+-114.212 174.957 47.409,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23365,8 +23365,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -107.694 160.962 80.756,
--107.954 160.962 75.444,
+point [ -109.704 174.957 56.944,
+-111.33 174.957 51.879,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23376,8 +23376,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -108.817 160.962 85.955,
--107.694 160.962 80.756,
+point [ -109.444 174.957 62.256,
+-109.704 174.957 56.944,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23387,8 +23387,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -111.248 160.962 90.686,
--108.817 160.962 85.955,
+point [ -110.567 174.957 67.455,
+-109.444 174.957 62.256,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23398,8 +23398,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -114.82 160.962 94.627,
--111.248 160.962 90.686,
+point [ -112.998 174.957 72.186,
+-110.567 174.957 67.455,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23409,8 +23409,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -119.291 160.962 97.509,
--114.82 160.962 94.627,
+point [ -116.57 174.957 76.127,
+-112.998 174.957 72.186,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23420,8 +23420,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -124.355 160.962 99.135,
--119.291 160.962 97.509,
+point [ -121.041 174.957 79.009,
+-116.57 174.957 76.127,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23431,8 +23431,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -129.668 160.962 99.395,
--124.355 160.962 99.135,
+point [ -126.105 174.957 80.635,
+-121.041 174.957 79.009,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23442,8 +23442,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -134.867 160.962 98.272,
--129.668 160.962 99.395,
+point [ -131.418 174.957 80.895,
+-126.105 174.957 80.635,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23453,8 +23453,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -139.598 160.962 95.841,
--134.867 160.962 98.272,
+point [ -136.617 174.957 79.772,
+-131.418 174.957 80.895,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23464,8 +23464,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -143.538 160.962 92.268,
--139.598 160.962 95.841,
+point [ -141.348 174.957 77.341,
+-136.617 174.957 79.772,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23475,8 +23475,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -146.42 160.962 87.798,
--143.538 160.962 92.268,
+point [ -145.288 174.957 73.768,
+-141.348 174.957 77.341,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23486,8 +23486,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -148.047 160.962 82.734,
--146.42 160.962 87.798,
+point [ -148.17 174.957 69.298,
+-145.288 174.957 73.768,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23497,8 +23497,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -148.307 160.962 77.421,
--148.047 160.962 82.734,
+point [ -149.797 174.957 64.234,
+-148.17 174.957 69.298,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23508,8 +23508,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -147.183 160.962 72.222,
--148.307 160.962 77.421,
+point [ -150.057 174.957 58.921,
+-149.797 174.957 64.234,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23519,8 +23519,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -144.753 160.962 67.491,
--147.183 160.962 72.222,
+point [ -148.933 174.957 53.722,
+-150.057 174.957 58.921,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23530,8 +23530,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -141.18 160.962 63.551,
--144.753 160.962 67.491,
+point [ -146.503 174.957 48.991,
+-148.933 174.957 53.722,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23541,8 +23541,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -136.709 160.962 60.669,
--141.18 160.962 63.551,
+point [ -142.93 174.957 45.051,
+-146.503 174.957 48.991,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23552,8 +23552,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -131.645 160.962 59.042,
--136.709 160.962 60.669,
+point [ -138.459 174.957 42.169,
+-142.93 174.957 45.051,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23563,8 +23563,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -126.333 160.962 58.782,
--131.645 160.962 59.042,
+point [ -133.395 174.957 40.542,
+-138.459 174.957 42.169,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23574,8 +23574,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -121.134 160.962 59.906,
--126.333 160.962 58.782,
+point [ -128.083 174.957 40.282,
+-133.395 174.957 40.542,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23585,8 +23585,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -116.403 160.962 62.336,
--121.134 160.962 59.906,
+point [ -122.884 174.957 41.406,
+-128.083 174.957 40.282,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23596,8 +23596,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -116.403 174.957 62.336,
--121.134 174.957 59.906,
+point [ 134.908 160.962 45.208,
+131.718 160.962 40.952,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23607,8 +23607,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -112.462 174.957 65.909,
--116.403 174.957 62.336,
+point [ 136.887 160.962 50.145,
+134.908 160.962 45.208,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23618,8 +23618,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -109.58 174.957 70.379,
--112.462 174.957 65.909,
+point [ 137.521 160.962 55.426,
+136.887 160.962 50.145,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23629,8 +23629,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -107.954 174.957 75.444,
--109.58 174.957 70.379,
+point [ 136.767 160.962 60.691,
+137.521 160.962 55.426,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23640,8 +23640,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -107.694 174.957 80.756,
--107.954 174.957 75.444,
+point [ 134.676 160.962 65.582,
+136.767 160.962 60.691,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23651,8 +23651,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -108.817 174.957 85.955,
--107.694 174.957 80.756,
+point [ 131.39 160.962 69.765,
+134.676 160.962 65.582,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23662,8 +23662,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -111.248 174.957 90.686,
--108.817 174.957 85.955,
+point [ 127.133 160.962 72.954,
+131.39 160.962 69.765,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23673,8 +23673,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -114.82 174.957 94.627,
--111.248 174.957 90.686,
+point [ 122.196 160.962 74.934,
+127.133 160.962 72.954,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23684,8 +23684,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -119.291 174.957 97.509,
--114.82 174.957 94.627,
+point [ 116.915 160.962 75.568,
+122.196 160.962 74.934,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23695,8 +23695,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -124.355 174.957 99.135,
--119.291 174.957 97.509,
+point [ 111.65 160.962 74.814,
+116.915 160.962 75.568,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23706,8 +23706,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -129.668 174.957 99.395,
--124.355 174.957 99.135,
+point [ 106.76 160.962 72.722,
+111.65 160.962 74.814,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23717,8 +23717,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -134.867 174.957 98.272,
--129.668 174.957 99.395,
+point [ 102.577 160.962 69.436,
+106.76 160.962 72.722,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23728,8 +23728,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -139.598 174.957 95.841,
--134.867 174.957 98.272,
+point [ 99.387 160.962 65.18,
+102.577 160.962 69.436,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23739,8 +23739,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -143.538 174.957 92.268,
--139.598 174.957 95.841,
+point [ 97.408 160.962 60.243,
+99.387 160.962 65.18,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23750,8 +23750,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -146.42 174.957 87.798,
--143.538 174.957 92.268,
+point [ 96.774 160.962 54.962,
+97.408 160.962 60.243,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23761,8 +23761,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -148.047 174.957 82.734,
--146.42 174.957 87.798,
+point [ 97.528 160.962 49.697,
+96.774 160.962 54.962,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23772,8 +23772,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -148.307 174.957 77.421,
--148.047 174.957 82.734,
+point [ 99.62 160.962 44.806,
+97.528 160.962 49.697,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23783,8 +23783,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -147.183 174.957 72.222,
--148.307 174.957 77.421,
+point [ 102.905 160.962 40.624,
+99.62 160.962 44.806,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23794,8 +23794,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -144.753 174.957 67.491,
--147.183 174.957 72.222,
+point [ 107.162 160.962 37.434,
+102.905 160.962 40.624,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23805,8 +23805,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -141.18 174.957 63.551,
--144.753 174.957 67.491,
+point [ 112.099 160.962 35.455,
+107.162 160.962 37.434,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23816,8 +23816,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -136.709 174.957 60.669,
--141.18 174.957 63.551,
+point [ 117.38 160.962 34.82,
+112.099 160.962 35.455,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23827,8 +23827,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -131.645 174.957 59.042,
--136.709 174.957 60.669,
+point [ 122.645 160.962 35.575,
+117.38 160.962 34.82,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23838,8 +23838,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -126.333 174.957 58.782,
--131.645 174.957 59.042,
+point [ 127.535 160.962 37.666,
+122.645 160.962 35.575,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23849,8 +23849,8 @@ Shape {
 appearance USE COL_ForegroundColor
 geometry IndexedLineSet {
 coord Coordinate {
-point [ -121.134 174.957 59.906,
--126.333 174.957 58.782,
+point [ 131.718 160.962 40.952,
+127.535 160.962 37.666,
 ]
 }
 coordIndex [ 0 1 -1]
@@ -23859,8 +23859,8 @@ coordIndex [ 0 1 -1]
 ]
 }
 Viewpoint {
-position -230 163.492 -265.084
-orientation -0.133184 -0.971772 -0.194734 1.968422
+position 122.226 58.038 101.497
+orientation 0.019347 0.999809 -0.002779 0.285388
 fieldOfView 0.61087
 description "Camera"
 jump FALSE
