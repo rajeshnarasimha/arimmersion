@@ -9,13 +9,13 @@ from path import PathGenerator
 from TimelineGen import Timeline
 
 # file to unpickle
-pickle_path = 'pathGen93238'
+pickle_path = 'pathGen67130'
 
 # experiment settings go here
 test_fov = 5
 Timeline.trialTime = 60
-Timeline.numDead = 0
-Timeline.deadLength = 1.5
+Timeline.numDead = 5
+Timeline.deadLength = 2
 Timeline.minLiveLength = 2
 numtrials = PathGenerator.numPaths
 test_timeline = Timeline()
@@ -34,7 +34,7 @@ def run_tasks():
 	pg = pickle.load(unpicklefile)
 	unpicklefile.close()
 	
-	PathGenerator newPg = PathGenerator()
+	newPg = PathGenerator()
 
 	# show space bar message
 	tbox.message("Press space to start")
@@ -49,15 +49,19 @@ def run_tasks():
 		
 		if d.key == 'y':
 			newPg.pathSets.append(pg.pathSets[i])
-
+			file = open("SavedPaths", 'w')
+			pickle.dump(newPg,file)
+			file.close()
+		
 		# hide message box
 		tbox.visible(viz.OFF)
-
+		
 		# set up variables for this condition
 		environment_setup.setARfov( test_fov )
 		
 		# run the path set
-		yield pg.runExperimentPathSet(i, test_timeline)
+		if d.key != 's':
+			yield pg.runExperimentPathSet(i, test_timeline)
 				
 		# show trial over message
 		tbox.visible(viz.ON)
@@ -65,9 +69,6 @@ def run_tasks():
 
 	# show done message
 	tbox.message("Done!")
-	file = open("SavedPaths", 'w')
-	pickle.dump(newPg,file)
-	file.close()
 
 # run it
 viztask.schedule(run_tasks())

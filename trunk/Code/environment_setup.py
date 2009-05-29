@@ -19,7 +19,7 @@ sky.texture(env)
 
 # add room model
 SCALE = [0.03, 0.03, 0.03]
-room = viz.add("../models/room2/room2.wrl")
+room = viz.add("../models/room3/room3.wrl")
 room.setScale(SCALE)
 
 # add ground model
@@ -82,7 +82,8 @@ def setARfov( val ):
 	global HMDheight, HMDwidth, HMDfov_vert, HMDaspect, HMDnear, HMDfar
 	global node, ARfov_vert, ARgraybox
 	
-	ARfov_vert = 10
+	print "********* val is ",val
+	ARfov_vert = val
 	ARheight = (int) (HMDheight / HMDfov_vert * ARfov_vert)
 	ARwidth = ARheight * HMDaspect
 	

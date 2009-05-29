@@ -60,7 +60,10 @@ class a_person:
 		
 		#setup the AR
 		viz.startlayer(viz.QUADS)
-		viz.vertexcolor(1,0,0)
+		if av_type == 0:
+			viz.vertexcolor(1,0,0)
+		else:
+			viz.vertexcolor(1,0,0)
 		viz.linewidth(20)
 		pos = self.avatar.getPosition()
 		viz.vertex(-0.3,0,0)
