@@ -4,7 +4,7 @@ from TimelineGen import Timeline
 
 conditions = []
 FOVs = ( 10, 20, 34 )
-deadLengths = ( 1, 2, 3 )
+deadLengths = ( 0, 1, 2 )
 
 for fov in FOVs:
 	for deadLength in deadLengths:
