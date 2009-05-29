@@ -5,36 +5,19 @@ import math
 import pickle
 import latinSquare
 import environment_setup
+import time
 
 # text box for showing messages
 tbox = viz.addTextbox()	
 tbox.setPosition(0.5,0.35)
 
-
-# experiment values
+# set numtrials number to twenty-seven
 numtrials = 27
-fov_values = [10, 20, 34]
+
+# results
 results = []
 
-
-
-
-
-
-# build conditions list
-# should use latin square to do this
-# instead of random
-#conditions = []
-#for i in xrange(3):
-#	for j in xrange(3):
-#		for k in xrange(3):
-#			conditions.append([fov_values[j]])
-#random.shuffle(conditions)
-#random_seeds = []
-#for i in range(1,numtrials + 1):
-#	random_seeds.append(i * 3)
-#random.shuffle(random_seeds)
-
+# load conditions from pickle
 unpicklefile = open('conditions', 'r')
 conditions = pickle.load(unpicklefile)
 unpicklefile.close()
@@ -43,11 +26,17 @@ unpicklefile.close()
 #	print c.fov
 #sys.exit()
 
+participantNumber = 0 #change for each participant
+
+# I can't believe I just wrote this
+# open("results_%d.txt"%participantNumber,'w').close()
+
+resultsPath = "results_%d_%d.txt"%(participantNumber,time.time())
+
 # function to run the experiment
 def run_tasks():
-	global tbox, message, numtrials, conditions, results
+	global tbox, message, numtrials, conditions, results, participantNumber, resultsPath
 
-	participantNumber = 0 #change for each participant
 	ls = latinSquare.LatinSquare(numtrials)
 	order = ls.getOrder(participantNumber)
 	#order[0]=0# temporary debug
@@ -89,6 +78,20 @@ def run_tasks():
 		tbox.message("Trial %d Over"%(i+1))
 		#print "Result: fov, latency, ncorrect, nfalsepos, nfalseneg"
 		#print conditions[i] +results[i]
+		
+		# open results file
+		resultsfile = open(resultsPath,'a')
+
+		# this is amazing and secret
+		resultsfile.write("%d\n"%conditions[order[i]].fov)
+		resultsfile.write("%d\n"%conditions[order[i]].deadLength)
+		resultsfile.write(str(pg.errlist))
+		resultsfile.write('\n\n')
+	
+		# close results file
+		# using close command
+		# resultsfile.close() <-- like this
+		resultsfile.close()
 
 	# show done message
 	tbox.message("Done!")
