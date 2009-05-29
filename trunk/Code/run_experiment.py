@@ -47,7 +47,7 @@ unpicklefile.close()
 def run_tasks():
 	global tbox, message, numtrials, conditions, results
 
-	participantNumber = 20 #change for each participant
+	participantNumber = 0 #change for each participant
 	ls = latinSquare.LatinSquare(numtrials)
 	order = ls.getOrder(participantNumber)
 	#order[0]=0# temporary debug
