@@ -24,29 +24,40 @@ results = []
 # build conditions list
 # should use latin square to do this
 # instead of random
-conditions = []
-for i in xrange(3):
-	for j in xrange(3):
-		for k in xrange(3):
-			conditions.append([fov_values[j]])
+#conditions = []
+#for i in xrange(3):
+#	for j in xrange(3):
+#		for k in xrange(3):
+#			conditions.append([fov_values[j]])
 #random.shuffle(conditions)
 #random_seeds = []
 #for i in range(1,numtrials + 1):
 #	random_seeds.append(i * 3)
 #random.shuffle(random_seeds)
 
+unpicklefile = open('conditions', 'r')
+conditions = pickle.load(unpicklefile)
+unpicklefile.close()
+
+#for c in conditions:
+#	print c.fov
+#sys.exit()
+
 # function to run the experiment
 def run_tasks():
 	global tbox, message, numtrials, conditions, results
 
-	participantNumber = 0 #change for each participant
+	participantNumber = 20 #change for each participant
 	ls = latinSquare.LatinSquare(numtrials)
 	order = ls.getOrder(participantNumber)
-	order[0]=0# temporary debug
-	print "order:",order
+	#order[0]=0# temporary debug
+	#print "order:",order
+	#for i in xrange(numtrials):
+	#	print ls.getOrder(i)
+	#sys.exit()
 	
 	# load path set from file
-	unpicklefile = open('pathGen24021', 'r')
+	unpicklefile = open('pathGen67130', 'r')
 	pg = pickle.load(unpicklefile)
 	unpicklefile.close()
 
@@ -63,10 +74,10 @@ def run_tasks():
 		tbox.visible(viz.OFF)
 
 		# set up variables for this condition
-		environment_setup.setARfov( conditions[order[i]][0] )
+		environment_setup.setARfov( conditions[order[i]].fov )
 		
 		# run the path set
-		yield pg.runExperimentPathSet(order[i])
+		yield pg.runExperimentPathSet(order[i],conditions[order[i]])
 		
 		# append the results
 		# results.append([ncorrect, nfalsepos, nfalseneg])

@@ -10,7 +10,7 @@ import error
 import TimelineGen
 
 quadSet = quadrants.QuadrantSet()
-speedMultiplier = 5.0
+speedMultiplier = 1.0
 
 class Path:
 	#startPoint = []

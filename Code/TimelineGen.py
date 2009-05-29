@@ -40,8 +40,8 @@ class Timeline:
 	#time granularity is in 1/10 of a second!
 	trialTime = 60									#total time of a trial in seconds
 	deadLength = .5									#time of each dropout
-	numDead = 10									#total number of dropouts
-	minLiveLength = 1								#mininum time of each live (or non-dropout) chunk of time
+	numDead = 7									#total number of dropouts
+	minLiveLength = 2								#mininum time of each live (or non-dropout) chunk of time
 	totalEvents = (numDead * 2) + 1					#total number of events in trial (both dropouts and non-dropouts)
 	maxRandomTime = 4								#maximum randomly chosen time to add to a live event
 	minTotalTime = 0;
@@ -118,6 +118,6 @@ class Timeline:
 			total += event.getLength()
 		print "total time : " + str(total)
 
-timeline = Timeline()
-timeline.printAllEvents()
-timeline.printTotalTime()
+#timeline = Timeline()
+#timeline.printAllEvents()
+#timeline.printTotalTime()
