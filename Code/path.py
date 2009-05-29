@@ -157,7 +157,7 @@ class PathGenerator:
 		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
 		
 		errlist = []
-		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,errlist)
+		error_timer = vizact.ontimer(0.1/speedMultiplier,self.checkError,tophat,errlist)
 		print "here7"
 		yield viztask.waitTime(self.taskTime)
 		print "here8"
