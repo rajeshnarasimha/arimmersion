@@ -26,7 +26,7 @@ unpicklefile.close()
 #	print c.fov
 #sys.exit()
 
-participantNumber = 0 #change for each participant
+participantNumber = 2 #change for each participant
 
 # I can't believe I just wrote this
 # open("results_%d.txt"%participantNumber,'w').close()
@@ -45,10 +45,10 @@ def run_tasks():
 	#	print ls.getOrder(i)
 	#sys.exit()
 	
-	for i in xrange(numtrials):
-		print conditions[order[i]].fov
-		print conditions[order[i]].myDeadLength
-	sys.exit()
+	#for i in xrange(numtrials):
+	#	print conditions[order[i]].fov
+	#	print conditions[order[i]].myDeadLength
+	#sys.exit()
 	
 	# load path set from file
 	unpicklefile = open('pathGen67130', 'r')
