@@ -45,6 +45,11 @@ def run_tasks():
 	#	print ls.getOrder(i)
 	#sys.exit()
 	
+	for i in xrange(numtrials):
+		print conditions[order[i]].fov
+		print conditions[order[i]].myDeadLength
+	sys.exit()
+	
 	# load path set from file
 	unpicklefile = open('pathGen67130', 'r')
 	pg = pickle.load(unpicklefile)
@@ -52,6 +57,10 @@ def run_tasks():
 
 	# show space bar message
 	tbox.message("Press space to start")
+
+	resultsfile = open(resultsPath,'a')
+	resultsfile.write("participant number: %d\n"%participantNumber)
+	resultsfile.close()
 
 	# for each trial
 	for i in range(0,numtrials):
@@ -84,7 +93,7 @@ def run_tasks():
 
 		# this is amazing and secret
 		resultsfile.write("%d\n"%conditions[order[i]].fov)
-		resultsfile.write("%d\n"%conditions[order[i]].deadLength)
+		resultsfile.write("%d\n"%conditions[order[i]].myDeadLength)
 		resultsfile.write(str(pg.errlist))
 		resultsfile.write('\n\n')
 	
