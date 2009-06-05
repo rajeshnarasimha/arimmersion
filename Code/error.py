@@ -10,7 +10,8 @@ def MeasureError(abe):
 	#err = math.sqrt( math.pow(abeyaw-yaw,2) ) + math.pow(abepitch-pitch,2) )
 	err = math.fabs(abeyaw-yaw)
 	if err > 180:
-		err -= 180
+		err = 360 - err
+		#err -= 180
 	return err
 	
 #vizact.ontimer(0,MeasureError)
