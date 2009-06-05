@@ -31,7 +31,7 @@ participantNumber = 3 #change for each participant
 # I can't believe I just wrote this
 # open("results_%d.txt"%participantNumber,'w').close()
 
-resultsPath = "results_%d_%d.txt"%(participantNumber,time.time())
+resultsPath = "results_%d_%d.csv"%(participantNumber,time.time())
 
 # function to run the experiment
 def run_tasks():
@@ -58,9 +58,9 @@ def run_tasks():
 	# show space bar message
 	tbox.message("Press space to start")
 
-	resultsfile = open(resultsPath,'a')
-	resultsfile.write("participant number: %d\n"%participantNumber)
-	resultsfile.close()
+	#resultsfile = open(resultsPath,'a')
+	#resultsfile.write("%d\n"%participantNumber)
+	#resultsfile.close()
 
 	# for each trial
 	for i in range(0,numtrials):
@@ -92,10 +92,12 @@ def run_tasks():
 		resultsfile = open(resultsPath,'a')
 
 		# this is amazing and secret
-		resultsfile.write("%d\n"%conditions[order[i]].fov)
-		resultsfile.write("%d\n"%conditions[order[i]].myDeadLength)
-		resultsfile.write(str(pg.errlist))
-		resultsfile.write('\n\n')
+		resultsfile.write("%d, "%participantNumber)
+		resultsfile.write("%d, "%conditions[order[i]].fov)
+		resultsfile.write("%d, "%conditions[order[i]].myDeadLength)
+		for err in pg.errlist:
+		    resultsfile.write("%f, "%err)
+		resultsfile.write('\n')
 	
 		# close results file
 		# using close command
