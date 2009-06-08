@@ -26,7 +26,7 @@ unpicklefile.close()
 #	print c.fov
 #sys.exit()
 
-participantNumber = 3 #change for each participant
+participantNumber = 0 #change for each participant
 
 # I can't believe I just wrote this
 # open("results_%d.txt"%participantNumber,'w').close()

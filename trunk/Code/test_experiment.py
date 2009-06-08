@@ -12,9 +12,9 @@ from TimelineGen import Timeline
 pickle_path = 'pathGen67130'
 
 # experiment settings go here
-test_fov = 5
+test_fov = 34
 Timeline.trialTime = 60
-Timeline.numDead = 5
+Timeline.numDead = 0
 Timeline.deadLength = 2
 Timeline.minLiveLength = 2
 numtrials = PathGenerator.numPaths
