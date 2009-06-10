@@ -42,7 +42,7 @@
 
 %% Paper title.
 
-\title{Global Illumination for Fun and Profit}
+\title{Title Goes Here}
 
 %% Author and Affiliation (single author).
 
@@ -50,13 +50,17 @@
 
 %% Author and Affiliation (multiple authors).
 
-\author{Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
-\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
-\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research}
+\author{
+%Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
+%\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
+%\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research}
+}
 
 %% Keywords that describe your work.
 
-\keywords{radiosity, global illumination, constant time}
+\keywords{
+%radiosity, global illumination, constant time
+}
 
 %%%%%% START OF THE PAPER %%%%%%
 
@@ -76,25 +80,6 @@
 
 \begin{abstract}
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at 
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Citations can be done this way~\cite{Jobs95} or this more concise 
-way~\shortcite{Jobs95}, depending upon the application.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit~\cite{Pellacini:2005:LAH}
-in vulputate velit esse molestie~\cite{notes2002} 
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.~\cite{Park:2006:DSI}
-
 \end{abstract}
 
 %% ACM Computing Review (CR) categories. 
@@ -102,9 +87,8 @@ delenit augue duis dolore te feugait nulla facilisi.~\cite{Park:2006:DSI}
 %% The ``\CRcat'' command takes four arguments.
 
 \begin{CRcatlist}
-  \CRcat{K.6.1}{Management of Computing and Information Systems}%
-{Project and People Management}{Life Cycle};
-  \CRcat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
+%  \CRcat{K.6.1}{Management of Computing and Information Systems}{Project and People Management}{Life Cycle};
+%  \CRcat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
 \end{CRcatlist}
 
 %% The ``\keywordlist'' command prints out the keywords.
@@ -119,261 +103,33 @@ delenit augue duis dolore te feugait nulla facilisi.~\cite{Park:2006:DSI}
 
 %% \copyrightspace
 
-\section{Exposition}
+\section{Related Work}
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
+\cite{4637329,4811058,1383060}
 
-\begin{equation}
- \sum_{j=1}^{z} j = \frac{z(z+1)}{2}
-\end{equation}
+\section{Experimental Design}
 
-\begin{eqnarray}
-x & \ll & y_{1} + \cdots + y_{n} \\
-  & \leq & z
-\end{eqnarray}
+Our experiment involves a tracking task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Outside of the room, people are walking around the building.  The target person to be tracked is visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is not different from any other person's overlay; the target is only identifiable when visible through a window or a door.
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
+To actually run this experiment using a true augmented reality system would be difficult.  Many confederates would be needed to walk around the room, and their movements would need to be accurately reproduced for each new participant.  Also, the confederates would need to be continously tracked for the augmented overlays to be displayed.  Instead, we simulated the experiment setup in a completely virtual environment.
 
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
+Participants are presented a view of the scene through a head-mounted display helmet with orientation tracking.  The tracking overlays are  augmented on top of the image to form the simulated augmented reality view.
 
-%\begin{figure*}[ht]
-%\centering
-%\includegraphics[width=2.5in]{sample.eps}
-%\caption{Sample illustration.}
-%\end{figure*}
+By simulating augmented reality, we are freed from the current restrictions of tracking and display technology.  Using a simulated environment also makes the experiment more controllable, and thus more easily reproduced.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
+The parameters of our experiment are divided between the ``real'' immersion factors, such as the field of view of the HMD, and the ``augmented'' immersion factors, such as the field of view of the simulated AR display, and the performance of the head tracker.  We introduce periods of tracking failure, where the augmented overlays disappear, to simulate the effect of failures in a real tracking system.  For example, such failures might occur with a magnetic tracker near interfering materials, or with visual tracking when tracked features are lost.
 
-\section{A New Section}
+In our experiment we vary two parameters: the field of view of the AR interface and the length of tracking failure periods.  Each trial lasted sixty seconds, and had seven tracking failures.  The total vertical field of view of our HMD is 36 degrees; the three possible values for the augmented field of view were 10, 20, and 34 degrees.  We varied the length of tracking failures between two seconds, one second and zero seconds (no failure).
 
-\subsection{A New Subsection}
+\section{Results}
 
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
+\section{Analysis}
 
-\subsection{A Second Subsection}
-
-\subsubsection{A Subsubsection}
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-\subsubsection{Another Subsubsection}
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
-
-\subsection{A Final Subsection}
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-\section{Back to the Section}
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
-
-\section{Conclusion}
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
-dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam
-et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
-takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit
-amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea
-rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-ipsum dolor sit amet.
-
-Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-vero eros et accumsan et iusto odio dignissim qui blandit praesent
-luptatum zzril delenit augue duis dolore te feugait nulla
-facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-aliquam erat volutpat.
-
-Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper
-suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem
-vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et
-accumsan et iusto odio dignissim qui blandit praesent luptatum zzril
-delenit augue duis dolore te feugait nulla facilisi.
+\section{Conclusions}
 
 \section*{Acknowledgements}
 
-To Robert, for all the bagels.
-
 \bibliographystyle{acmsiggraph}
 \nocite{*}
-\bibliography{template}
+\bibliography{paper}
 \end{document}
