@@ -16,13 +16,14 @@ data.agg[sapply(data.agg['fov'],function(x) x==10),'fov'] = 'lowfov'
 data.agg[sapply(data.agg['fov'],function(x) x==20),'fov'] = 'medfov'
 data.agg[sapply(data.agg['fov'],function(x) x==34),'fov'] = 'uppfov'
 
-data.agg[sapply(data.agg['deadlen'],function(x) x==1),'latency'] = 'lowlat'
-data.agg[sapply(data.agg['deadlen'],function(x) x==6),'latency'] = 'medlat'
-data.agg[sapply(data.agg['deadlen'],function(x) x==12),'latency'] = 'upplat'
+data.agg[sapply(data.agg['deadlen'],function(x) x==0),'deadlen'] = 'lowlen'
+data.agg[sapply(data.agg['deadlen'],function(x) x==1),'deadlen'] = 'medlen'
+data.agg[sapply(data.agg['deadlen'],function(x) x==2),'deadlen'] = 'upplen'
 
-#data.agg[sapply(data.agg['id'],function(x) x==1),'id'] = 'id1'
-#data.agg[sapply(data.agg['id'],function(x) x==2),'id'] = 'id2'
-#data.agg[sapply(data.agg['id'],function(x) x==3),'id'] = 'id3'
+data.agg[sapply(data.agg['id'],function(x) x==0),'id'] = 'id0'
+data.agg[sapply(data.agg['id'],function(x) x==1),'id'] = 'id1'
+data.agg[sapply(data.agg['id'],function(x) x==2),'id'] = 'id2'
+data.agg[sapply(data.agg['id'],function(x) x==3),'id'] = 'id3'
 #data.agg[sapply(data.agg['id'],function(x) x==4),'id'] = 'id4'
 #data.agg[sapply(data.agg['id'],function(x) x==5),'id'] = 'id5'
 #data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id6'
@@ -45,24 +46,24 @@ detach(data.all)
 #boxplot(recall~game,data=data.agg)
 
 # one-way repeated measures anova on fov
-#aov.fov=aov(recall~fov+Error(id/fov),data.agg)
+#aov.fov=aov(mean~fov+Error(id/fov),data.agg)
 #print(summary(aov.fov))
-#boxplot(recall~fov,data=data.agg)
+#boxplot(mean~fov,data=data.agg)
 
 
-# one-way repeated measures anova on latency
-#aov.latency=aov(recall~latency+Error(id/latency),data.agg)
-#print(summary(aov.latency))
-#boxplot(recall~latency,data=data.agg)
+# one-way repeated measures anova on deadlen
+aov.deadlen = aov(mean ~deadlen+Error(id/deadlen),data.agg)
+print(summary(aov.deadlen))
+boxplot(mean~deadlen,data=data.agg)
 
 
 
 # two-way anova repeated measures on both
-#aov.two = aov(precision ~(fov*latency)+Error(id/(fov*latency)),data.agg)
+#aov.two = aov(mean ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
 #print(summary(aov.two))
-#boxplot(precision ~fov*latency,data=data.agg)
+#boxplot(mean ~fov*deadlen,data=data.agg)
 #attach(data.agg)
-#interaction.plot(fov,latency, precision)    #another way to graph the interaction
+#interaction.plot(fov,deadlen, mean)    #another way to graph the interaction
 #detach(data.agg)
 
 
