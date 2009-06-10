@@ -98,6 +98,10 @@ def run_tasks():
 		for err in pg.errlist:
 		    resultsfile.write("%f, "%err)
 		resultsfile.write('\n')
+		resultsfile.write(",,,")
+		for time in pg.timelist:
+		    resultsfile.write("%f, "%time)
+		resultsfile.write('\n')
 	
 		# close results file
 		# using close command

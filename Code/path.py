@@ -133,9 +133,10 @@ class PathGenerator:
 		self.num_nearby += num_nearby
 		self.num_samples += 1
 		
-	def checkError(self,tophat,errlist):
+	def checkError(self,tophat):
 		err =  error.MeasureError(tophat)
-		errlist.append(err)
+		self.errlist.append(err)
+		self.timelist.append( viz.tick() - self.starttime )
 		#print "current error: ",err
 		#a = 0
 	
@@ -152,18 +153,19 @@ class PathGenerator:
 		print "here6"
 		self.num_nearby = 0
 		self.num_samples = 0
-		nearby_timer = vizact.ontimer(1/speedMultiplier,self.checkNearby,tophat,peopleset)
+		#nearby_timer = vizact.ontimer(1/speedMultiplier,self.checkNearby,tophat,peopleset)
 		
-		visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
+		#visible_timer = vizact.ontimer(0.5/speedMultiplier,tophat.checkVisibleTime)
 		
-		errlist = []
-		error_timer = vizact.ontimer(0.1/speedMultiplier,self.checkError,tophat,errlist)
+		#errlist = []
+		#error_timer = vizact.ontimer(0.1/speedMultiplier,self.checkError,tophat,errlist)
+		#error_timer = vizact.onupdate(-10,self.checkError,tophat,errlist,timelist)
 		print "here7"
 		yield viztask.waitTime(self.taskTime)
 		print "here8"
-		vizact.removeEvent(visible_timer)
-		vizact.removeEvent(nearby_timer)
-		vizact.removeEvent(error_timer)
+		#vizact.removeEvent(visible_timer)
+		#vizact.removeEvent(nearby_timer)
+		#vizact.removeEvent(error_timer)
 		
 		#save the path
 		print "peopleSetLength:",len(peopleset)
@@ -180,7 +182,7 @@ class PathGenerator:
 		ps.collisions = ps.abePath.collisions
 		ps.timeNotVisible = tophat.timeNotVisible*speedMultiplier
 		ps.pointsWalkedTo = len( ps.abePath.points )
-		ps.numberPeopleNearby = self.num_nearby / self.num_samples
+#		ps.numberPeopleNearby = self.num_nearby / self.num_samples
 		ps.quadrantsReached = ps.abePath.quadrantsReached
 		print "num collisions: ",ps.collisions
 		print "quadrants reached: ",ps.quadrantsReached
@@ -263,8 +265,11 @@ class PathGenerator:
 		self.abe = tophat
 		tophat.custom_walk(ps.abePath.getFullPath())
 		self.peopleset.append(tophat)
+		self.starttime = viz.tick()
 		self.errlist = []
-		error_timer = vizact.ontimer(0.5/speedMultiplier,self.checkError,tophat,self.errlist)
+		self.timelist = []
+		#error_timer = vizact.ontimer(0.1/speedMultiplier,self.checkError,tophat,self.errlist)
+		error_timer = vizact.onupdate(-10,self.checkError,tophat)
 		yield self.runPathSet(self.peopleset, newPs, tophat, 1, timeline)
 		vizact.removeEvent(error_timer)
 	
