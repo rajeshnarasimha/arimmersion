@@ -1,16 +1,16 @@
-datafilename="resampled.csv"
+datafilename="timetofailure_20.csv"
 data.all=read.csv(datafilename,header=FALSE)	# read the data into a table
 
 #data.all[0,1] = 
 #data.all[0,2] = 'fov'
 #data.all[0,3] = 'deadlen'
-data.all[,'mean'] = rowMeans(data.all[,4:3603])
+#data.all[,'mean'] = rowMeans(data.all[,4:3603])
 
 #plot(data.all[,'avg'],type='lines')
 
 attach(data.all)
-data.agg = aggregate(mean,list(V1,V2,V3), function(x)mean(x))
-colnames(data.agg) <- c("id","fov","deadlen",'mean')
+data.agg = aggregate(V4,list(V1,V2,V3), function(x)mean(x))
+colnames(data.agg) <- c("id","fov","deadlen","ttf")
 
 data.agg[sapply(data.agg['fov'],function(x) x==10),'fov'] = 'lowfov'
 data.agg[sapply(data.agg['fov'],function(x) x==20),'fov'] = 'medfov'
@@ -30,13 +30,6 @@ data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id6'
 data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id7'
 data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id8'
 
-#data.agg[sapply(data.agg['game'],function(x) x==1),'game'] = '0-1'
-#data.agg[sapply(data.agg['game'],function(x) x==3),'game'] = '2-5'
-#data.agg[sapply(data.agg['game'],function(x) x==10),'game'] = '5-15'
-
-#data.agg[4] = log(data.agg[4])
-#data.agg[17,4] <- -2
-
 detach(data.all)
 
 # one-way repeated measures anova on fov
@@ -46,20 +39,19 @@ detach(data.all)
 
 
 # one-way repeated measures anova on deadlen
-aov.deadlen = aov(mean ~deadlen+Error(id/deadlen),data.agg)
-print(summary(aov.deadlen))
-boxplot(mean~deadlen,data=data.agg)
+#aov.deadlen = aov(mean ~deadlen+Error(id/deadlen),data.agg)
+#print(summary(aov.deadlen))
+#boxplot(mean~deadlen,data=data.agg)
 
 
 
 # two-way anova repeated measures on both
-#aov.two = aov(mean ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
-#print(summary(aov.two))
-#boxplot(mean ~fov*deadlen,data=data.agg)
-#attach(data.agg)
-#interaction.plot(fov,deadlen, mean)    #another way to graph the interaction
-#detach(data.agg)
-
+aov.two = aov(ttf ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
+print(summary(aov.two))
+attach(data.agg)
+interaction.plot(fov,deadlen, ttf)    #another way to graph the interaction
+detach(data.agg)
+boxplot(ttf ~fov*deadlen,data=data.agg)
 
 
 
