@@ -27,8 +27,9 @@ data.agg[sapply(data.agg['id'],function(x) x==3),'id'] = 'id3'
 data.agg[sapply(data.agg['id'],function(x) x==4),'id'] = 'id4'
 data.agg[sapply(data.agg['id'],function(x) x==5),'id'] = 'id5'
 data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id6'
-data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id7'
-data.agg[sapply(data.agg['id'],function(x) x==6),'id'] = 'id8'
+data.agg[sapply(data.agg['id'],function(x) x==7),'id'] = 'id7'
+data.agg[sapply(data.agg['id'],function(x) x==8),'id'] = 'id8'
+data.agg[sapply(data.agg['id'],function(x) x==9),'id'] = 'id9'
 
 detach(data.all)
 
@@ -41,17 +42,17 @@ detach(data.all)
 # one-way repeated measures anova on deadlen
 #aov.deadlen = aov(tt ~deadlen+Error(id/deadlen),data.agg)
 #print(summary(aov.deadlen))
-#boxplot(tt~deadlen,data=data.agg)
+boxplot(tt~deadlen,data=data.agg)
 
 
 
 # two-way anova repeated measures on both
 aov.two = aov(tt ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
 print(summary(aov.two))
-attach(data.agg)
-interaction.plot(fov,deadlen, tt)    #another way to graph the interaction
-detach(data.agg)
-boxplot(tt ~fov*deadlen,data=data.agg)
+#attach(data.agg)
+#interaction.plot(fov,deadlen, tt)    #another way to graph the interaction
+#detach(data.agg)
+#boxplot(tt ~fov*deadlen,data=data.agg)
 
 
 
