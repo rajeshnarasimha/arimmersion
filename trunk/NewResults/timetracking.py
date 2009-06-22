@@ -5,6 +5,12 @@ thresh = 70
 if len(sys.argv) == 2:
     thresh = int(sys.argv[1])
 
+id_dict = {}
+for i in xrange(27):
+    id_dict[ "%d"%i ] = "id%d"%i
+fov_dict = { '10':'lowfov', '20':'medfov', '34':'uppfov' }
+len_dict = { '0':'lowlen', '1':'medlen', '2':'upplen' }
+
 while not done:
     for i in xrange(27):
 	line = sys.stdin.readline()
@@ -12,9 +18,9 @@ while not done:
 	    done = True
 	    break
 	list = line.rstrip().split(',')
-	id = list[0]
-	fov = list[1]
-	deadlen = list[2]
+	id = id_dict[list[0].lstrip()]
+	fov = fov_dict[list[1].lstrip()]
+	deadlen = len_dict[list[2].lstrip()]
 	samples = list[3:]
 
 	samples_in = []
