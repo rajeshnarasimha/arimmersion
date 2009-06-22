@@ -1,4 +1,4 @@
-datafilename="timetracking_10_factor.csv"
+datafilename="timetracking_5_factor.csv"
 data.all=read.csv(datafilename,header=FALSE)	# read the data into a table
 
 #data.all[0,1] = 
@@ -39,11 +39,11 @@ detach(data.all)
 
 
 aov.deadlen = aov( tt ~ deadlen + Error(id/deadlen), data.agg )
+aov.fov =     aov( tt ~ fov + Error(id/fov), data.agg )
+aov.two =     aov( tt ~ (fov*deadlen) + Error(id/(fov*deadlen)), data.agg )
+
 #hsd.deadlen = TukeyHSD( aov.deadlen )
 
-#aov.fov =     aov( tt ~ fov + Error(id/fov), data.agg )
-#aov.two =     aov( tt ~ (fov*deadlen) + Error(id/(fov*deadlen)), data.agg )
-#
 #aov2.deadlen = aov( terms( tt ~ deadlen + id, keep.order=T), data.agg )
 #aov2.fov =     aov( terms( tt ~ fov + id, keep.order=T), data.agg )
 #aov2.two =     aov( terms( tt ~ fov*deadlen + id, keep.order=T), data.agg )
@@ -51,3 +51,11 @@ aov.deadlen = aov( tt ~ deadlen + Error(id/deadlen), data.agg )
 #hsd.fov = TukeyHSD( aov.fov )
 #hsd.two = TukeyHSD( aov.two )
 #
+
+boxplot( tt ~ deadlen, data.agg )
+boxplot( tt ~ fov, data.agg )
+
+attach(data.agg)
+interaction.plot(fov,deadlen,tt)
+detach(data.agg)
+
