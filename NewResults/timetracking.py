@@ -18,9 +18,12 @@ while not done:
 	    done = True
 	    break
 	list = line.rstrip().split(',')
-	id = id_dict[list[0].lstrip()]
-	fov = fov_dict[list[1].lstrip()]
-	deadlen = len_dict[list[2].lstrip()]
+	#id = id_dict[list[0].lstrip()]
+	#fov = fov_dict[list[1].lstrip()]
+	#deadlen = len_dict[list[2].lstrip()]
+	id = list[0].lstrip()
+	fov = list[1].lstrip()
+	deadlen = list[2].lstrip()
 	samples = list[3:]
 
 	samples_in = []
