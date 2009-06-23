@@ -1,0 +1,126 @@
+import viz
+import random
+import viztask
+import math
+import pickle
+import latinSquare
+import environment_setup
+import time
+
+# text box for showing messages
+tbox = viz.addTextbox()	
+tbox.setPosition(0.5,0.35)
+
+# set numtrials number to twenty-seven
+numtrials = 3
+
+# results
+results = []
+
+# load conditions from pickle
+unpicklefile = open('ExtraConditions', 'r')
+conditions = pickle.load(unpicklefile)
+unpicklefile.close()
+
+#for c in conditions:
+#	print c.fov
+#sys.exit()
+
+participantNumber = 0 #change for each participant
+
+resultsPath = "extra_%d_%d.csv"%(participantNumber,time.time())
+
+# function to run the experiment
+def run_tasks():
+	global tbox, message, numtrials, results, conditions, participantNumber, resultsPath
+	#sys.exit()
+	ls = latinSquare.LatinSquare(numtrials)
+	order = ls.getOrder(participantNumber % numtrials)
+	#order[0]=0# temporary debug
+	#print "order:",order
+	#for i in xrange(numtrials):
+	#	print ls.getOrder(i)
+	#sys.exit()
+	
+	#for i in xrange(numtrials):
+	#	print conditions[order[i]].fov
+	#	print conditions[order[i]].myDeadLength
+	
+	# load path set from file
+	unpicklefile = open('pathGen67130', 'r')
+	pg = pickle.load(unpicklefile)
+	unpicklefile.close()
+
+	# show space bar message
+	tbox.message("Press space to start")
+
+	#resultsfile = open(resultsPath,'a')
+	#resultsfile.write("%d\n"%participantNumber)
+	#resultsfile.close()
+
+	# for each trial
+	for i in range(0,numtrials):
+		
+		# wait for space bar
+		yield viztask.waitKeyDown(' ')
+
+		# hide message box
+		tbox.visible(viz.OFF)
+
+		# set up variables for this condition
+		environment_setup.setARfov( conditions[order[i]].fov )
+		
+		# run the path set
+		yield pg.runExperimentPathSet(27+order[i],conditions[order[i]])
+		
+		# append the results
+		# results.append([ncorrect, nfalsepos, nfalseneg])
+		results.append( pg.errlist )
+		print pg.errlist
+		
+		# show trial over message
+		tbox.visible(viz.ON)
+		tbox.message("Trial %d Over"%(i+1))
+		#print "Result: fov, latency, ncorrect, nfalsepos, nfalseneg"
+		#print conditions[i] +results[i]
+		
+		# open results file
+		resultsfile = open(resultsPath,'a')
+
+		# this is amazing and secret
+		resultsfile.write("%d, "%participantNumber)
+		resultsfile.write("%d, "%conditions[order[i]].fov)
+		resultsfile.write("%d, "%conditions[order[i]].myDeadLength)
+		for err in pg.errlist:
+		    resultsfile.write("%f, "%err)
+		resultsfile.write('\n')
+		resultsfile.write(",,,")
+		for time in pg.timelist:
+		    resultsfile.write("%f, "%time)
+		resultsfile.write('\n')
+	
+		# close results file
+		# using close command
+		# resultsfile.close() <-- like this
+		resultsfile.close()
+
+	# show done message
+	tbox.message("Done!")
+
+	# print results
+	#print "Results:"
+	#print "fov, latency, ncorrect, nfalsepos, nfalseneg"
+	#i = 0
+	#for r in results:
+		#print conditions[i] + r
+		#i += 1
+
+
+# run it
+viztask.schedule(run_tasks())
+
+
+# call timeline() to create
+# get events
+# iterate through list
+# get start time, isdead
