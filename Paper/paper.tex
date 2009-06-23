@@ -106,11 +106,16 @@ In a second study using the AR simulator, we studied a tracking task where the A
 
 %% \copyrightspace
 
+Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has applications in fields ranging from engineering and architecture to military or search-and-rescue operations.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view.
+
+
 motivation??
 
 \section{Related Work}
 
-Livingston and Ai studied the effects of various sources of registration error with an AR simulation similar to our own.  Here, participants tracked a virtual car moving throughout a real environment, with a white box representing an augmented view of the car's location.  A white box was continuously visible, even when the car itself was occluded by a building in the environment.  Other virtual cars and their associated white boxes acted as distractors.  At specific times during the experiment, the simulation would freeze and the participant was asked to align the center of their view (indicated by cross-hairs) on the location of the correct car and press a key.  While the effects of several types of error were studied in this work, the effect of registration dropouts was not examined.
+Livingston and Ai \cite{4637329} studied the effects of various sources of registration error with an AR simulation similar to our own.  Here, participants tracked a virtual car moving throughout a real environment, with a white box representing an augmented view of the car's location.  A white box was continuously visible, even when the car itself was occluded by a building in the environment.  Other virtual cars and their associated white boxes acted as distractors.  At specific times during the experiment, the simulation would freeze and the participant was asked to align the center of their view (indicated by cross-hairs) on the location of the correct car and press a key.  While the effects of several types of error were studied in this work, the effect of registration dropouts was not examined.
+
+Bane and Hollerer \cite{1383060} propose a set of AR tools for virtual x-ray vision.  Various augmented views are presented, each attempting to overcome the "Superman's X-ray vision" problem of presenting too much AR information to the user.  The toolset's usefulness is illustrated with an example of an outdoors user viewing the contents of a nearby building.
 
 other studies which vary AR fov, tracking failures
 
@@ -119,23 +124,6 @@ previous X-ray AR work
 simulated AR
 
 \cite{4637329,4811058,1383060}
-
-\section{AR Simulator Validation}
-
-Cha's text goes here
-
-\subsection{Experimental Design}
-
-\begin{figure}[ht!]
-	\centering
-	\includegraphics[width=3.5in]{annotated_room.png}
-	\caption{Overhead view of virtual room (approx. measure)}
-\end{figure}
-
-
-\subsection{Results}
-
-\subsection{Analysis}
 
 \section{Tracking Study}
 
@@ -146,6 +134,13 @@ To actually run this experiment using a true augmented reality system would be d
 By simulating augmented reality, we are freed from the current restrictions of tracking and display technology.  Using a simulated environment also makes the experiment more controllable, and thus more easily reproduced.
 
 \subsection{Experimental Design}
+
+\begin{figure}[ht!]
+	\centering
+	\includegraphics[width=3.5in]{annotated_room.png}
+	\caption{Overhead view of virtual room (approx. measure).  Participant is stationary in the center of the room, with initial orientation along ``user view'' arrow.  Top-hat's initial position is outside the front doorway, directly in the participant's view.}
+\end{figure}
+
 Participants are presented a view of the scene through a head-mounted display helmet with orientation tracking.  The tracking overlays are  augmented on top of the image to form the simulated augmented reality view.
 
 The parameters of our experiment are divided between the ``real'' immersion factors, such as the field of view of the HMD, and the ``augmented'' immersion factors, such as the field of view of the simulated AR display, and the performance of the head tracker.  We introduce periods of tracking failure, where the augmented overlays disappear, to simulate the effect of failures in a real tracking system.  For example, such failures might occur with a magnetic tracker near interfering materials, or with visual tracking when tracked features are lost.
