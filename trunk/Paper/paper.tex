@@ -107,13 +107,15 @@ Augmented reality (AR) systems are expensive.  It is worth studying the effects 
 
 Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has potential applications in various fields ranging from construction \cite{Webster96augmentedreality}, medicine \cite{azuma95survey}, military \cite{Livingston02anaugmented} and search-and-rescue operations \cite{1528424}.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view, such as GPS dropout errors \cite{4079263}, where tracking is temporarily lost.
 
-In this paper, we study the effects of varying augmented FOV along with object-tracking dropouts.  By using an AR simulation built with virtual reality, it is possible to simulate the tracking dropouts, which would otherwise be difficult or impossible to replicate.  The simulation is a tracking task, where the participant is placed inside a virtual room and visually follows a person outside, walking an unpredictable path.  We wish to answer the following questions.  What effect does varying the augmented FOV have on user tracking performance?  What effect do different dropout lengths have on performance?  What are the interactions between these two variables?
+In this study, we have implemented an AR simulation with virtual reality hardware and software to examine the effects of varying FOV and sensor dropouts in a tracking task.  Using an AR simulation gives us the ability to vary experiment conditions which may be difficult or even impossible to replicate on a real-world AR system.  It also gives us the ability to remove unnecessary factors from generating noise in our data: illumination 
+
+By using an AR simulation built with virtual reality, it is possible to simulate the tracking dropouts, which would otherwise be difficult or impossible to replicate.  The simulation is a tracking task, where the participant is placed inside a virtual room and visually follows a person outside, walking an unpredictable path.  We wish to answer the following questions.  What effect does varying the augmented FOV have on user tracking performance?  What effect do different dropout lengths have on performance?  What are the interactions between these two variables?
 
 \section{Related Work}
 
 Livingston and Ai studied the effects of various sources of registration error with an AR simulation similar to our own \cite{4637329}.  Here, participants tracked a virtual car moving throughout a real environment, with a white box representing an augmented view of the car's location.  A white box was continuously visible, even when the car itself was occluded by a building in the environment.  Other virtual cars and their associated white boxes acted as distractors.  At specific times during the experiment, the simulation would freeze and the participant was asked to align the center of their view (indicated by cross-hairs) on the location of the correct car and press a key.  While the effects of several types of error were studied in this work, the effect of registration dropouts was not examined.
 
-Bane and H\"{o}llerer propose a set of AR tools for virtual x-ray vision \cite{1383060}.  Various augmented views are presented, each attempting to overcome the "Superman's X-ray vision" problem of presenting too much AR information to the user.  The toolset's usefulness is illustrated with an example of an outdoors user viewing the contents of a nearby building.
+Bane and Hollerer propose a set of AR tools for virtual x-ray vision \cite{1383060}.  Various augmented views are presented, each attempting to overcome the "Superman's X-ray vision" problem of presenting too much AR information to the user.  The toolset's usefulness is illustrated with an example of an outdoors user viewing the contents of a nearby building.
 
 % TODO: add discussion of validity of AR simulation w/ citations
 
@@ -129,9 +131,9 @@ By simulating augmented reality, we are freed from the current restrictions of t
 
 \section{Experimental Design}
 
-The design of the experiment is based around the idea that a task should have straightforward quantitative results.  Also, the task should be reasonably simple so as not to frustrate the participants.  Added challenges were that the task should be generic so as to be generizable, yet grounded in reality (i.e. not an abstract world), to enhance participant familiarity with the AR task.
+The design of the experiment is built with several goals in mind.  The task should have straightforward, quantitative results.  Also, the task should be reasonably simple so as not to frustrate the participants.  Further, the task should be generic so as to be generizable, yet grounded in reality (i.e. not an abstract world), to enhance participant familiarity with the AR task.
 
-We developed a tracking scenario, where the user is asked to visually track a virtual person as he moves around the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation as the please, but not change position (3 degrees of freedom).  The user's view to the tracked virtual person may be occluded at any time by the walls of the building.  The augmented view element is composed of red marker rectangles indicating the location of the tracked person and other virtual people.
+We developed a tracking task scenario, where the user is asked to visually track a virtual person as it moves throughout the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation as the please, but not change position (3 degrees of freedom).  The virtual person to be tracked walks an unpredictable path outside the room.  The user's view to the virtual person may be occluded at any time by the walls of the building; at other times the virtual person may be visible through doors or windows in the building.  The augmented view element is composed of red marker rectangles indicating the location of the tracked person and other virtual people.
 
 \begin{figure}[t]
 	\centering
@@ -159,7 +161,7 @@ We implemented this experiment with Python and the Vizard virtual reality toolki
 
 In our experiment we define performance as effectiveness in tracking \emph{Tophat}.  We measure performance by recording the angular distance (in yaw) between the the user's viewing direction and the direction towards the target character.  This measure ranges between zero and 180 degrees (we used the smaller of the two options, clockwise and counter-clockwise).  We record one measurement per video frame, at about sixty frames per second, resulting in about 3600 measurements for a one second trial.
 
-Because the video does not run at exactly 60 Hz, each trial might have a slightly different number of measurements.  We also record a timestamp for each measurement, so that we can determine their exact frequency.  As a pre-processing step, we linearly re-sample the data for each trial so that each has exactly 3600 measurements at 60 Hz.
+Because the video does not always run at precisely 60 Hz, each trial might have a slightly different number of measurements.  We also record a timestamp for each measurement, so that we can determine their exact frequency.  As a pre-processing step, we linearly re-sample the data for each trial so that each has exactly 3600 measurements at 60 Hz.
 
 We observed that participants tend to switch between two different states during the experiment: a tracking state, where they are following the target; and a lost state, where they are searching for the target.  The two states are easily visible in the data.  In the tracking state, the angular error is generally low.  We asked participants to keep the cross hairs on the target as closely as they could, but different participants achieved different levels of accuracy.  In the lost state, the error starts to steadily climb, and may fluctuate depending on where the target moves.  The error may even return to near-zero during a lost state, if the participant unwittingly crosses the target's path.
 
@@ -167,7 +169,7 @@ We observed that participants tend to switch between two different states during
 
 We hypothesize that less immersive conditions will have longer and more frequent periods where the participant loses the target.  We considered several different metrics which might be appropriate in testing this hypothesis.
 
-The simplest is the average error over an entire trial.  This may not accurately capture the amount that a participant is lost, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
+The simplest is the average error over an entire trial.  This may not accurately represent tracking failures, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
 
 % median ??
 
@@ -178,7 +180,7 @@ We use a threshold of one quarter of the total horizontal field of view of the H
 
 Using this threshold we measure a participant's ``time to failure,'' the time until the a lost state is encountered.  However, this may not be a very descriptive measure, since a participant may reach the lost state sooner or later depending on the movement of the avatars, which varies between trials.
 
-We also consider a measurement we call ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most generally represent how well a participant performed.  Trials with either more lost periods or longer lost periods will result in a lower total time tracking.
+We also consider a measurement we call ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most generally represent how well a participant performed.  Trials with either more or longer lost periods will result in a lower total time tracking.
 
 For a more specific measure of performance, we count the number of times a participant reaches the lost state in a trial.  We only record a lost state when the error stays above the threshold $\tau$ for a minimum of 0.5 seconds.
 % TODO: how to motivate this threshold?
@@ -192,7 +194,7 @@ For a more specific measure of performance, we count the number of times a parti
 %\begin{figure}[t]
 %	\centering
 %	\includegraphics[width=3in]{figures/numtimes_deadlen.pdf}
-%	\caption{Box plot of the number of times the participant is lost versus the length of the tracking failure periods.}
+%	\caption{Box plot of the number of times the participant is lost versus the length of the sensor dropouts.}
 %\end{figure}
 
 %\begin{figure}[t]
@@ -204,13 +206,13 @@ For a more specific measure of performance, we count the number of times a parti
 %\begin{figure}[t]
 %	\centering
 %	\includegraphics[width=3in]{figures/numtimes_interaction.pdf}
-%	\caption{Interaction plot of the effect of field of view and tracking failure on the number of times the participant becomes lost.}
+%	\caption{Interaction plot of the effect of field of view and registration dropouts on the number of times the participant becomes lost.}
 %\end{figure}
 
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=3in]{figures/tt_deadlen.pdf}
-	\caption{\label{fig:tt_deadlen}Box plot of the amount of time that the target is near the crosshairs versus the length of tracker failure periods.}
+	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
 \end{figure}
 
 %\begin{figure}[t]
@@ -235,9 +237,9 @@ We performed two-way {ANOVA} for the time tracking metric as an overall analysis
 % TODO: num times lost: fov not significant, deadlen significant, interaction -- talk about what interaction means.
 
 
-Figure \ref{fig:tt_deadlen} shows a box plot of time tracking versus failure length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that conditions one and two were significantly different than zero (p<??), but not significantly different from each other (p<??).  This suggests that we may be seeing a thresholding effect above one second tracking failures.
+Figure \ref{fig:tt_deadlen} shows a box plot of time tracking versus dropout length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that conditions one and two were significantly different than zero (p<??), but not significantly different from each other (p<??).  This suggests that we may be seeing a thresholding effect above one second sensor dropouts.
 
-This suggests that we have reached a threshold at one second.  We had seven participants complete an extra three trials with the medium field of view and tracking failure periods of 0.5 seconds.  Figure 8 shows the data.  There wasn't a significant difference between the zero length and half second length conditions.  For future work, we could find the threshold between 0.5 and 1.
+This suggests that we have reached a threshold at one second.  We had seven participants complete an extra three trials with the medium field of view and sensor dropout periods of 0.5 seconds.  Figure 8 shows the data.  There wasn't a significant difference between the zero length and half second length conditions.  For future work, we could find the threshold between 0.5 and 1.
 
 %use multiple comparison of means to determine which pairs are significant -- difference between length of one and length of two is not significant.
 
@@ -248,9 +250,9 @@ This suggests that we have reached a threshold at one second.  We had seven part
 %\multicolumn{2}{|c|}{Selection Stroke Thresholds} \\
 Metric & Factor & F value & Pr \\
 \hline
-Time Tracking & Failure Length & 20.41 & $<0.001$\\
+Time Tracking & Dropout Length & 20.41 & $<0.001$\\
 Time Tracking & Field of View & 13.549 & $<0.001$\\
-Number of Times Lost & Failure Length & 61.816 & $<0.001$\\
+Number of Times Lost & Dropout Length & 61.816 & $<0.001$\\
 \hline
 \end{tabular}
  \caption{\label{fig:anova}Factors which have a significant effect.}
