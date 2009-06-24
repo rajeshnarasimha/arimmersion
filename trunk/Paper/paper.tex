@@ -125,7 +125,7 @@ simulated AR
 
 \cite{4637329,4811058,1383060}
 
-\section{Tracking Study}
+\section{AR Simulation}
 
 Our experiment involves a tracking task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Outside of the room, people are walking around the building.  The target person to be tracked is visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is not different from any other person's overlay; the target is only identifiable when visible through a window or a door.
 
@@ -133,7 +133,7 @@ To actually run this experiment using a true augmented reality system would be d
 
 By simulating augmented reality, we are freed from the current restrictions of tracking and display technology.  Using a simulated environment also makes the experiment more controllable, and thus more easily reproduced.
 
-\subsection{Experimental Design}
+\section{Experimental Design}
 
 \begin{figure}[ht!]
 	\centering
@@ -153,9 +153,23 @@ The experiment was written in python using the Vizard environemnt.  Tracking was
 The HMD we used was a Proview HMD with the following attirbutes. ....  Fill this in.
 The computer we used was a Dell with the following specs...........  Fill this in
 
-\subsection{Results}
+\section{Analysis}
 
-\subsection{Analysis}
+In our experiment we define performance as effectiveness in tracking the top hat character.  We measure performance by recording the angular distance (in yaw) between the the user's viewing direction and the direction towards the target character.  This measure ranges between zero and 180 degrees (we used the smaller of the two options, clockwise and counter-clockwise).  We record one measurement per video frame, at about sixty frames per second, resulting in about 3600 measurements for a one second trial.
+
+Because the video does not run at exactly 60 Hz, each trial might have a slightly different number of measurements.  We also record a timestamp for each measurement, so that we can determine their exact frequency.  As a pre-processing step, we linearly re-sample the data for each trial so that each has exactly 3600 measurements at 60 Hz.
+
+We observed that participants tend to switch between two different states during the experiment: a tracking state, where they are following the target; and a lost state, where they are searching for the target.  The two states are easily visible in the data.  In the tracking state, the angular error is generally low.  We asked participants to keep the cross hairs on the target as closely as they could, but different participants achieved different levels of accuracy.  In the lost state, the error starts to steadily climb, and may fluctuate depending on where the target moves.  The error may even return to near-zero during a lost state, if the participant unwittingly crosses the target's path.
+
+We hypothesize that less immersive conditions will have longer and more frequent periods where the participant is lost.  We considered several different metrics which might be appropriate in testing this hypothesis.
+
+The simplest is the average error over an entire trial.  However, this may not accurately capture the amount that a participant is lost, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
+
+We can more explicitly detect the lost state by applying a threshold $\tau$ to the data.  When the error rises above the threshold, we consider the participant lost.  TODO: how to determine this threshold??
+
+One metric which uses this threshold is the ``time to failure,'' the time until a lost state is encountered.  However a participant may reach the lost state sooner or later depending on the movement of the avatars.  We also considered a measurement we called ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most clearly represent how well a participant performed.  Trials with either more lost periods or longer lost periods will result in a lower total time tracking.
+
+\section{Results}
 
 \section{Conclusions and Future Work}
 
