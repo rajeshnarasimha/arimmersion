@@ -32,7 +32,7 @@ for i in xrange(27):
     samples_line = sys.stdin.readline()
     timing_line = sys.stdin.readline()
     list = samples_line.rstrip().split(',')
-    id = int(list[0]) + 12
+    id = int(list[0]) - 12
     fov = list[1]
     deadlen = list[2]
     samples = list[3:]
@@ -52,14 +52,13 @@ for i in xrange(27):
 		except:
 			continue
 
-	if int(fov) == 20:
+    if int(fov) == 20:
 
 		#print "%d samples, %d timings"%(len(samples_in),len(timing_in))
 		rs = Resampler( samples_in, timing_in, 60. )
 
 		samples_out = []
 		timing_out = []
-
 		
 		sys.stdout.write("%s,%s,%s,"%(str(id),fov,deadlen))
 		for j in xrange(60*60):
