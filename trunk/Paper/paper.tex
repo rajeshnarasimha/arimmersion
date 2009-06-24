@@ -177,7 +177,11 @@ We can more explicitly detect the participant's state by applying a threshold $\
 %When the error rises above the threshold, we consider the participant lost.
 We use a threshold of one quarter of the total horizontal field of view of the HMD, $\tau = 12$ degrees.
 % TODO: how to motivate this threshold?
-
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=3.5in]{figures/tt_deadlen.pdf}
+	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
+\end{figure}
 Using this threshold we measure a participant's ``time to failure,'' the time until the a lost state is encountered.  However, this may not be a very descriptive measure, since a participant may reach the lost state sooner or later depending on the movement of the avatars, which varies between trials.
 
 We also consider a measurement we call ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most generally represent how well a participant performed.  Trials with either more or longer lost periods will result in a lower total time tracking.
@@ -203,18 +207,7 @@ For a more specific measure of performance, we count the number of times a parti
 %	\caption{Box plot of the number of times the participant becomes lost versus the field of view of the augmentations.}
 %\end{figure}
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=3.5in]{figures/tt_deadlen.pdf}
-	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
-\end{figure}
 % TODO: make the units seconds and change the labels on the bottom of this figure
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=3.5in]{figures/numtimes_interaction.pdf}
-	\caption{Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
-\end{figure}
 
 
 %\begin{figure}[t]
@@ -231,12 +224,19 @@ For a more specific measure of performance, we count the number of times a parti
 We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view had a very significant effect on performance using this metric.  
 % TODO: interaction?
 
+
 We also used a two-way {ANOVA} to examine the number of times the participant loses the target.
 % TODO: num times lost: fov not significant, deadlen significant, interaction -- talk about what interaction means.
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=3.5in]{figures/numtimes_interaction.pdf}
+	\caption{Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
+\end{figure}
+
+
+
+
 \begin{figure}[h]
-
-%use multiple comparison of means to determine which pairs are significant -- difference between length of one and length of two is not significant.
-
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -260,7 +260,7 @@ To investigate this threshold, we had seven participants complete an extra three
 With further experimentation, we could further delineate the performance curve as the dropout length increases from zero to one.
 %For future work, we could find the threshold between 0.5 and 1.
 
-\begin{figure}[t]
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=3.5in]{figures/extra.pdf}
 	\caption{Box plot of the number of times the participant loses the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected this data from seven participants, using the medium field of view.}
