@@ -79,7 +79,7 @@
 %% Abstract section.
 
 \begin{abstract}
-It is extremely challenging to run controlled studies comparing multiple augmented reality (AR) systems.  We use an “AR simulation” approach, in which a virtual reality (VR) system is used to simulate multiple AR systems. In order to validate this approach, we carefully replicated a well-known study by Ellis et al. using our simulator, obtaining comparable results. 
+%It is extremely challenging to run controlled studies comparing multiple augmented reality (AR) systems.  We use an “AR simulation” approach, in which a virtual reality (VR) system is used to simulate multiple AR systems. In order to validate this approach, we carefully replicated a well-known study by Ellis et al. using our simulator, obtaining comparable results. 
 
 In a second study using the AR simulator, we studied a tracking task where the AR interface provides x-ray vision to help track a moving target.  We varied the field of view of the AR display, as well as the reliability of the head tracker.  In low reliability conditions, we simulate tracker failure by disabling the augmented view of the scene for brief periods.  Our study gives insight into the effect of head tracker reliability on user performance in a tracking task, as well as the relationship between reliability and field of view in an AR system.
 
@@ -148,9 +148,7 @@ In our experiment we vary two parameters: the field of view of the AR interface 
 
 During each trial there are 20 people in addtition to the man wearing the tophat waking around outside of the room.  The walking path for each person was given by a randomly generated set of points with the constraint that they must stay within the rectangular area of size X by X surrounding the room.  At each point in the path the person would randomly change his walking speed to a new value which was within a range we deemed accecptable through expert analysis.  The man wearing the tophat had the additional constraints as follows.  He must start at the same location for each trial which made him visible by the participant through the door shaped opening in the building.  In order to make the paths by of similar dificulty we decided, through expert analysis, that through the trial he must have walked around the entire building at least once, and he must be visible through the windows for at least $x$ seconds.  We made sure these constraints were met by randomly generating paths until they were satisfied.  We generated 27 sets of patahs this way, one for each trail.  We used a balanced latin square to order these paths and the conditions to discourage the effects of learning.
 
-The experiment was written in python using the Vizard environemnt.  Tracking was done using IntersenseTracker
-The HMD we used was a Proview HMD with the following attirbutes. ....  Fill this in.
-The computer we used was a Dell with the following specs...........  Fill this in
+The experiment was written in Python using the Vizard environment.  Tracking was done using InterSense InertiaCube3 orientation tracker which has 180 Hz update rate.  We used a Pro-View 60 head mounted display which displays $640\times480$ video at 60 Hz, and has 36 degrees vertical field of view.  We did not use stereoscopic display.  We ran the experiment on a 2.4 GHz Intel Core 2 machine with 2 Gb of RAM and a NVIDIA GeForce 9800 GX2 graphics card running Windows XP.
 
 \section{Analysis}
 
