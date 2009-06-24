@@ -1,10 +1,7 @@
 import sys
 
 done = False
-
 thresh = 12
-secondsLoss = 2
-
 if len(sys.argv) == 2:
     thresh = int(sys.argv[1])
 
@@ -18,57 +15,30 @@ resamples = open("resampled.csv")
 
 while not done:
     for i in xrange(27):
-		
-		line = resamples.readline()
-		if line == "":
-			done = True
-			break
-		list = line.rstrip().split(',')
-		id = id_dict[list[0].lstrip()]
-		fov = fov_dict[list[1].lstrip()]
-		deadlen = len_dict[list[2].lstrip()]
-		#fov = list[1].lstrip()
-		#deadlen = list[2].lstrip()
-		samples = list[3:]
+	line =  resamples.readline()
+	if line == "":
+	    done = True
+	    break
+	list = line.rstrip().split(',')
+	id = id_dict[list[0].lstrip()]
+	fov = fov_dict[list[1].lstrip()]
+	deadlen = len_dict[list[2].lstrip()]
+	#fov = list[1].lstrip()
+	#deadlen = list[2].lstrip()
+	samples = list[3:]
 
-		samples_in = []
-		for j in samples:
-			try:
-				samples_in.append( float(j) )
-			except:
-				continue
+	samples_in = []
+	for j in samples:
+	    try:
+		samples_in.append( float(j) )
+	    except:
+		continue
 
-		#print "%d samples"%len(samples_in)
+	#print "%d samples"%len(samples_in)
 
-		sys.stdout.write("%s,%s,%s,"%(id,fov,deadlen))
-		totaltime = 0
-		
-		numLoss = 0
-		reachedThreshold = 0
-		totaltime = 60*60
-		
-		for j in xrange(60*60):
-			if samples_in[j] > thresh:
-				numLoss += 1
-				
-				if numLoss >= (secondsLoss*60):
-					if reachedThreshold == 0:
-						totaltime -= numLoss
-						reachedThreshold = 1
-					else:
-						totaltime -= 1
-			else:
-				numLoss = 0
-				reachedThreshold = 0
-		sys.stdout.write(" %d\n"%totaltime)
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	sys.stdout.write("%s,%s,%s,"%(id,fov,deadlen))
+	totaltime = 0
+	for j in xrange(60*60):
+	    if samples_in[j] <= thresh:
+		totaltime += 1
+	sys.stdout.write(" %d\n"%totaltime)
