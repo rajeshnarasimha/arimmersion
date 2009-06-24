@@ -203,17 +203,19 @@ For a more specific measure of performance, we count the number of times a parti
 %	\caption{Box plot of the number of times the participant becomes lost versus the field of view of the augmentations.}
 %\end{figure}
 
-%\begin{figure}[t]
-%	\centering
-%	\includegraphics[width=3in]{figures/numtimes_interaction.pdf}
-%	\caption{Interaction plot of the effect of field of view and registration dropouts on the number of times the participant becomes lost.}
-%\end{figure}
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=3.5in]{figures/tt_deadlen.pdf}
+	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
+\end{figure}
+% TODO: make the units seconds and change the labels on the bottom of this figure
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=3in]{figures/tt_deadlen.pdf}
-	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
+	\includegraphics[width=3.5in]{figures/numtimes_interaction.pdf}
+	\caption{Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
 \end{figure}
+
 
 %\begin{figure}[t]
 %	\centering
@@ -221,49 +223,57 @@ For a more specific measure of performance, we count the number of times a parti
 %	\caption{Box plot of time the participant is not lost versus the field of view of the augmentations.}
 %\end{figure}
 
-%\begin{figure}[t]
-%	\centering
-%	\includegraphics[width=3in]{figures/numtimes_extra_deadlen.pdf}
-%	\caption{Box plot of the number of times the participant is lost versus the length of the tracking failure periods, for the medium field of view condition, including the half second trial.}
-%\end{figure}
 
 % TODO: should we include data from older generation??
 
 % TODO: look at analysis from mean.
 
-We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Table \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view had a very significant effect on performance using this metric.  
+We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view had a very significant effect on performance using this metric.  
 % TODO: interaction?
 
+We also used a two-way {ANOVA} to examine the number of times the participant loses the target.
 % TODO: num times lost: fov not significant, deadlen significant, interaction -- talk about what interaction means.
-
-
-Figure \ref{fig:tt_deadlen} shows a box plot of time tracking versus dropout length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that conditions one and two were significantly different than zero (p<??), but not significantly different from each other (p<??).  This suggests that we may be seeing a thresholding effect above one second sensor dropouts.
-
-This suggests that we have reached a threshold at one second.  We had seven participants complete an extra three trials with the medium field of view and sensor dropout periods of 0.5 seconds.  Figure 8 shows the data.  There wasn't a significant difference between the zero length and half second length conditions.  For future work, we could find the threshold between 0.5 and 1.
+\begin{figure}[h]
 
 %use multiple comparison of means to determine which pairs are significant -- difference between length of one and length of two is not significant.
 
-\begin{figure}[htb]
 \centering
 \begin{tabular}{|c|c|c|c|}
 \hline
 %\multicolumn{2}{|c|}{Selection Stroke Thresholds} \\
 Metric & Factor & F value & Pr \\
 \hline
-Time Tracking & Dropout Length & 20.41 & $<0.001$\\
-Time Tracking & Field of View & 13.549 & $<0.001$\\
-Number of Times Lost & Dropout Length & 61.816 & $<0.001$\\
+Time Tracking & Failure Length & 28.904 & $<0.001$\\
+Time Tracking & Field of View & 15.800 & $<0.001$\\
+Number of Times Lost & Failure Length & 8.5008 & $<0.001$\\
+Number of Times Lost & Field of View & 13.060 & $<0.001$\\
 \hline
 \end{tabular}
  \caption{\label{fig:anova}Factors which have a significant effect.}
 \end{figure}
+
+Figure \ref{fig:tt_deadlen} shows a box plot of time tracking versus dropout length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that conditions one and two were significantly different than zero (p=??), but not significantly different from each other (p=??).  This suggests that we may be seeing a thresholding effect above one second sensor dropouts.
+% TODO: table with values
+
+To investigate this threshold, we had seven participants complete an extra three trials with the medium field of view and sensor dropout periods of 0.5 seconds.  Figure \ref{fig:extra} shows a box plot of time tracking versus sensor dropout length for these seven participants.  Again using Tukey's HSD to compare the means, we did not find a significant difference between the zero length and half second length conditions, but did find a significant difference between those and the higher length conditions.  
+%TODO: table with values
+With further experimentation, we could further delineate the performance curve as the dropout length increases from zero to one.
+%For future work, we could find the threshold between 0.5 and 1.
+
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=3.5in]{figures/extra.pdf}
+	\caption{Box plot of the number of times the participant loses the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected this data from seven participants, using the medium field of view.}
+\end{figure}
+
+%use multiple comparison of means to determine which pairs are significant -- difference between length of one and length of two is not significant.
 
 \section{Conclusions and Future Work}
 
 
 
 \section*{Acknowledgements}
-Cha Lee, Steffan Gauglitz, funding, and all of our participants.
+Cha Lee, Steffen Gauglitz, funding, and all of our participants.
 
 \bibliographystyle{acmsiggraph}
 \nocite{*}
