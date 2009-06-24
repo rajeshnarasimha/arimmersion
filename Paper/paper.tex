@@ -165,17 +165,32 @@ We hypothesize that less immersive conditions will have longer and more frequent
 
 The simplest is the average error over an entire trial.  This may not accurately capture the amount that a participant is lost, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
 
-We can more explicitly detect the lost state by applying a threshold $\tau$ to the data.  When the error rises above the threshold, we consider the participant lost.  Here, we use a 12 degree error as the threshold.
+% median ??
+
+We can more explicitly detect the lost state by applying a threshold $\tau$ to the data.  When the error rises above the threshold, we consider the participant lost.  TODO: how to determine this threshold??
 
 One metric which uses this threshold is the ``time to failure,'' the time until a lost state is encountered.  However a participant may reach the lost state sooner or later depending on the movement of the avatars.  We also considered a measurement we called ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most clearly represent how well a participant performed.  Trials with either more lost periods or longer lost periods will result in a lower total time tracking.
+
+% count number of times lost
+
+% time tracking is overview metric -- captures both number of times lost and length of lost periods
+% number of times lost is piece of overview -- number of times lost.
 
 \begin{figure}[ht!]
 	\centering
 	\includegraphics[width=3in]{figures/tophatscreenshot.png}
-	\caption{Sample user-view of AR simulation.  \emph{Tophat} is visible (non-occluded) in the doorway.  The augmented view overlays transparent red rectangles on the characters, indicating their location while occluded.}
+	\caption{Sample user-view of AR simulation.  \emph{Top Hat} is visible (non-occluded) in the doorway.  The augmented view overlays transparent red rectangles on the characters, indicating their location while occluded.}
 \end{figure}
 
 \section{Results}
+
+% should we include data from older generation??
+
+% look at analysis from mean.
+
+% time tracking: fov, deadlen significant.  interaction is weird....
+
+% num times lost: fov not significant, deadlen significant, interaction -- talk about what interaction means.
 
 \section{Conclusions and Future Work}
 
