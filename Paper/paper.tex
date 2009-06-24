@@ -106,11 +106,9 @@ In a second study using the AR simulator, we studied a tracking task where the A
 
 %% \copyrightspace
 
-Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has applications in various fields ranging from engineering and architecture to military or search-and-rescue operations.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view, such as GPS dropout errors, where tracking is temporarily lost.  
+Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has applications in various fields ranging from engineering and architecture to military or search-and-rescue operations.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view, such as GPS dropout errors \cite{4079263}, where tracking is temporarily lost.
 
 In this paper, we study the effects of varying augmented FOV along with object-tracking dropouts.  By using an AR simulation built with virtual reality, it is possible to simulate the tracking dropouts, which would otherwise be difficult or impossible to replicate.  The simulation is a tracking task, where the participant is placed inside a virtual room and visually follows a person outside, walking an unpredictable path.  We wish to answer the following questions.  What effect does varying the augmented FOV have on user tracking performance?  What effect do different dropout lengths have on performance?  What are the interactions between these two variables?
-
-motivation??
 
 \section{Related Work}
 
@@ -138,7 +136,7 @@ By simulating augmented reality, we are freed from the current restrictions of t
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=3.5in]{figures/annotated_roomb.png}
+	\includegraphics[width=3.5in]{figures/augmentedroom.png}
 	\caption{Overhead view of virtual room (approx. measure).  Participant is stationary in the center of the room, with initial orientation along ``user view'' arrow.  Top-hat's initial position is outside the front doorway, directly in the participant's view.}
 \end{figure}
 
