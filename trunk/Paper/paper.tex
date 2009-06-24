@@ -51,9 +51,9 @@
 %% Author and Affiliation (multiple authors).
 
 \author{
-%Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
-%\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
-%\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research}
+Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
+\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
+\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research
 }
 
 %% Keywords that describe your work.
@@ -132,9 +132,13 @@ By simulating augmented reality, we are freed from the current restrictions of t
 
 \section{Experimental Design}
 
+The design of the experiment is based around the idea that a task should have straightforward quantitative results.  Also, the task should be reasonably simple so as not to frustrate the participants.  Added challenges were that the task should be generic so as to be generizable, yet grounded in reality (i.e. not an abstract world), to enhance participant familiarity with the AR task.
+
+We developed a tracking scenario, where the user is asked to visually track a virtual person as he moves around the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation as the please, but not change position (3 degrees of freedom).  The user's view to the tracked virtual person may be occluded at any time by the walls of the building.  The augmented view element is composed of red marker rectangles indicating the location of the tracked person and other virtual people.
+
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=3.5in]{figures/augmentedroom.png}
+	\includegraphics[width=3in]{figures/augmentedroom.png}
 	\caption{Overhead view of virtual room (approx. measure).  Participant is stationary in the center of the room, with initial orientation along ``user view'' arrow.  Top-hat's initial position is outside the front doorway, directly in the participant's view.}
 \end{figure}
 
@@ -142,15 +146,15 @@ Participants are presented a view of the scene through a head-mounted display he
 
 The parameters of our experiment are divided between the ``real'' immersion factors, such as the field of view of the HMD, and the ``augmented'' immersion factors, such as the field of view of the simulated AR display, and the performance of the head tracker.  We introduce periods of tracking failure, where the augmented overlays disappear, to simulate the effect of failures in a real tracking system.  For example, such failures might occur with a magnetic tracker near interfering materials, or with visual tracking when tracked features are lost.
 
-In our experiment we vary two parameters: the field of view of the AR interface and the length of tracking failure periods.  Each trial is 60 seconds, with seven tracking failures.  The total vertical field of view of the HMD is 36 degrees; the three possible values for the augmented field of view were 10, 20, and 34 degrees.  The length of tracking failures varied between two seconds (longest), one second (medium failure) and zero seconds (no failure).  We experimented with longer values but deemed them too long to be realistic through expert analysis.  This gave us a total of 9 conditions, and for each participant we tested each condition 3 times giving a total of 27 trials per participant.
+In our experiment we vary two parameters: the field of view of the AR interface and the length of tracking failure periods.  Each trial is 60 seconds, with seven tracking failures.  The total vertical field of view of the HMD is 36 degrees; the three possible values for the augmented field of view were 10, 20, and 34 degrees.  The length of tracking failures varied between two seconds (high failure), one second (medium failure) and zero seconds (no failure).  We experimented with longer values but deemed them too long to be realistic through expert analysis.  This gave us a total of 9 conditions, and for each participant we tested each condition 3 times giving a total of 27 trials per participant.
 
-During each trial there are 20 people in addition to a virtual man (Tophat) wearing a tall black tophat walking an unpredictable path outside of the room.  The paths for each virtual person was randomly generated from set of coordinates exterior to the room.  Each path had the constraint that they must stay within the rectangular area of size X by X surrounding the room.  At each path point, the person would randomly change his walking speed to a new value which was within a range we deemed accecptable through expert analysis.  \emph{Tophat} had the additional constraints as follows.  He must start at the same location for each trial which made him visible by the participant through the door shaped opening in the building.  In order to make the paths by of similar dificulty we decided, through expert analysis, that through the trial he must have walked around the entire building at least once, and he must be visible through the windows for at least $x$ seconds.  We made sure these constraints were met by randomly generating paths until they were satisfied.  We generated 27 sets of patahs this way, one for each trail.  We used a balanced latin square to order these paths and the conditions to discourage the effects of learning.
+During each trial there are 20 people in addition to a virtual man \emph{Tophat} wearing a tall black tophat walking an unpredictable path outside of the room.  The paths for each virtual person was randomly generated from set of coordinates exterior to the room.  Each path had the constraint that they must stay within the rectangular $50\times50$ $m^2$ area surrounding the room.  At each path point, the person will randomly change his/her walking speed within the range of 4 to 7 m/s.  \emph{Tophat} had the additional constraints as follows.  He must start at the same location for each trial which made him visible by the participant through the front door the building.  In order to make the paths by of similar difficulty \emph{Tophat} must walk around the entire building at least once, and he must be visible through the windows for at least 10 seconds.  These constraints were met by randomly generating paths until all were satisfied.  We generated 27 sets of paths in this fashion, each corresponding to a specific trial.  We used a latin squares ordering to discourage the effects of learning.
 
-The experiment was written in Python using the Vizard environment.  Tracking was done using InterSense InertiaCube3 orientation tracker which has 180 Hz update rate.  We used a Pro-View 60 head mounted display which displays $640\times480$ video at 60 Hz, and has 36 degrees vertical field of view.  We did not use stereoscopic display.  We ran the experiment on a 2.4 GHz Intel Core 2 machine with 2 Gb of RAM and a NVIDIA GeForce 9800 GX2 graphics card running Windows XP.
+We implemented this experiment with Python and the Vizard virtual reality toolkit.  Head-tracking was handled by a InterSense InertiaCube3 orientation tracker with a 180 Hz refresh rate.  We used a Pro-View 60 head mounted display (HMD) displaying $640\times480$ video at 60 Hz, and 36 degrees vertical field of view.  As we were not concerned with stereo performance, we turned off the stereoscopic feature.  The experiment ran on a 2.4 GHz Intel Core 2 machine with 2 Gb of RAM and a NVIDIA GeForce 9800 GX2 graphics card running Windows XP SP3.
 
 \section{Analysis}
 
-In our experiment we define performance as effectiveness in tracking the top hat character.  We measure performance by recording the angular distance (in yaw) between the the user's viewing direction and the direction towards the target character.  This measure ranges between zero and 180 degrees (we used the smaller of the two options, clockwise and counter-clockwise).  We record one measurement per video frame, at about sixty frames per second, resulting in about 3600 measurements for a one second trial.
+In our experiment we define performance as effectiveness in tracking \emph{Tophat}.  We measure performance by recording the angular distance (in yaw) between the the user's viewing direction and the direction towards the target character.  This measure ranges between zero and 180 degrees (we used the smaller of the two options, clockwise and counter-clockwise).  We record one measurement per video frame, at about sixty frames per second, resulting in about 3600 measurements for a one second trial.
 
 Because the video does not run at exactly 60 Hz, each trial might have a slightly different number of measurements.  We also record a timestamp for each measurement, so that we can determine their exact frequency.  As a pre-processing step, we linearly re-sample the data for each trial so that each has exactly 3600 measurements at 60 Hz.
 
@@ -158,15 +162,15 @@ We observed that participants tend to switch between two different states during
 
 We hypothesize that less immersive conditions will have longer and more frequent periods where the participant is lost.  We considered several different metrics which might be appropriate in testing this hypothesis.
 
-The simplest is the average error over an entire trial.  However, this may not accurately capture the amount that a participant is lost, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
+The simplest is the average error over an entire trial.  This may not accurately capture the amount that a participant is lost, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the tracking state.
 
-We can more explicitly detect the lost state by applying a threshold $\tau$ to the data.  When the error rises above the threshold, we consider the participant lost.  TODO: how to determine this threshold??
+We can more explicitly detect the lost state by applying a threshold $\tau$ to the data.  When the error rises above the threshold, we consider the participant lost.  Here, we use a 12 degree error as the threshold.
 
 One metric which uses this threshold is the ``time to failure,'' the time until a lost state is encountered.  However a participant may reach the lost state sooner or later depending on the movement of the avatars.  We also considered a measurement we called ``time tracking,'' which is the amount of time spent in the tracking state.  This metric seems to most clearly represent how well a participant performed.  Trials with either more lost periods or longer lost periods will result in a lower total time tracking.
 
 \begin{figure}[ht!]
 	\centering
-	\includegraphics[width=3.5in]{figures/tophatscreenshot.png}
+	\includegraphics[width=3in]{figures/tophatscreenshot.png}
 	\caption{Sample user-view of AR simulation.  \emph{Tophat} is visible (non-occluded) in the doorway.  The augmented view overlays transparent red rectangles on the characters, indicating their location while occluded.}
 \end{figure}
 
