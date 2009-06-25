@@ -106,7 +106,7 @@ This is an AR study, simulated using a virtual reality (VR), to examine the effe
 
 %% \copyrightspace
 
-Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has potential applications in various fields ranging from construction \cite{Webster96augmentedreality}, medicine \cite{azuma95survey}, military \cite{Livingston02anaugmented} and search-and-rescue operations \cite{1528424}.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view, such as GPS dropout errors \cite{4079263}, where tracking is temporarily lost.
+Augmented Reality systems may be used to simulate x-ray vision \cite{1383060}.  The ability to see through solid objects has potential applications in various fields ranging from construction \cite{Webster96augmentedreality}, medicine \cite{azuma95survey}, military \cite{Livingston02anaugmented} and search-and-rescue operations \cite{1528424}.  Unfortunately, implementing x-ray vision is not a trivial task.  AR systems have cost issules, including those pertaining to level-of-immersion.  For example, what is the ideal augmented field of view (FOV) for a given scenario?  Other issues relate to tracking the objects in the x-ray view, such as GPS dropout errors \cite{4079263}, where position information is temporarily lost.
 
 In this study, we have implemented an AR simulation with virtual reality hardware and software to examine the effects of varying FOV and sensor dropouts in a target following task.  Using an AR simulation gives us the ability to vary experiment conditions which may be difficult or even impossible to replicate on a real-world AR system.  It also gives us the ability to remove unnecessary factors from generating noise in our data, such as illumination or visibilty changes, weather problems, or environmental distractions. 
 
@@ -124,11 +124,11 @@ Bane and Hollerer propose a set of AR tools for virtual x-ray vision \cite{13830
 
 \section{AR Simulation}
 
-Our experiment involves a target following task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Virtual people walk unpredictable paths outside the building.  The target to be tracked is one of these people, visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is identical to the other virtual people overlays; the target may only be distinguished when visible through a window or a door.
+Our experiment involves a target following task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Virtual people walk unpredictable paths outside the building.  The target to be followed is one of these people, visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is identical to the other virtual people overlays; the target may only be distinguished when visible through a window or a door.
 
 To actually run this experiment using a true augmented reality system would be extremely difficult.  Many confederates would be needed to walk around the room, and their movements would need to be accurately reproduced for each new participant.  Also, the confederates would need to be continously tracked for the augmented overlays to be displayed.  Instead, we chose to simulate the experiment setup in a completely virtual environment.
 
-By simulating augmented reality, we are freed from the current restrictions of tracking and display technology.  This simulated environment also affords easily controlled variables, and thus the experiment may be replicated.
+By simulating augmented reality, we are freed from the current restrictions of display technology.  This simulated environment also affords easily controlled variables, and thus the experiment may be replicated.
 
 \section{Experimental Design}
 
@@ -191,7 +191,7 @@ We use a threshold of one quarter of the total horizontal field of view of the H
 \end{figure}
 Using this threshold we measure a participant's ``time to failure,'' the time until the a lost state is encountered.  However, this may not be a very descriptive measure, since a participant may reach the lost state sooner or later depending on the movement of the avatars, which varies between trials.
 
-We also consider a measurement we call ``time tracking,'' which is the amount of time spent in the target following state.  This metric seems to most generally represent how well a participant performed.  Trials with either more or longer lost periods will result in a lower total time following the target.
+We also consider a measurement we call ``Time Following Target,'' which is the amount of time spent in the target following state.  This metric seems to most generally represent how well a participant performed.  Trials with either more or longer lost periods will result in a lower total time following the target.
 
 For a more specific measure of performance, we count the number of times a participant reaches the lost state in a trial.  We only record a lost state when the error stays above the threshold $\tau$ for a minimum of 0.5 seconds.
 % TODO: how to motivate this threshold?
@@ -248,9 +248,9 @@ From this plot we can see that with a small field of view, performance is equall
 %\multicolumn{2}{|c|}{Selection Stroke Thresholds} \\
 Metric & Factor & F value & Pr \\
 \hline
-Time Tracking & Failure Length & 28.904 & $<0.001$\\
-Time Tracking & Field of View & 15.800 & $<0.001$\\
-Number of Times Lost & Failure Length & 8.5008 & $<0.001$\\
+Time Following Target & Dropout Length & 28.904 & $<0.001$\\
+Time Following Target & Field of View & 15.800 & $<0.001$\\
+Number of Times Lost & Dropout Length & 8.5008 & $<0.001$\\
 Number of Times Lost & Field of View & 13.060 & $<0.001$\\
 \hline
 \end{tabular}
