@@ -81,7 +81,7 @@ Submission 191
 
 \begin{abstract}
 
-This is an AR study, simulated using a virtual reality (VR), to examine the effects of level of immersion and tracking sensor reliability in AR.  We analyze participant performance on a target following task in which the AR interface provides X-ray vision to help track a moving target.  We varied the field of view of the AR display, as well as the reliability of the head tracking sensor.  In low reliability conditions, we simulate tracker failure by disabling the augmented view of the scene for brief periods.  Our study gives insight into the effect of tracking sensor reliability on user performance in a target following task, as well as the relationship between reliability and field of view in an AR system.
+We examine the effects of level of immersion and tracking sensor reliability in augmented reality (AR) X-ray vision with a virtual reality (VR) based simulation.  We analyze participant performance on a target following task while varying the field of view of the AR display, as well as the reliability of the head tracking sensor.  In low reliability conditions, we simulate sensor dropouts by disabling the augmented view of the scene for brief time periods.  Our study gives insight into the effect of tracking sensor reliability on user performance in a target following task, as well as the relationship between reliability and field of view in an AR system.
 
 \end{abstract}
 
@@ -120,11 +120,19 @@ Livingston and Ai studied the effects of various sources of registration error w
 
 Bane and Hollerer propose a set of AR tools for virtual X-ray vision \cite{1383060}.  Various augmented views are presented, each attempting to overcome the "Superman's X-ray vision" problem of presenting too much AR information to the user.  The toolset's usefulness is illustrated with an example of an outdoors user viewing the contents of a nearby building.
 
+Ragan et. al. \cite{4811058} developed an AR simulation using virtual reality to examine the effect of registration errors on an object manipulation tasks.  The implemented task involved moving a virtual ring from one end of an irregularly shaped tube to the other, while avoiding collisions between the two objects.  By using VR to simulate this task, they were able to independently control tracking jitter and latency variables in a pilot study.
+
 % TODO: add discussion of validity of AR simulation w/ citations
 
 %other studies which vary AR fov, tracking failures?
 
 \section{AR Simulation}
+
+\begin{figure*}[ht!]
+	\centering
+	\includegraphics[width=7in]{figures/triple_view.png}
+	\caption{Sample views of AR simulation.  Transparent red rectangles overlay the people, indicating their location.  \emph{Left:} A user view of Top Hat (non-occluded) in the doorway.   \emph{Middle:} Three distractor people are visible through a large window.  \emph{Right:} A typical user view of a corner occluding several people.}
+\end{figure*}
 
 Our experiment involves a target following task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Virtual people walk unpredictable paths outside the building.  The target to be followed is one of these people, visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is identical to the other virtual people overlays; the target may only be distinguished when visible through a window or a door.
 
@@ -138,12 +146,6 @@ The design of the experiment is built with several goals in mind.  The task shou
 
 We developed a target following task scenario, where the user is asked to visually track a virtual person as it moves throughout the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation as the please, but not change position (3 degrees of freedom).  The virtual person to be tracked walks an unpredictable path outside the room.  The user's view to the virtual person may be occluded at any time by the walls of the building; at other times the virtual person may be visible through doors or windows in the building.  The augmented view element is composed of red marker rectangles indicating the location of the tracked person and other virtual people.
 
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=3in]{figures/augmentedroom.png}
-	\caption{Overhead view of virtual room (approx. measure).  Participant is stationary in the center of the room, with initial orientation along ``user view'' arrow.  Top-hat's initial position is outside the front doorway, directly in the participant's view.}
-\end{figure}
-
 Participants are presented a view of the scene through a head-mounted display helmet with orientation tracking.  The augmented overlays are merged with the original image to form the simulated augmented reality view.
 
 The parameters of our experiment are divided between the ``real'' components of immersion, such as the field of view of the HMD, and the ``augmented'' components of immersion, such as the field of view of the simulated AR display, and the performance of the tracking sensor.  We introduce periods of sensor dropouts, where the augmented overlays disappear, to simulate the effect of dropouts in a real tracking system.  For example, such dropouts might occur with a magnetic sensor near interfering material.
@@ -152,6 +154,12 @@ In our experiment we vary two parameters: the field of view of the AR interface 
 
 During each trial there are 20 people in addition to a virtual man \emph{Top Hat} wearing a tall black top hat walking an unpredictable path outside of the room.  The paths for each virtual person was randomly generated from set of coordinates exterior to the room.  Each path had the constraint that they must stay within the rectangular $50\times50$ $m^2$ area surrounding the room.  At each path point, the person will randomly change his/her walking speed within the range of 4 to 7 m/s.  Top Hat had the additional constraints as follows.  He must start at the same location for each trial which made him visible by the participant through the front door the building.  In order to make the paths by of similar difficulty Top Hat must walk around the entire building at least once, and he must be visible through the windows for at least 10 seconds.  These constraints were met by randomly generating paths until all were satisfied.  We generated 27 sets of paths in this fashion, each corresponding to a specific trial.  We used a latin squares ordering to discourage the effects of learning.
 
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=3in]{figures/augmentedroom.png}
+	\caption{Overhead view of virtual room (approx. measure).  Participant is stationary in the center of the room, with initial orientation along ``user view'' arrow.  Top-hat's initial position is outside the front doorway, directly in the participant's view.}
+\end{figure}
+
 \subsection{Implementation}
 
 We implemented this experiment with Python and the Vizard virtual reality toolkit.  Head-tracking was handled by a InterSense InertiaCube3 orientation tracker with a 180 Hz refresh rate.  We used a Pro-View 60 head mounted display (HMD) displaying $640\times480$ video at 60 Hz, and 36 degrees vertical field of view.  As we were not concerned the effects of stereo, we turned off the stereoscopic feature.  The experiment ran on a 2.4 GHz Intel Core 2 machine with 2 Gb of RAM and a NVIDIA GeForce 9800 GX2 graphics card running Windows XP SP3.
@@ -159,12 +167,6 @@ We implemented this experiment with Python and the Vizard virtual reality toolki
 \subsection{Participants}
 
 We ran this experiment on 19 subjects, 11 were male, and 8 female.  The participants ranged in age from 23 to 59, 15 were in the range 23 to 30, and the remaining 4 in the range 51 to 49.  None were colorblind.  Most users were heavy computer users with at least somewhat familiarity with virtual reality and augmented reality.  Only one participant played 3D video games often.  After every 9 trials we had the participants take a mandatory 5 minute break.  Some experienced light fatigue, but none experienced any strong effects of motion sickness.
-
-\begin{figure*}[ht!]
-	\centering
-	\includegraphics[width=7in]{figures/triple_view.png}
-	\caption{Sample views of AR simulation.  Transparent red rectangles overlay the people, indicating their location.  \emph{Left:} A user view of Top Hat (non-occluded) in the doorway.   \emph{Middle:} Three distractor people are visible through a large window.  \emph{Right:} A typical user view of a corner occluding several people.}
-\end{figure*}
 
 \section{Analysis}
 
