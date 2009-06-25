@@ -138,7 +138,7 @@ Ragan et. al. \cite{4811058} developed an AR simulation using virtual reality to
 
 Our experiment involves a target following task which uses an augmented reality interface to allow people to be tracked behind walls.  A participant stands in the middle of a square room with doors and windows on all sides.  Virtual people walk unpredictable paths outside the building.  The target to be followed is one of these people, visually distinguishable by a large black top hat.  The augmented reality interface overlays a translucent red rectangle on each person, which is visible even when the person is occluded by a wall.  However, the target person's overlay is identical to the other virtual people overlays; the target may only be distinguished when visible through a window or a door.
 
-To actually run this experiment using a true augmented reality system would be extremely difficult.  Many confederates would be needed to walk around the room, and their movements would need to be accurately reproduced for each new participant.  Also, the confederates would need to be continously tracked for the augmented overlays to be displayed.  Instead, we chose to simulate the experiment setup in a completely virtual environment.
+To actually run this experiment using a true augmented reality system would be extremely difficult.  Many confederates would be needed to walk around the room, and their movements would need to be accurately reproduced for each new participant.  Also, the confederates would need to be continously tracked for the augmented overlays to be displayed.%  Instead, we chose to simulate the experiment setup in a completely virtual environment.%
 
 By simulating augmented reality, we are freed from the current restrictions of display technology.  This simulated environment also affords easily controlled variables, and thus the experiment may be replicated.
 
@@ -146,9 +146,7 @@ By simulating augmented reality, we are freed from the current restrictions of d
 
 The design of the experiment is built with several goals in mind.  The task should have straightforward, quantitative results.  Also, the task should be reasonably simple so as not to frustrate the participants.  Further, the task should be generic so as to be generizable, yet grounded in reality (i.e. not an abstract world), to enhance participant familiarity with the AR task.
 
-We developed a target following task scenario, where the user is asked to visually track a virtual person as it moves throughout the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation as the please, but not change position (3 degrees of freedom).  The virtual person to be tracked walks an unpredictable path outside the room.  The user's view to the virtual person may be occluded at any time by the walls of the building; at other times the virtual person may be visible through doors or windows in the building.  The augmented view element is composed of red marker rectangles indicating the location of the tracked person and other virtual people.
-
-Participants are presented a view of the scene through a head-mounted display helmet with orientation tracking.  The augmented overlays are merged with the original image to form the simulated augmented reality view.
+We developed a target following task scenario, where the user is asked to visually track a virtual person as it moves throughout the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation, but not change position (3 degrees of freedom).  The user's view to the virtual people may be occluded at any time by the walls of the building; at other times the person may be visible through doors or windows in the building.  The augmented view element is composed of red marker rectangles indicating the location of the person to be followed and distractor people.
 
 The parameters of our experiment are divided between the ``real'' components of immersion, such as the field of view of the HMD, and the ``augmented'' components of immersion, such as the field of view of the simulated AR display, and the performance of the tracking sensor.  We introduce periods of sensor dropouts, where the augmented overlays disappear, to simulate the effect of dropouts in a real tracking system.  For example, such dropouts might occur with a magnetic sensor near interfering material.
 
@@ -180,7 +178,7 @@ We observed that participants tend to switch between two different states during
 
 % TODO: include two plots of error here (one with losses, one without)
 
-We hypothesize that less immersive conditions will have longer and more frequent periods where the participant loses the target.  We considered several different metrics which might be appropriate in testing this hypothesis.
+%We hypothesize that less immersive conditions will have longer and more frequent periods where the participant loses the target.  We considered several different metrics which might be appropriate in testing this hypothesis.%
 
 The simplest is the average error over an entire trial.  This may not accurately represent sensor dropouts, because the error does not necessarily stay high during the lost state, and also different participants may generally keep the cross hair further from the target even in the target following state.
 
