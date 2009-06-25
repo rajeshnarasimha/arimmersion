@@ -190,8 +190,11 @@ While conducting the trials we noticed that the participants spent a majority of
 % TODO: how to motivate this threshold?
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=3.5in]{figures/tt_deadlen.pdf}
-	\caption{\label{fig:tt_deadlen}Box plot of the amount of time the target is near the crosshairs versus the length of sensor dropouts.}
+	\includegraphics[width=1.5in]{figures/tt_deadlen.pdf}
+	\includegraphics[width=1.5in]{figures/tt_fov.pdf}\\
+	\includegraphics[width=1.5in]{figures/numtimes_deadlen.pdf}
+	\includegraphics[width=1.5in]{figures/numtimes_fov.pdf}
+	\caption{\label{fig:tt_deadlen}Box plots for our two independent variables and two metrics.  In general, performance increases when the length of sensor dropout periods is lessened, and when the AR field of view increases.}
 \end{figure}
 Using this threshold we measure a participant's \emph{time to failure}, the time until the a lost state is encountered.  However, this may not be a very descriptive measure, since a participant may reach the lost state sooner or later depending on the movement of the avatars, which varies between trials.
 
@@ -241,7 +244,7 @@ From this plot we can see that with a small field of view, performance is equall
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=3.5in]{figures/numtimes_interaction.pdf}
+	\includegraphics[width=2.5in]{figures/numtimes_interaction.pdf}
 	\caption{\label{fig:interaction}Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
 \end{figure}
 
@@ -271,7 +274,7 @@ With further experimentation, we could further delineate the performance curve a
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=3.5in]{figures/extra.pdf}
+	\includegraphics[width=2.5in]{figures/extra.pdf}
 	\caption{Box plot of the number of times the participant loses the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected this data from seven participants, using the medium field of view.}
 \end{figure}
 
@@ -279,7 +282,14 @@ With further experimentation, we could further delineate the performance curve a
 
 \section{Conclusions and Future Work}
 
+We designed an experiment to study a target following task which makes use of X-ray vision through an augmented reality device.  We used an augmented reality simulation to make the experiment feasible.
 
+We found that for our task, a low field of view has an adverse effect on performance.  This adverse effect dominates the other variable component of immersion, the reliability of the head-based rendering.  With reliable head-based rendering, a medium field of view is enough for good performance.  We did not see a significant performance increase when increasing to a high field of view.
+
+Decreased reliability in the head-based rendering, caused by periods of sensor dropout, adversely affects performance.  However, for our task, the performance decrease levels off at one second dropouts.  Preliminary analysis also shows no significant difference between having no dropouts and half second dropouts.  This suggests that below a certain length of dropouts, good level of performance can be maintained, provided that the field of view is large enough.  This threshold on the dropouts would change depending on what is being followed, but we expect the same pattern would appear in other target following scenarios.
+
+Future work lies in further investigating the effect of the dropout length 
+below the one second level.  Also, this work points to other interesting experiments which might test the interaction between reliability of the head-based rendering and other immersion components.
 
 %\section*{Acknowledgements}
 %Cha Lee, Steffen Gauglitz, funding, and all of our participants.
