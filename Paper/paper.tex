@@ -51,7 +51,7 @@
 %% Author and Affiliation (multiple authors).
 
 \author{
-Submission 191
+Submission 165
 %Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
 %\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
 %\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research
@@ -148,7 +148,7 @@ The design of the experiment is built with several goals in mind.  The task shou
 
 We developed a target following task scenario, where the user is asked to visually track a virtual person as it moves throughout the scene.  The participant is centered inside a room with various doors and windows giving a view to the outside world.  They may change their orientation, but not change position (3 degrees of freedom).  The user's view to the virtual people may be occluded at any time by the walls of the building; at other times the person may be visible through doors or windows in the building.  The augmented view element is composed of red marker rectangles indicating the location of the person to be followed and distractor people.
 
-The parameters of our experiment are divided between the ``real'' components of immersion, such as the field of view of the HMD, and the ``augmented'' components of immersion, such as the field of view of the simulated AR display, and the performance of the tracking sensor.  We introduce periods of sensor dropouts, where the augmented overlays disappear, to simulate the effect of dropouts in a real tracking system.  For example, such dropouts might occur with a magnetic sensor near interfering material.
+The parameters of our experiment are divided between the ``real'' components of immersion, such as the field of view of the HMD, and the ``augmented'' components of immersion, such as the field of view of the simulated AR display, and the performance of the tracking sensor.  We introduce periods of sensor dropouts, where the augmented overlays disappear, to simulate the effect of dropouts in a real tracking system.  For example, such dropouts might occur with a magnetic sensor near interfering material.  Different display options are available in this case; for example we could use the last known sensor reading, or predict future values.  However, these options could have a positive or negative effect on performance, depending on the circumstances.  We determined that hiding the AR overlay during sensor dropouts has the least effect on performance.
 
 In our experiment we have two independent variables: the field of view of the AR interface and the length of sensor dropout periods.  Each trial is 60 seconds, with seven sensor dropouts.  The total vertical field of view of the HMD is 36 degrees; the three possible values for the augmented field of view were 10, 20, and 34 degrees.  The length of dropouts varied between two seconds (highest), one second (medium) and zero seconds (lowest).  We experimented with longer dropout periods but deemed them too long.  This gave us a total of 9 conditions, and for each participant we tested each condition 3 times giving a total of 27 trials per participant.
 
@@ -235,10 +235,11 @@ For a more specific measure of performance, we count the number of times a parti
 
 % TODO: look at analysis from mean.
 
-We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view have a very significant effect on performance using this metric.  
+We performed two-way {ANOVA} for the time following target metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view have a very significant effect on performance using this metric.  
 % TODO: interaction?
 
 We also used a two-way {ANOVA} to examine the number of times the participant loses the target, with results shown in Figure \ref{fig:anova}.  Both field of view and dropout length have a significant effect.  There also is an interaction between the two factors.  Figure \ref{fig:interaction} shows a plot of this interaction.  
+% TODO: need F values reported here.
 
 From this plot we can see that with a small field of view, performance is equally bad with no dropouts or one second dropouts.  The small field of view seems to have a dominating effect on performance.  When the field of view is increased to the medium level, performance dramatically increases when there are no dropouts, but only gets slightly better when there are dropouts.  Finally, we do not observe much difference in performance between the medium and large field of view cases.  Using Tukey's HSD to compare means, the medium and large field of view conditions are in fact not significantly different ($p=0.575$).
 
