@@ -118,7 +118,7 @@ The AR simulation is built as a target following task, where the participant is 
 
 \section{Related Work}
 
-Livingston and Ai studied the effects of various sources of registration error with an AR simulation similar to our own \cite{4637329}.  Here, participants tracked a virtual car moving throughout a real environment, with a white box representing an augmented view of the car's location.  A white box was continuously visible, even when the car itself was occluded by a building in the environment.  Other virtual cars and their associated white boxes acted as distractors.  At specific times during the experiment, the simulation would freeze and the participant was asked to align the center of their view (indicated by cross-hairs) on the location of the correct car and press a key.  While the effects of several types of error were studied in this work, the effect of registration dropouts was not examined.
+Livingston and Ai studied the effects of various sources of registration error with an AR simulation similar to our own \cite{4637329}.  Here, participants tracked a virtual car moving throughout a real environment, with a white box representing an augmented view of the car's location.  A white box was continuously visible, even when the car itself was occluded by a building in the environment.  Other virtual cars and their associated white boxes acted as distractors.  At specific times during the experiment, the simulation would freeze and the participant identified the location of the correct car.
 
 Bane and Hollerer propose a set of AR tools for virtual X-ray vision \cite{1383060}.  Various augmented views are presented, each attempting to overcome the "Superman's X-ray vision" problem of presenting too much AR information to the user.  The toolset's usefulness is illustrated with an example of an outdoors user viewing the contents of a nearby building.
 
@@ -132,7 +132,7 @@ Ragan et. al. \cite{4811058} developed an AR simulation using virtual reality to
 
 \begin{figure*}[ht!]
 	\centering
-	\includegraphics[width=7in]{figures/triple_view.png}
+	\includegraphics[width=5in]{figures/triple_view.png}
 	\caption{Sample views of AR simulation.  Transparent red rectangles overlay the people, indicating their location.  \emph{Left:} A user view of Top Hat (non-occluded) in the doorway.   \emph{Middle:} Three distractor people are visible through a large window.  \emph{Right:} A typical user view of a corner occluding several people.}
 \end{figure*}
 
@@ -290,7 +290,7 @@ We found that for our task, a low field of view has an adverse effect on perform
 %This adverse effect dominates the other variable component of immersion, the reliability of the head-based rendering.
 With reliable head-based rendering, a medium field of view is enough for good performance.  We did not see a significant performance increase when increasing to a high field of view.
 
-Decreased reliability in the head-based rendering, caused by periods of sensor dropout, adversely affects performance.  However, the performance decrease levels off at one second dropouts.  Preliminary analysis also shows no significant difference between having no dropouts and half second dropouts.  This suggests that below a certain length of dropout time, good performance may be maintained, given a sufficiently large FOV.  This threshold on dropouts would change depending on the task at hand, but we expect the same pattern would arise in other target following scenarios.
+Decreased reliability in the head-based rendering, caused by periods of sensor dropout, adversely affects performance.  However, the performance decrease levels off at one second dropouts.  Preliminary analysis also shows no significant difference between having no dropouts and half second dropouts.  This suggests that below a certain length of dropout time, good performance may be maintained, given a sufficiently large FOV.%  This threshold on dropouts would change depending on the task at hand, but we expect the same pattern would arise in other target following scenarios.
 
 Future work lies in further investigating the effect of the dropout length 
 below the one second level.  Our work also suggests new experiments designed to test the interaction between reliability of the head-based rendering and various other immersion components.
