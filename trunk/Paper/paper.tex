@@ -42,7 +42,7 @@
 
 %% Paper title.
 
-\title{A Study of Immersion Factors Using an Augmented Reality Simulation}
+\title{A Study of an X-Ray Vision Tracking Task in Simulated Augmented Reality}
 
 %% Author and Affiliation (single author).
 
@@ -51,9 +51,10 @@
 %% Author and Affiliation (multiple authors).
 
 \author{
-Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
-\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
-\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research
+Submission 191
+%Roy G. Biv\thanks{e-mail: roy.g.biv@aol.com}\\ Starbucks Research %
+%\and Ed Grimley\thanks{e-mail:ed.grimley@aol.com}\\Nigel Mansell\thanks{nigelf1@msn.com}\\ Grimley Widgets, Inc. %
+%\and Martha Stewart\thanks{e-mail:martha.stewart@marthastewart.com}\\ Martha Stewart Enterprises \\ Microsoft Research
 }
 
 %% Keywords that describe your work.
@@ -149,9 +150,11 @@ In our experiment we vary two parameters: the field of view of the AR interface 
 
 During each trial there are 20 people in addition to a virtual man \emph{Top Hat} wearing a tall black top hat walking an unpredictable path outside of the room.  The paths for each virtual person was randomly generated from set of coordinates exterior to the room.  Each path had the constraint that they must stay within the rectangular $50\times50$ $m^2$ area surrounding the room.  At each path point, the person will randomly change his/her walking speed within the range of 4 to 7 m/s.  Top Hat had the additional constraints as follows.  He must start at the same location for each trial which made him visible by the participant through the front door the building.  In order to make the paths by of similar difficulty Top Hat must walk around the entire building at least once, and he must be visible through the windows for at least 10 seconds.  These constraints were met by randomly generating paths until all were satisfied.  We generated 27 sets of paths in this fashion, each corresponding to a specific trial.  We used a latin squares ordering to discourage the effects of learning.
 
+\subsection{Implementation}
+
 We implemented this experiment with Python and the Vizard virtual reality toolkit.  Head-tracking was handled by a InterSense InertiaCube3 orientation tracker with a 180 Hz refresh rate.  We used a Pro-View 60 head mounted display (HMD) displaying $640\times480$ video at 60 Hz, and 36 degrees vertical field of view.  As we were not concerned the effects of stereo, we turned off the stereoscopic feature.  The experiment ran on a 2.4 GHz Intel Core 2 machine with 2 Gb of RAM and a NVIDIA GeForce 9800 GX2 graphics card running Windows XP SP3.
 
-\subsection(Participants)
+\subsection{Participants}
 
 We ran this experiment on 19 subjects, 11 were male, and 8 female.  The participants ranged in age from 23 to 59, 15 were in the range 23 to 30, and the remaining 4 in the range 51 to 49.  None were colorblind.  Most users were heavy computer users with at least somewhat familiarity with virtual reality and augmented reality.  Only one participant played 3D video games often.  After every 9 trials we had the participants take a mandatory 5 minute break.  Some experienced light fatigue, but none experienced any strong effects of motion sickness.
 
@@ -225,20 +228,18 @@ For a more specific measure of performance, we count the number of times a parti
 
 % TODO: look at analysis from mean.
 
-We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view had a very significant effect on performance using this metric.  
+We performed two-way {ANOVA} for the time tracking metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view have a very significant effect on performance using this metric.  
 % TODO: interaction?
 
+We also used a two-way {ANOVA} to examine the number of times the participant loses the target, with results shown in Figure \ref{fig:anova}.  Both field of view and dropout length have a significant effect.  There also is an interaction between the two factors.  Figure \ref{fig:interaction} shows a plot of this interaction.  
 
-We also used a two-way {ANOVA} to examine the number of times the participant loses the target.
-% TODO: num times lost: fov not significant, deadlen significant, interaction -- talk about what interaction means.
+From this plot we can see that with a small field of view, performance is equally bad with no dropouts or one second dropouts.  The small field of view seems to have a dominating effect on performance.  When the field of view is increased to the medium level, performance dramatically increases when there are no dropouts, but only gets slightly better when there are dropouts.  Finally, we do not observe much difference in performance between the medium and large field of view cases.  Using Tukey's HSD to compare means, the medium and large field of view conditions are in fact not significantly different (p=??).
+
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=3.5in]{figures/numtimes_interaction.pdf}
-	\caption{Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
+	\caption{\label{fig:interaction}Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
 \end{figure}
-
-
-
 
 \begin{figure}[h]
 \centering
@@ -276,8 +277,8 @@ With further experimentation, we could further delineate the performance curve a
 
 
 
-\section*{Acknowledgements}
-Cha Lee, Steffen Gauglitz, funding, and all of our participants.
+%\section*{Acknowledgements}
+%Cha Lee, Steffen Gauglitz, funding, and all of our participants.
 
 \bibliographystyle{acmsiggraph}
 \nocite{*}
