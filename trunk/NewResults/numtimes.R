@@ -1,5 +1,5 @@
 #datafilename="numtimes_extra8_4.csv"
-datafilename="numtimes8_4.csv"
+datafilename="numtimeslost8_4_34.csv"
 data.all=read.csv(datafilename,header=FALSE)	# read the data into a table
 
 attach(data.all)
@@ -9,7 +9,7 @@ detach(data.all)
 
 #aov.deadlen = aov(numtimes~deadlen+Error(id/deadlen),data.agg)
 #aov.fov = aov(numtimes~deadlen+Error(id/fov),data.agg)
-aov.two = aov(numtimes~deadlen*fov+Error(id/(deadlen*fov)),data.agg)
+#aov.two = aov(numtimes~deadlen*fov+Error(id/(deadlen*fov)),data.agg)
 
 #plot(numtimes~deadlen,data.agg,xlab='Dropout Length',ylab='Number of Times Lost')
 #plot(numtimes~fov,data.agg,xlab='Field of View',ylab='Number of Times Lost')
