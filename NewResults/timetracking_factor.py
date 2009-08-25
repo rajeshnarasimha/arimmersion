@@ -8,14 +8,15 @@ if len(sys.argv) == 2:
 id_dict = {}
 for i in xrange(27):
     id_dict[ "%d"%i ] = "id%d"%i
-fov_dict = { '10':'lowfov', '20':'medfov', '34':'uppfov' }
-len_dict = { '0':'lowlen', '1':'medlen', '2':'upplen' }
+fov_dict = { '10':'10deg', '20':'20deg', '34':'34deg' }
+len_dict = { '0':'0.0s', '0.5':'0.5s', '1':'1.0s', '2':'2.0s' }
 
-resamples = open("resampled.csv")
+#resamples = open("resampled.csv")
 
 while not done:
     for i in xrange(27):
-	line =  resamples.readline()
+	#line =  resamples.readline()
+	line = sys.stdin.readline()
 	if line == "":
 	    done = True
 	    break
@@ -41,4 +42,4 @@ while not done:
 	for j in xrange(60*60):
 	    if samples_in[j] <= thresh:
 		totaltime += 1
-	sys.stdout.write(" %d\n"%totaltime)
+	sys.stdout.write("%f\n"%(float(totaltime)/60.))
