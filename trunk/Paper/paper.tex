@@ -183,7 +183,7 @@ In our experiment we define performance as effectiveness in following Top Hat.  
 
 Because the video does not always run precisely at 60 Hz, each trial might have a slightly different number of measurements.  We also record a timestamp for each measurement, so that we can determine their exact frequency.  As a pre-processing step, we linearly re-sample the data for each trial so that each has exactly 3600 measurements at 60 Hz.
 
-We observed that participants tend to switch between two different states during the experiment: a target following state, and a lost state, where they are searching for the target.  The two states are easily visible in the data.  In the target following state, the angular error is generally low.  We asked participants to keep the cross hairs on the target as closely as they could, but different participants achieved different levels of accuracy.  In the lost state, the error starts to steadily climb, and may fluctuate depending on where the target moves.  The error may even return to near-zero during a lost state, if the participant unwittingly crosses the target's path.
+We observed that participants tend to switch between two different states during the experiment: a target following state, and a lost state, where they are searching for the target.  The two states are easily visible in the data.  In the target following state, the angular error is generally low.  We had asked participants to keep the cross hairs on the target as close as possible, but different participants achieved different levels of accuracy.  In the lost state, the error starts to steadily climb, and may fluctuate depending on where the target moves.  The error may even return to near-zero during a lost state, if the participant unwittingly crosses the target's path.
 
 % TODO: include two plots of error here (one with losses, one without)
 
@@ -193,9 +193,9 @@ The simplest is the average error over an entire trial.  This may not accurately
 
 % median ??
 
-We can more explicitly detect the participant's state by applying a threshold $\tau$ to the data.  The threshold specifies the maximum angular error that still represents successful following of the target. 
+We may detect the participant's state more explicitly by applying a threshold $\tau$ to the data.  The threshold specifies the maximum angular error that represents successful following of the target. 
 %When the error rises above the threshold, we consider the participant lost.
-While conducting the trials we noticed that the participants spent a majority of the time correctly following Top Hat, computing the median angular error at each time-step across all trials gave us values mostly around 4 degrees so we consider values close to this as successful tracking.  We also noticed that during trials as Top Hat would change direction the participant's angular error would increase a small amount for a short time, without losing the target.  As a result we doubled the 4 degrees, giving us a threshold of $\tau = 8$ degrees
+When conducting the trials we noticed that the participants spent a majority of the time correctly following Top Hat.  By computing the median angular error, we found that the participants successfully tracked Top Hat within an error margin of 4 degrees.  We also noticed that during trials as Top Hat would change direction the participant's angular error would increase by a small amount for a short period of time, without losing the target.  As a result we doubled the 4 degrees, giving us a threshold of $\tau = 8$ degrees
 % TODO: how to motivate this threshold?
 \begin{figure}[t]
 	\centering
