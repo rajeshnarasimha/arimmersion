@@ -23,6 +23,8 @@
 
 \usepackage{graphicx}
 
+\usepackage{subfigure}
+
 %% use this for zero \parindent and non-zero \parskip, intelligently.
 
 \usepackage{parskip}
@@ -63,15 +65,10 @@ Tobias H\"{o}llerer\hspace{12pt}
 %% Keywords that describe your work.
 
 \keywords{
-%radiosity, global illumination, constant time
+augmented reality, immersion, user study, simulation 
 }
 
 %%%%%% START OF THE PAPER %%%%%%
-%
-\def\sharedaffiliation{%
-\end{tabular}
-\begin{tabular}{c}}
-%
 \begin{document}
 
 %\teaser{
@@ -97,8 +94,8 @@ We examine the effect of varying levels of immersion on the performance of a tar
 %% The ``\CRcat'' command takes four arguments.
 
 \begin{CRcatlist}
-%  \CRcat{K.6.1}{Management of Computing and Information Systems}{Project and People Management}{Life Cycle};
-%  \CRcat{K.7.m}{The Computing Profession}{Miscellaneous}{Ethics}
+  \CRcat{I.3.7}{Computer Graphics}{Three-Dimensional Graphics and Realism}{Augmented Reality};
+  \CRcat{H.1.2}{Models and Principles}{User/Machine Systems}{Human Factors};
 \end{CRcatlist}
 
 %% The ``\keywordlist'' command prints out the keywords.
@@ -111,7 +108,7 @@ We examine the effect of varying levels of immersion on the performance of a tar
 %% copyright space is left at the bottom of the first column on the first
 %% page of your paper.
 
-%% \copyrightspace
+\copyrightspace
 
 Augmented Reality systems may be used to simulate X-ray vision.  The ability to see through solid objects has potential applications in various fields ranging from construction \cite{Webster96augmentedreality}, medicine \cite{azuma95survey}, military \cite{Livingston02anaugmented} and search-and-rescue operations \cite{1528424}.  Unfortunately, implementing X-ray vision is not a trivial task.  AR systems face certain unresolved issues, including those pertaining to tracking objects in the X-ray view.  For example, GPS dropout errors \cite{4079263} may cause augmented position information to be temporarily lost.  We hypothesize that sensor dropouts will decrease user performance, but this problem may be mitigated by increasing the augmented field of view (FOV).
 
@@ -248,7 +245,7 @@ For a more specific measure of performance, we count the number of times a parti
 We performed two-way {ANOVA} for the time following target metric as an overall analysis of the effects of our two factors.  Figure \ref{fig:anova} gives the results of this analysis.  Both the failure length and the field of view have a significant effect on performance with this metric, at the $p=0.001$ level.
 % TODO: interaction?
 
-We also used a two-way {ANOVA} to examine the number of times the participant loses the target, with results shown in Figure \ref{fig:anova}.  Both field of view and dropout length have a significant effect at the $p=0.001$ level.  There also is an interaction between the two factors at the $p=0.05$ level.  Figure \ref{fig:interaction} shows a plot of this interaction.  
+We also used a two-way {ANOVA} to examine the number of times the participant loses the target, with results shown in Figure \ref{fig:anova}.  Both field of view and dropout length have a significant effect at the $p=0.001$ level.  There also is an interaction between the two factors at the $p=0.05$ level.  Figures \ref{subfig:low}-(c) show box plots for these conditions.  
 % TODO: need F values reported here.
 
 From this plot we can see that with a small field of view, performance is equally bad with no dropouts or one second dropouts.  
@@ -256,11 +253,37 @@ From this plot we can see that with a small field of view, performance is equall
 When the field of view is increased to the medium level, performance dramatically increases when there are no dropouts, but only gets slightly better when there are dropouts.  Finally, there is not a significant difference in performance between the medium and large field of view ($p=0.575$), which suggests that the medium field of view is enough for good performance.
 %Finally, we do not observe much difference in performance between the medium and large field of view cases.  Using Tukey's HSD to compare means, the medium and large field of view conditions are in fact not significantly different ($p=0.575$).
 
-\begin{figure}[t]
+%\begin{figure}[t]
+%	\centering
+%	\includegraphics[width=2.5in]{figures/numtimes_interaction.pdf}
+%	\caption{\label{fig:interaction}Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
+%\end{figure}
+
+%\begin{figure*}[t]
+%	\centering
+%	\subfigure[]{\label{subfig:low}\includegraphics[width=1.5in]{figures/numtimes_deadlen_lowfov.pdf}}
+%	\subfigure[]{\label{subfig:med}\includegraphics[width=1.5in]{figures/numtimes_deadlen_medfov.pdf}}
+%	\subfigure[]{\label{subfig:upp}\includegraphics[width=1.5in]{figures/numtimes_deadlen_uppfov.pdf}}
+%	\caption{\label{fig:interaction}Box plots relating sensor dropout length to the number of times the participant loses the target, with (a) low, (b) medium and (c) upper field of view.}
+%\end{figure*}
+
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics[width=1.5in]{figures/extra.pdf}
+%	\caption{\label{fig:extra}Box plot of the total time the participant is following the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected this data from seven participants, using the medium field of view.}
+%\end{figure}
+
+\begin{figure*}[t]
 	\centering
-	\includegraphics[width=2.5in]{figures/numtimes_interaction.pdf}
-	\caption{\label{fig:interaction}Interaction plot of the effect of field of view and sensor dropout length on the number of times the participant loses the target.}
-\end{figure}
+	\subfigure[]{\label{subfig:low}\includegraphics[width=1.7in]{figures/numtimes_deadlen_lowfov.pdf}}
+	\subfigure[]{\label{subfig:med}\includegraphics[width=1.7in]{figures/numtimes_deadlen_medfov.pdf}}
+	\subfigure[]{\label{subfig:upp}\includegraphics[width=1.7in]{figures/numtimes_deadlen_uppfov.pdf}}
+	\subfigure[]{\label{subfig:extra}\includegraphics[width=1.7in]{figures/extra.pdf}}
+	\caption{\label{fig:interaction}Box plots (a)-(c) relate sensor dropout length to the number of times the participant loses the target, with (a) low, (b) medium and (c) upper field of view.  Box plot (d) shows the total time the participant is following the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected the data for box plot (d) from seven participants, using the medium field of view.}
+\end{figure*}
+
+Figure \ref{fig:tt_deadlen} shows a box plot of time following target versus dropout length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that the one second and two second conditions were significantly different than zero ($p<0.001$ for both), but not significantly different from each other ($p=0.239$).  This suggests that we may be seeing a thresholding effect above one second sensor dropouts.
+% TODO: table with values
 
 \begin{figure}[h]
 \centering
@@ -278,18 +301,9 @@ Number of Times Lost & Field of View & 13.060 & $<0.001$\\
  \caption{\label{fig:anova}Factors which have a significant effect.}
 \end{figure}
 
-Figure \ref{fig:tt_deadlen} shows a box plot of time following target versus dropout length.  Performance decreases between zero and one seconds, but seems to level off between one and two.  We ran a post-hoc analysis to determine which conditions were significantly different.  Using Tukey's HSD, we found that the one second and two second conditions were significantly different than zero ($p<0.001$ for both), but not significantly different from each other ($p=0.239$).  This suggests that we may be seeing a thresholding effect above one second sensor dropouts.
-% TODO: table with values
-
-To investigate this threshold, we had seven participants complete an extra three trials with the medium field of view and sensor dropout periods of 0.5 seconds.  Figure \ref{fig:extra} shows a box plot of time following target versus sensor dropout length for these seven participants.  Again using Tukey's HSD to compare the means, we did not find a significant difference between the zero length and half second length conditions, but did find a significant difference between those and the higher length conditions.
+To investigate this threshold, we had seven participants complete an extra three trials with the medium field of view and sensor dropout periods of 0.5 seconds.  Figure \ref{subfig:extra} shows a box plot of time following target versus sensor dropout length for these seven participants.  Again using Tukey's HSD to compare the means, we did not find a significant difference between the zero length and half second length conditions, but did find a significant difference between those and the higher length conditions.
 %TODO: table with values
 With further experimentation, we could further delineate the performance curve as the dropout length increases from zero to one.
-
-\begin{figure}[htb]
-	\centering
-	\includegraphics[width=2.5in]{figures/extra.pdf}
-	\caption{\label{fig:extra}Box plot of the total time the participant is following the target versus the length of the sensor dropout periods, including the half second dropout condition.  We collected this data from seven participants, using the medium field of view.}
-\end{figure}
 
 %use multiple comparison of means to determine which pairs are significant -- difference between length of one and length of two is not significant.
 
@@ -307,9 +321,11 @@ Decreased reliability in the head-based rendering, caused by periods of sensor d
 Future work lies in further investigating the effect of the dropout length 
 below the one second level.  Our work also suggests new experiments designed to test the interaction between reliability of the head-based rendering and various other immersion components.
 
-%\section*{Acknowledgements}
-%Cha Lee, Steffen Gauglitz, funding, and all of our participants.
+\section*{Acknowledgements}
+We would like to thank Cha Lee and Steffen Gauglitz for help in designing and running our experiments, and our study participants.  This work was partially supported by NSF CAREER grant IIS-0747520, and NSF IGERT grant DGE-0221713.
 
 \bibliographystyle{acmsiggraph}
 \bibliography{paper}
+
+
 \end{document}
