@@ -40,6 +40,9 @@ while not done:
 
 		#print "%d samples"%len(samples_in)
 
+		if fov != 'lowfov':
+		    continue
+
 		sys.stdout.write("%s,%s,%s,"%(id,fov,deadlen))
 		totaltime = 0
 		
