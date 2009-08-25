@@ -52,19 +52,19 @@ detach(data.all)
 
 
 # one-way repeated measures anova on deadlen
-aov.deadlen = aov(mean ~deadlen+Error(id/deadlen),data.agg)
-print(summary(aov.deadlen))
-boxplot(mean~deadlen,data=data.agg)
+#aov.deadlen = aov(mean ~deadlen+Error(id/deadlen),data.agg)
+#print(summary(aov.deadlen))
+#boxplot(mean~deadlen,data=data.agg)
 
 
 
 # two-way anova repeated measures on both
-#aov.two = aov(mean ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
-#print(summary(aov.two))
+aov.two = aov(mean ~(fov*deadlen)+Error(id/(fov*deadlen)),data.agg)
+print(summary(aov.two))
 #boxplot(mean ~fov*deadlen,data=data.agg)
-#attach(data.agg)
-#interaction.plot(fov,deadlen, mean)    #another way to graph the interaction
-#detach(data.agg)
+attach(data.agg)
+interaction.plot(fov,deadlen, mean)    #another way to graph the interaction
+detach(data.agg)
 
 
 
