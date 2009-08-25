@@ -4,6 +4,7 @@ done = False
 
 thresh = 12
 secondsLoss = 3
+selectedFov = '10deg'
 
 if len(sys.argv) == 2:
     thresh = int(sys.argv[1])
@@ -11,6 +12,12 @@ if len(sys.argv) == 2:
 if len(sys.argv) == 3:
     thresh = int(sys.argv[1])
     secondsLoss = float(sys.argv[2])
+
+if len(sys.argv) == 4:
+    thresh = int(sys.argv[1])
+    secondsLoss = float(sys.argv[2])
+    selectedFov = sys.argv[3]
+
 
 id_dict = {}
 for i in xrange(27):
@@ -45,7 +52,7 @@ while not done:
 
 		#print "%d samples"%len(samples_in)
 
-		if fov != 'lowfov':
+		if fov != selectedFov:
 		    continue
 
 		sys.stdout.write("%s,%s,%s,"%(id,fov,deadlen))
