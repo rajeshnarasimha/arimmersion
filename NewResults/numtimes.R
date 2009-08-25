@@ -1,5 +1,5 @@
 #datafilename="numtimes_extra8_4.csv"
-datafilename="numtimeslost8_4_34.csv"
+datafilename="numtimeslost8_4_10.csv"
 data.all=read.csv(datafilename,header=FALSE)	# read the data into a table
 
 attach(data.all)
@@ -21,5 +21,5 @@ par(mar=c(5,5,5,2),cex.axis=2,cex.lab=2)
 #interaction.plot(fov,deadlen,numtimes,xlab='Field of View',ylab='Number of Times Lost',trace.label='Dropout Len')
 #detach(data.agg)
 
-plot(numtimes~deadlen,data.agg,cex.axis=2,cex.lab=2,xlab='Dropout Length',ylab='Number of Times Lost')
+plot(numtimes~deadlen,data.agg,cex.axis=2,cex.lab=2,xlab='Dropout Length',ylab='Number of Times Lost',ylim=c(0,2.5))
 #plot(numtimes~fov,data.agg,cex.axis=2,cex.lab=2,xlab='Field of View',ylab='Number of Times Lost')
